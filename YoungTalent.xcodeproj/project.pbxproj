@@ -16,6 +16,11 @@
 		843167F82992335400908312 /* YoungTalentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843167F72992335400908312 /* YoungTalentTests.swift */; };
 		843168022992335400908312 /* YoungTalentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843168012992335400908312 /* YoungTalentUITests.swift */; };
 		843168042992335400908312 /* YoungTalentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843168032992335400908312 /* YoungTalentUITestsLaunchTests.swift */; };
+		84BAB81029AF5F8600F5CDCC /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BAB80F29AF5F8600F5CDCC /* RegisterVC.swift */; };
+		84BAB81229AF5FB600F5CDCC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BAB81129AF5FB600F5CDCC /* UIView+Extension.swift */; };
+		84BAB81529AF637A00F5CDCC /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84BAB81329AF637A00F5CDCC /* Montserrat-Bold.ttf */; };
+		84BAB81629AF637A00F5CDCC /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84BAB81429AF637A00F5CDCC /* Montserrat-Regular.ttf */; };
+		84BAB81929AF6BB000F5CDCC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84BAB81829AF6BB000F5CDCC /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		843168032992335400908312 /* YoungTalentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoungTalentUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		843168112992338500908312 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		843168122992339400908312 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
+		84BAB80F29AF5F8600F5CDCC /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		84BAB81129AF5FB600F5CDCC /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		84BAB81329AF637A00F5CDCC /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		84BAB81429AF637A00F5CDCC /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		84BAB81829AF6BB000F5CDCC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,10 +115,14 @@
 				843167E02992335300908312 /* AppDelegate.swift */,
 				843167E22992335300908312 /* SceneDelegate.swift */,
 				843167E42992335300908312 /* ViewController.swift */,
+				84BAB81129AF5FB600F5CDCC /* UIView+Extension.swift */,
+				84BAB80F29AF5F8600F5CDCC /* RegisterVC.swift */,
 				843167E62992335300908312 /* Main.storyboard */,
 				843167E92992335400908312 /* Assets.xcassets */,
+				84BAB81829AF6BB000F5CDCC /* Colors.xcassets */,
 				843167EB2992335400908312 /* LaunchScreen.storyboard */,
 				843167EE2992335400908312 /* Info.plist */,
+				84BAB81729AF638E00F5CDCC /* Fonts */,
 			);
 			path = YoungTalent;
 			sourceTree = "<group>";
@@ -137,6 +151,15 @@
 				843168122992339400908312 /* Development.xcconfig */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		84BAB81729AF638E00F5CDCC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				84BAB81329AF637A00F5CDCC /* Montserrat-Bold.ttf */,
+				84BAB81429AF637A00F5CDCC /* Montserrat-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,8 +266,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84BAB81529AF637A00F5CDCC /* Montserrat-Bold.ttf in Resources */,
 				843167ED2992335400908312 /* LaunchScreen.storyboard in Resources */,
 				843167EA2992335400908312 /* Assets.xcassets in Resources */,
+				84BAB81929AF6BB000F5CDCC /* Colors.xcassets in Resources */,
+				84BAB81629AF637A00F5CDCC /* Montserrat-Regular.ttf in Resources */,
 				843167E82992335300908312 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +297,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				843167E52992335300908312 /* ViewController.swift in Sources */,
+				84BAB81029AF5F8600F5CDCC /* RegisterVC.swift in Sources */,
+				84BAB81229AF5FB600F5CDCC /* UIView+Extension.swift in Sources */,
 				843167E12992335300908312 /* AppDelegate.swift in Sources */,
 				843167E32992335300908312 /* SceneDelegate.swift in Sources */,
 			);

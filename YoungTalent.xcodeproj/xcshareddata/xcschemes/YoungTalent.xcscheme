@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "843167DC2992335300908312"
-               BuildableName = "YoungTalent.app"
+               BuildableName = "YoungTalentProd.app"
                BlueprintName = "YoungTalent"
                ReferencedContainer = "container:YoungTalent.xcodeproj">
             </BuildableReference>
@@ -67,7 +67,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "843167DC2992335300908312"
-            BuildableName = "YoungTalent.app"
+            BuildableName = "YoungTalentProd.app"
             BlueprintName = "YoungTalent"
             ReferencedContainer = "container:YoungTalent.xcodeproj">
          </BuildableReference>
@@ -84,7 +84,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "843167DC2992335300908312"
-            BuildableName = "YoungTalent.app"
+            BuildableName = "YoungTalentProd.app"
             BlueprintName = "YoungTalent"
             ReferencedContainer = "container:YoungTalent.xcodeproj">
          </BuildableReference>
