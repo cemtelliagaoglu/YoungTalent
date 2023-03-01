@@ -112,17 +112,13 @@
 		843167DF2992335300908312 /* YoungTalent */ = {
 			isa = PBXGroup;
 			children = (
-				843167E02992335300908312 /* AppDelegate.swift */,
-				843167E22992335300908312 /* SceneDelegate.swift */,
+				84BAB81A29AF7D8000F5CDCC /* Application */,
+				84BAB81B29AF7D8B00F5CDCC /* Utils */,
 				843167E42992335300908312 /* ViewController.swift */,
-				84BAB81129AF5FB600F5CDCC /* UIView+Extension.swift */,
 				84BAB80F29AF5F8600F5CDCC /* RegisterVC.swift */,
 				843167E62992335300908312 /* Main.storyboard */,
-				843167E92992335400908312 /* Assets.xcassets */,
-				84BAB81829AF6BB000F5CDCC /* Colors.xcassets */,
 				843167EB2992335400908312 /* LaunchScreen.storyboard */,
-				843167EE2992335400908312 /* Info.plist */,
-				84BAB81729AF638E00F5CDCC /* Fonts */,
+				84BAB81C29AF7DAB00F5CDCC /* Resources */,
 			);
 			path = YoungTalent;
 			sourceTree = "<group>";
@@ -160,6 +156,34 @@
 				84BAB81429AF637A00F5CDCC /* Montserrat-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		84BAB81A29AF7D8000F5CDCC /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				843167E02992335300908312 /* AppDelegate.swift */,
+				843167E22992335300908312 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		84BAB81B29AF7D8B00F5CDCC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				84BAB81129AF5FB600F5CDCC /* UIView+Extension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		84BAB81C29AF7DAB00F5CDCC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				843167E92992335400908312 /* Assets.xcassets */,
+				84BAB81829AF6BB000F5CDCC /* Colors.xcassets */,
+				843167EE2992335400908312 /* Info.plist */,
+				84BAB81729AF638E00F5CDCC /* Fonts */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
