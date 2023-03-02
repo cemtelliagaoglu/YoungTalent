@@ -21,6 +21,8 @@
 		84BAB81529AF637A00F5CDCC /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84BAB81329AF637A00F5CDCC /* Montserrat-Bold.ttf */; };
 		84BAB81629AF637A00F5CDCC /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84BAB81429AF637A00F5CDCC /* Montserrat-Regular.ttf */; };
 		84BAB81929AF6BB000F5CDCC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84BAB81829AF6BB000F5CDCC /* Colors.xcassets */; };
+		84BAB81E29AF7E6E00F5CDCC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BAB81D29AF7E6E00F5CDCC /* LoginVC.swift */; };
+		84BAB82029AF974000F5CDCC /* OTPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BAB81F29AF974000F5CDCC /* OTPVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		84BAB81329AF637A00F5CDCC /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		84BAB81429AF637A00F5CDCC /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		84BAB81829AF6BB000F5CDCC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		84BAB81D29AF7E6E00F5CDCC /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		84BAB81F29AF974000F5CDCC /* OTPVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				84BAB81A29AF7D8000F5CDCC /* Application */,
 				84BAB81B29AF7D8B00F5CDCC /* Utils */,
 				843167E42992335300908312 /* ViewController.swift */,
+				84BAB81D29AF7E6E00F5CDCC /* LoginVC.swift */,
+				84BAB81F29AF974000F5CDCC /* OTPVC.swift */,
 				84BAB80F29AF5F8600F5CDCC /* RegisterVC.swift */,
 				843167E62992335300908312 /* Main.storyboard */,
 				843167EB2992335400908312 /* LaunchScreen.storyboard */,
@@ -322,7 +328,9 @@
 			files = (
 				843167E52992335300908312 /* ViewController.swift in Sources */,
 				84BAB81029AF5F8600F5CDCC /* RegisterVC.swift in Sources */,
+				84BAB81E29AF7E6E00F5CDCC /* LoginVC.swift in Sources */,
 				84BAB81229AF5FB600F5CDCC /* UIView+Extension.swift in Sources */,
+				84BAB82029AF974000F5CDCC /* OTPVC.swift in Sources */,
 				843167E12992335300908312 /* AppDelegate.swift in Sources */,
 				843167E32992335300908312 /* SceneDelegate.swift in Sources */,
 			);
@@ -506,7 +514,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = YoungTalent/Info.plist;
+				INFOPLIST_FILE = YoungTalent/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -536,7 +544,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = YoungTalent/Info.plist;
+				INFOPLIST_FILE = YoungTalent/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -707,7 +715,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = YoungTalent/Info.plist;
+				INFOPLIST_FILE = YoungTalent/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -832,7 +840,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = YoungTalent/Info.plist;
+				INFOPLIST_FILE = YoungTalent/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
