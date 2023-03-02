@@ -42,7 +42,7 @@ class OTPVC: UIViewController{
         view.addGestureRecognizer(tap)
         
         // backButton for navigationController
-        let backButton = UIButton(frame: .init(x: 30, y: 50, width: 20, height: 60))
+        let backButton = UIButton(frame: .init(x: 30, y: 30, width: 20, height: 57))
         backButton.setBackgroundImage(UIImage(named: "back"), for: .normal)
         backButton.tintColor = UIColor(named: "Blue-Dark")
         backButton.contentMode = .scaleToFill
