@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		843167E12992335300908312 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843167E02992335300908312 /* AppDelegate.swift */; };
 		843167E32992335300908312 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843167E22992335300908312 /* SceneDelegate.swift */; };
-		843167E52992335300908312 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843167E42992335300908312 /* ViewController.swift */; };
 		843167E82992335300908312 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843167E62992335300908312 /* Main.storyboard */; };
 		843167EA2992335400908312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843167E92992335400908312 /* Assets.xcassets */; };
 		843167ED2992335400908312 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843167EB2992335400908312 /* LaunchScreen.storyboard */; };
 		843167F82992335400908312 /* YoungTalentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843167F72992335400908312 /* YoungTalentTests.swift */; };
 		843168022992335400908312 /* YoungTalentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843168012992335400908312 /* YoungTalentUITests.swift */; };
 		843168042992335400908312 /* YoungTalentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843168032992335400908312 /* YoungTalentUITestsLaunchTests.swift */; };
+		8446CBDB29B0DB0C00442F53 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446CBDA29B0DB0C00442F53 /* WelcomeVC.swift */; };
 		84BAB81029AF5F8600F5CDCC /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BAB80F29AF5F8600F5CDCC /* RegisterVC.swift */; };
 		84BAB81229AF5FB600F5CDCC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BAB81129AF5FB600F5CDCC /* UIView+Extension.swift */; };
 		84BAB81529AF637A00F5CDCC /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84BAB81329AF637A00F5CDCC /* Montserrat-Bold.ttf */; };
@@ -46,7 +46,6 @@
 		843167DD2992335300908312 /* YoungTalentProd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoungTalentProd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		843167E02992335300908312 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		843167E22992335300908312 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		843167E42992335300908312 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		843167E72992335300908312 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		843167E92992335400908312 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		843167EC2992335400908312 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,6 +57,7 @@
 		843168032992335400908312 /* YoungTalentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoungTalentUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		843168112992338500908312 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		843168122992339400908312 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
+		8446CBDA29B0DB0C00442F53 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		84BAB80F29AF5F8600F5CDCC /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		84BAB81129AF5FB600F5CDCC /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		84BAB81329AF637A00F5CDCC /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 			children = (
 				84BAB81A29AF7D8000F5CDCC /* Application */,
 				84BAB81B29AF7D8B00F5CDCC /* Utils */,
-				843167E42992335300908312 /* ViewController.swift */,
+				8446CBDA29B0DB0C00442F53 /* WelcomeVC.swift */,
 				84BAB81D29AF7E6E00F5CDCC /* LoginVC.swift */,
 				84BAB81F29AF974000F5CDCC /* OTPVC.swift */,
 				84BAB80F29AF5F8600F5CDCC /* RegisterVC.swift */,
@@ -326,13 +326,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				843167E52992335300908312 /* ViewController.swift in Sources */,
 				84BAB81029AF5F8600F5CDCC /* RegisterVC.swift in Sources */,
 				84BAB81E29AF7E6E00F5CDCC /* LoginVC.swift in Sources */,
 				84BAB81229AF5FB600F5CDCC /* UIView+Extension.swift in Sources */,
 				84BAB82029AF974000F5CDCC /* OTPVC.swift in Sources */,
 				843167E12992335300908312 /* AppDelegate.swift in Sources */,
 				843167E32992335300908312 /* SceneDelegate.swift in Sources */,
+				8446CBDB29B0DB0C00442F53 /* WelcomeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
