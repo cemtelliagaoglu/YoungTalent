@@ -29,14 +29,6 @@ class LoginVC: UIViewController{
         let viewTap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(viewTap)
         
-        // backButton for navigationController
-        let backButton = UIButton(frame: .init(x: 30, y: 30, width: 20, height: 57))
-        backButton.setBackgroundImage(UIImage(named: "back"), for: .normal)
-        backButton.tintColor = UIColor(named: "Blue-Dark")
-        backButton.contentMode = .scaleToFill
-        backButton.addTarget(self, action: #selector(handleBackButtonTapped), for: .touchUpInside)
-        view.addSubview(backButton)
-        
         // setup termsAndConditionLabel
         let attributedText = NSMutableAttributedString(string: "By click continue you are agree with\nour",
                                                 attributes: [
@@ -56,10 +48,6 @@ class LoginVC: UIViewController{
         
     }
     
-    @objc func handleBackButtonTapped(){
-        navigationController?.popViewController(animated: true)
-    }
-    
     @objc func handleTermsAndConditionTapped(){
         print("Terms And Condition Tapped")
     }
@@ -73,7 +61,11 @@ class LoginVC: UIViewController{
         let destinationVC = storyboard.instantiateViewController(withIdentifier: "OTPVC")
         navigationController?.pushViewController(destinationVC, animated: true)
     }
-
+    
+    @IBAction func handleBackButtonTapped(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
 }
 //MARK: - TextFieldDelegate
 extension LoginVC: UITextFieldDelegate{
