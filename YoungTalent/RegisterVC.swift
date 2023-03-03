@@ -36,6 +36,10 @@ class RegisterVC: UIViewController{
         print("Tapped Next Button")
     }
     
+    @IBAction func handleBackButtonPressed(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
 }
 //MARK: - TextFieldDelegate
 extension RegisterVC: UITextFieldDelegate{

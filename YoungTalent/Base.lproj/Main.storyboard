@@ -529,6 +529,18 @@ our </string>
                                     <constraint firstAttribute="width" constant="120" id="Qm7-Ss-Hwi"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yc1-Su-5Rk">
+                                <rect key="frame" x="30" y="50" width="20" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="e5b-sm-8yo"/>
+                                    <constraint firstAttribute="height" constant="57" id="x59-OX-eIa"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="back"/>
+                                <connections>
+                                    <action selector="handleBackButtonPressed:" destination="kbJ-5E-zyA" eventType="touchUpInside" id="oPM-hY-sRd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QiQ-UM-ta9"/>
                         <color key="backgroundColor" name="backgroundColor"/>
@@ -547,7 +559,9 @@ our </string>
                             <constraint firstItem="QiQ-UM-ta9" firstAttribute="trailing" secondItem="dng-ci-ova" secondAttribute="trailing" constant="30" id="Scl-mM-eny"/>
                             <constraint firstItem="4Ap-OX-xhY" firstAttribute="top" secondItem="dng-ci-ova" secondAttribute="bottom" constant="162" id="UE6-qU-LvP"/>
                             <constraint firstItem="QiQ-UM-ta9" firstAttribute="trailing" secondItem="UFy-YT-71e" secondAttribute="trailing" constant="30" id="WDQ-Wc-bUT"/>
+                            <constraint firstItem="yc1-Su-5Rk" firstAttribute="top" secondItem="bRV-CU-owD" secondAttribute="top" constant="50" id="Xkc-Li-Xym"/>
                             <constraint firstItem="dng-ci-ova" firstAttribute="top" secondItem="bRV-CU-owD" secondAttribute="top" constant="137" id="YFa-gk-HnR"/>
+                            <constraint firstItem="yc1-Su-5Rk" firstAttribute="leading" secondItem="bRV-CU-owD" secondAttribute="leading" constant="30" id="bwF-Sb-LzU"/>
                             <constraint firstAttribute="bottom" secondItem="4Ap-OX-xhY" secondAttribute="bottom" id="cu1-WJ-jk0"/>
                             <constraint firstItem="UFy-YT-71e" firstAttribute="leading" secondItem="QiQ-UM-ta9" secondAttribute="leading" constant="30" id="iXO-dN-bZn"/>
                             <constraint firstItem="r8n-TM-0zq" firstAttribute="top" secondItem="UFy-YT-71e" secondAttribute="bottom" constant="7" id="xUV-eX-8Hl"/>
@@ -585,6 +599,7 @@ our </string>
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="20" height="57.333332061767578"/>
         <image name="chatting" width="262" height="271"/>
         <image name="done" width="120" height="107"/>
         <image name="next" width="120" height="107"/>
@@ -592,7 +607,7 @@ our </string>
         <image name="security" width="310" height="233.66667175292969"/>
         <image name="shapedBackground" width="375" height="470"/>
         <namedColor name="Blue-Dark">
-            <color red="0.10199999809265137" green="0.067000001668930054" blue="0.40400001406669617" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.10196078431372549" green="0.066666666666666666" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Blue-Light">
             <color red="0.5220000147819519" green="0.49799999594688416" blue="0.70599997043609619" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
