@@ -41,17 +41,6 @@ class OTPVC: UIViewController{
         tap.numberOfTapsRequired = 1
         view.addGestureRecognizer(tap)
         
-        // backButton for navigationController
-        let backButton = UIButton(frame: .init(x: 30, y: 30, width: 20, height: 57))
-        backButton.setBackgroundImage(UIImage(named: "back"), for: .normal)
-        backButton.tintColor = UIColor(named: "Blue-Dark")
-        backButton.contentMode = .scaleToFill
-        backButton.addTarget(self, action: #selector(handleBackButtonTapped), for: .touchUpInside)
-        view.addSubview(backButton)
-    }
-    
-    @objc func handleBackButtonTapped(){
-        navigationController?.popViewController(animated: true)
     }
     
     @objc func dismissKeyboard(){
@@ -90,6 +79,21 @@ class OTPVC: UIViewController{
             }
         }
     }
+    
+    @IBAction func handleBackButtonTapped(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func handleNextButtonTapped(_ sender: UIButton) {
+        guard textField1.hasText,
+              textField2.hasText,
+              textField3.hasText,
+              textField4.hasText else{ return }
+        
+        let otpCode = "\(textField1.text!)\(textField2.text!)\(textField3.text!)\(textField4.text!)"
+        print("Next Button Tapped... OTP Code: \(otpCode)")
+    }
+    
 }
 
 //MARK: - TextFieldDelegate
