@@ -70,19 +70,35 @@
                                 <color key="textColor" name="Blue-Dark"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" title="Dark Mode" translatesAutoresizingMaskIntoConstraints="NO" id="YnR-0N-Hwg">
+                                <rect key="frame" x="314" y="100" width="51" height="31"/>
+                                <color key="onTintColor" name="Blue-Light"/>
+                                <connections>
+                                    <action selector="darkModeSwitched:" destination="KPJ-c2-dor" eventType="valueChanged" id="jfi-Qz-DD8"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKp-c2-SrR">
+                                <rect key="frame" x="226" y="106.66666666666667" width="78" height="18"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                <color key="textColor" name="Blue-Dark"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WAq-sH-2cK"/>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="dmX-eg-Zaf" firstAttribute="top" secondItem="r5d-86-8BL" secondAttribute="bottom" constant="50" id="3sZ-Ok-rou"/>
+                            <constraint firstItem="YnR-0N-Hwg" firstAttribute="top" secondItem="gQa-vf-0Gi" secondAttribute="top" constant="100" id="4Qa-sv-GTK"/>
                             <constraint firstItem="WAq-sH-2cK" firstAttribute="trailing" secondItem="Eci-2v-oye" secondAttribute="trailing" constant="30" id="CBR-Gr-Jz2"/>
                             <constraint firstItem="WAq-sH-2cK" firstAttribute="trailing" secondItem="r5d-86-8BL" secondAttribute="trailing" constant="30" id="CCM-Ub-89F"/>
                             <constraint firstAttribute="trailing" secondItem="1on-4q-9Kd" secondAttribute="trailing" constant="-46" id="DRy-lX-fWf"/>
                             <constraint firstItem="WAq-sH-2cK" firstAttribute="trailing" secondItem="ywn-oC-De2" secondAttribute="trailing" constant="30" id="KRD-iG-oCD"/>
                             <constraint firstItem="WAq-sH-2cK" firstAttribute="bottom" secondItem="Eci-2v-oye" secondAttribute="bottom" constant="80" id="Mdu-6V-rFf"/>
+                            <constraint firstItem="YnR-0N-Hwg" firstAttribute="leading" secondItem="nKp-c2-SrR" secondAttribute="trailing" constant="10" id="OHu-ri-yYa"/>
                             <constraint firstItem="vUM-OB-Jh8" firstAttribute="leading" secondItem="WAq-sH-2cK" secondAttribute="leading" constant="30" id="OLM-Gd-Dth"/>
                             <constraint firstItem="r5d-86-8BL" firstAttribute="top" secondItem="gQa-vf-0Gi" secondAttribute="top" constant="167" id="RP3-xz-O7P"/>
                             <constraint firstItem="r5d-86-8BL" firstAttribute="leading" secondItem="WAq-sH-2cK" secondAttribute="leading" constant="30" id="RfS-dz-9Hy"/>
+                            <constraint firstItem="WAq-sH-2cK" firstAttribute="trailing" secondItem="YnR-0N-Hwg" secondAttribute="trailing" constant="30" id="SuP-NW-DCJ"/>
                             <constraint firstItem="dmX-eg-Zaf" firstAttribute="leading" secondItem="WAq-sH-2cK" secondAttribute="leading" constant="30" id="Tz9-14-TAB"/>
                             <constraint firstItem="ywn-oC-De2" firstAttribute="top" secondItem="dmX-eg-Zaf" secondAttribute="bottom" constant="20" id="bM7-Em-6x9"/>
                             <constraint firstItem="WAq-sH-2cK" firstAttribute="trailing" secondItem="vUM-OB-Jh8" secondAttribute="trailing" constant="30" id="dgB-3F-azQ"/>
@@ -90,6 +106,7 @@
                             <constraint firstItem="1on-4q-9Kd" firstAttribute="top" secondItem="gQa-vf-0Gi" secondAttribute="top" constant="374" id="fa8-Ad-8CO"/>
                             <constraint firstItem="1on-4q-9Kd" firstAttribute="leading" secondItem="gQa-vf-0Gi" secondAttribute="leading" constant="-46" id="fmt-g3-gBr"/>
                             <constraint firstItem="vUM-OB-Jh8" firstAttribute="top" secondItem="ywn-oC-De2" secondAttribute="bottom" constant="20" id="igv-Ie-i5B"/>
+                            <constraint firstItem="nKp-c2-SrR" firstAttribute="centerY" secondItem="YnR-0N-Hwg" secondAttribute="centerY" id="jY4-mU-9g2"/>
                             <constraint firstItem="ywn-oC-De2" firstAttribute="leading" secondItem="WAq-sH-2cK" secondAttribute="leading" constant="30" id="kwf-Ld-btH"/>
                             <constraint firstAttribute="bottom" secondItem="1on-4q-9Kd" secondAttribute="bottom" id="ljZ-l3-339"/>
                             <constraint firstItem="Eci-2v-oye" firstAttribute="leading" secondItem="WAq-sH-2cK" secondAttribute="leading" constant="30" id="xpL-rx-VCA"/>
@@ -99,6 +116,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="yFm-wE-80U"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="darkModeSwitch" destination="YnR-0N-Hwg" id="JVN-6H-tIx"/>
                         <outlet property="loginButton" destination="vUM-OB-Jh8" id="I9U-br-KiG"/>
                         <outlet property="registerLabel" destination="Eci-2v-oye" id="yL0-98-Ynh"/>
                         <segue destination="Cam-iH-afM" kind="show" identifier="toLogin" id="2vs-94-368"/>
