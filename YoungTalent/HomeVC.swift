@@ -24,7 +24,7 @@ class HomeVC: UIViewController{
         // collectionView
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "CommunityMainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: collectionViewCellIdentifier)
+        collectionView.register(UINib(nibName: "CommunityMainCell", bundle: nil), forCellWithReuseIdentifier: collectionViewCellIdentifier)
         
         // tableView
         tableView.delegate = self
@@ -53,7 +53,7 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate,UICollect
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCellIdentifier, for: indexPath) as? CommunityMainCollectionViewCell else{ return UICollectionViewCell()}
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCellIdentifier, for: indexPath) as? CommunityMainCell else{ return UICollectionViewCell()}
         
         return cell
     }
