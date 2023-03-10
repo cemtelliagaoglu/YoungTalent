@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840E7E7F29B9CA9C003CE39C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E7E7E29B9CA9C003CE39C /* HomeVC.swift */; };
+		840E7E8329B9E04A003CE39C /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E7E8129B9E04A003CE39C /* ChatTableViewCell.swift */; };
+		840E7E8429B9E04A003CE39C /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840E7E8229B9E04A003CE39C /* ChatTableViewCell.xib */; };
+		840E7E8729B9F132003CE39C /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 840E7E8629B9F132003CE39C /* Montserrat-SemiBold.ttf */; };
+		840E7E8A29B9F81F003CE39C /* CommunityMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E7E8829B9F81F003CE39C /* CommunityMainCell.swift */; };
+		840E7E8B29B9F81F003CE39C /* CommunityMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840E7E8929B9F81F003CE39C /* CommunityMainCell.xib */; };
+		840E7E8F29BA30D2003CE39C /* CommunityGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E7E8D29BA30D2003CE39C /* CommunityGroupCell.swift */; };
+		840E7E9029BA30D2003CE39C /* CommunityGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840E7E8E29BA30D2003CE39C /* CommunityGroupCell.xib */; };
 		843167E12992335300908312 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843167E02992335300908312 /* AppDelegate.swift */; };
 		843167E32992335300908312 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843167E22992335300908312 /* SceneDelegate.swift */; };
 		843167E82992335300908312 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843167E62992335300908312 /* Main.storyboard */; };
@@ -43,6 +51,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		840E7E7E29B9CA9C003CE39C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		840E7E8129B9E04A003CE39C /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		840E7E8229B9E04A003CE39C /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
+		840E7E8629B9F132003CE39C /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		840E7E8829B9F81F003CE39C /* CommunityMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityMainCell.swift; sourceTree = "<group>"; };
+		840E7E8929B9F81F003CE39C /* CommunityMainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityMainCell.xib; sourceTree = "<group>"; };
+		840E7E8D29BA30D2003CE39C /* CommunityGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityGroupCell.swift; sourceTree = "<group>"; };
+		840E7E8E29BA30D2003CE39C /* CommunityGroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityGroupCell.xib; sourceTree = "<group>"; };
 		843167DD2992335300908312 /* YoungTalentProd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoungTalentProd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		843167E02992335300908312 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		843167E22992335300908312 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +108,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		840E7E8529B9E050003CE39C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				840E7E8129B9E04A003CE39C /* ChatTableViewCell.swift */,
+				840E7E8229B9E04A003CE39C /* ChatTableViewCell.xib */,
+				840E7E8829B9F81F003CE39C /* CommunityMainCell.swift */,
+				840E7E8929B9F81F003CE39C /* CommunityMainCell.xib */,
+				840E7E8D29BA30D2003CE39C /* CommunityGroupCell.swift */,
+				840E7E8E29BA30D2003CE39C /* CommunityGroupCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		843167D42992335200908312 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +151,8 @@
 				84BAB81D29AF7E6E00F5CDCC /* LoginVC.swift */,
 				84BAB81F29AF974000F5CDCC /* OTPVC.swift */,
 				84BAB80F29AF5F8600F5CDCC /* RegisterVC.swift */,
+				840E7E7E29B9CA9C003CE39C /* HomeVC.swift */,
+				840E7E8529B9E050003CE39C /* Cells */,
 				843167E62992335300908312 /* Main.storyboard */,
 				843167EB2992335400908312 /* LaunchScreen.storyboard */,
 				84BAB81C29AF7DAB00F5CDCC /* Resources */,
@@ -160,6 +191,7 @@
 			children = (
 				84BAB81329AF637A00F5CDCC /* Montserrat-Bold.ttf */,
 				84BAB81429AF637A00F5CDCC /* Montserrat-Regular.ttf */,
+				840E7E8629B9F132003CE39C /* Montserrat-SemiBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -300,7 +332,11 @@
 				843167ED2992335400908312 /* LaunchScreen.storyboard in Resources */,
 				843167EA2992335400908312 /* Assets.xcassets in Resources */,
 				84BAB81929AF6BB000F5CDCC /* Colors.xcassets in Resources */,
+				840E7E9029BA30D2003CE39C /* CommunityGroupCell.xib in Resources */,
 				84BAB81629AF637A00F5CDCC /* Montserrat-Regular.ttf in Resources */,
+				840E7E8429B9E04A003CE39C /* ChatTableViewCell.xib in Resources */,
+				840E7E8B29B9F81F003CE39C /* CommunityMainCell.xib in Resources */,
+				840E7E8729B9F132003CE39C /* Montserrat-SemiBold.ttf in Resources */,
 				843167E82992335300908312 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,9 +363,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				84BAB81029AF5F8600F5CDCC /* RegisterVC.swift in Sources */,
+				840E7E7F29B9CA9C003CE39C /* HomeVC.swift in Sources */,
 				84BAB81E29AF7E6E00F5CDCC /* LoginVC.swift in Sources */,
+				840E7E8329B9E04A003CE39C /* ChatTableViewCell.swift in Sources */,
+				840E7E8A29B9F81F003CE39C /* CommunityMainCell.swift in Sources */,
 				84BAB81229AF5FB600F5CDCC /* UIView+Extension.swift in Sources */,
 				84BAB82029AF974000F5CDCC /* OTPVC.swift in Sources */,
+				840E7E8F29BA30D2003CE39C /* CommunityGroupCell.swift in Sources */,
 				843167E12992335300908312 /* AppDelegate.swift in Sources */,
 				843167E32992335300908312 /* SceneDelegate.swift in Sources */,
 				8446CBDB29B0DB0C00442F53 /* WelcomeVC.swift in Sources */,
