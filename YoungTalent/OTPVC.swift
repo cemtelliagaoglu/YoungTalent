@@ -92,6 +92,9 @@ class OTPVC: UIViewController{
         
         let otpCode = "\(textField1.text!)\(textField2.text!)\(textField3.text!)\(textField4.text!)"
         print("Next Button Tapped... OTP Code: \(otpCode)")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "HomeVC")
+        navigationController?.pushViewController(destinationVC, animated: true)
     }
     
 }
