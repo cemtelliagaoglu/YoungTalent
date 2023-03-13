@@ -36,7 +36,7 @@ extension CommunityMainCell: UICollectionViewDataSource,UICollectionViewDelegate
         return 10
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 15, left: 30, bottom: 0, right: 30)
+        return UIEdgeInsets(top: 15, left: 30, bottom: 15, right: 30)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U8v-Sf-uCo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8VW-a9-TOc">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -526,7 +526,7 @@ our </string>
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="d9I-zY-fcr">
-                                <rect key="frame" x="0.0" y="180" width="393" height="165"/>
+                                <rect key="frame" x="0.0" y="180" width="393" height="180"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EBK-MH-NIq">
                                     <size key="itemSize" width="128" height="128"/>
@@ -559,7 +559,7 @@ our </string>
                         <color key="backgroundColor" name="Purple-Soft"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="bMR-5a-fWb" secondAttribute="bottom" constant="105" id="EeE-Es-6Qh"/>
-                            <constraint firstItem="mVC-eb-6rN" firstAttribute="top" secondItem="d9I-zY-fcr" secondAttribute="bottom" constant="20" id="O7P-xd-u96"/>
+                            <constraint firstItem="mVC-eb-6rN" firstAttribute="top" secondItem="d9I-zY-fcr" secondAttribute="bottom" constant="5" id="O7P-xd-u96"/>
                             <constraint firstItem="mVC-eb-6rN" firstAttribute="leading" secondItem="2mM-Le-4dq" secondAttribute="leading" id="S2k-vm-PjN"/>
                             <constraint firstItem="d9I-zY-fcr" firstAttribute="top" secondItem="1Qd-6A-crg" secondAttribute="top" constant="180" id="YMb-Xg-mvG"/>
                             <constraint firstItem="2mM-Le-4dq" firstAttribute="trailing" secondItem="iVf-v1-hjB" secondAttribute="trailing" constant="40" id="ZKf-8s-ddm"/>
