@@ -11,6 +11,7 @@ class HomeVC: UIViewController{
     //MARK: - Properties
     private let tableViewCellIdentifier = "chatCellIdentifier"
     private let collectionViewCellIdentifier = "communityMainCellIdentifier"
+    private let collectionViewHeaderIdentifier = "communityHeaderIdentifier"
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -25,6 +26,7 @@ class HomeVC: UIViewController{
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "CommunityMainCell", bundle: nil), forCellWithReuseIdentifier: collectionViewCellIdentifier)
+        collectionView.register(CommunityHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: collectionViewHeaderIdentifier)
         
         // tableView
         tableView.delegate = self
@@ -60,5 +62,14 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate,UICollect
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.size.width, height: 165)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: collectionViewHeaderIdentifier, for: indexPath) as? CommunityHeader else{ return UICollectionReusableView() }
+        return header
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.size.width, height: 16)
     }
 }
