@@ -84,26 +84,59 @@
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="7Br-fc-eNq">
                                 <rect key="frame" x="15" y="93" width="85" height="26"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personalEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="XRo-gW-fMP">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personalEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="XRo-gW-fMP">
                                         <rect key="frame" x="0.0" y="1" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="11H-TH-Gdb"/>
                                             <constraint firstAttribute="height" constant="25" id="KN4-Ef-gGt"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" name="backgroundColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personalEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="14d-v9-WN0">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personalEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="14d-v9-WN0">
                                         <rect key="frame" x="20" y="1" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="dkN-Y6-wJl"/>
                                             <constraint firstAttribute="height" constant="25" id="ome-An-M5z"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" name="backgroundColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personalEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="hsO-MW-Ecj">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personalEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="hsO-MW-Ecj">
                                         <rect key="frame" x="40" y="1" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="Kw8-cU-rX9"/>
                                             <constraint firstAttribute="height" constant="25" id="tgH-ac-Cfd"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" name="backgroundColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yXQ-dE-Cq5">
                                         <rect key="frame" x="60" y="1" width="25" height="25"/>
@@ -169,6 +202,8 @@
                 <outlet property="memberImageView2" destination="14d-v9-WN0" id="j3K-lw-4hr"/>
                 <outlet property="memberImageView3" destination="hsO-MW-Ecj" id="eGG-W2-nSv"/>
                 <outlet property="moreMemberLabel" destination="tNp-pl-2qP" id="Xw4-ub-5Zz"/>
+                <outlet property="moreMemberView" destination="yXQ-dE-Cq5" id="cHv-LQ-wn3"/>
+                <outlet property="stackView" destination="7Br-fc-eNq" id="CHm-7P-Cwp"/>
             </connections>
             <point key="canvasLocation" x="100.76335877862596" y="41.549295774647888"/>
         </collectionViewCell>
