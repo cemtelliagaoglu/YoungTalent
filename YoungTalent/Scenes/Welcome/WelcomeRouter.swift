@@ -27,7 +27,7 @@ final class WelcomeRouter: WelcomeRoutingLogic, WelcomeDataPassing {
         viewController?.navigationController?.pushViewController(destinationVC, animated: true)
     }
     func routeToRegister() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Register", bundle: nil)
         let destinationVC = storyboard.instantiateViewController(withIdentifier: "RegisterVC")
         viewController?.navigationController?.pushViewController(destinationVC, animated: true)
     }
