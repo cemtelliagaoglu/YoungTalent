@@ -41,6 +41,12 @@
 		84C2C85629BF7A1000F139D8 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2C84F29BF7A1000F139D8 /* HomeRouter.swift */; };
 		84C8EBA429C02FF10090AFCE /* CurrentUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBA329C02FF10090AFCE /* CurrentUserResponse.swift */; };
 		84C8EBA629C03C070090AFCE /* UserEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBA529C03C070090AFCE /* UserEndpoint.swift */; };
+		84C8EBAF29C094CE0090AFCE /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C8EBA829C094CE0090AFCE /* Welcome.storyboard */; };
+		84C8EBB129C094CE0090AFCE /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBAA29C094CE0090AFCE /* WelcomePresenter.swift */; };
+		84C8EBB229C094CE0090AFCE /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBAB29C094CE0090AFCE /* WelcomeInteractor.swift */; };
+		84C8EBB329C094CE0090AFCE /* WelcomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBAC29C094CE0090AFCE /* WelcomeModels.swift */; };
+		84C8EBB429C094CE0090AFCE /* WelcomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBAD29C094CE0090AFCE /* WelcomeWorker.swift */; };
+		84C8EBB529C094CE0090AFCE /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBAE29C094CE0090AFCE /* WelcomeRouter.swift */; };
 		84EB4E1C29BB0D3C002C64CE /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB4E1B29BB0D3C002C64CE /* RequestMethod.swift */; };
 		84EB4E1E29BB0D66002C64CE /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB4E1D29BB0D66002C64CE /* RequestError.swift */; };
 		84EB4E2029BB0DCC002C64CE /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB4E1F29BB0DCC002C64CE /* HTTPClient.swift */; };
@@ -107,6 +113,12 @@
 		84C2C84F29BF7A1000F139D8 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		84C8EBA329C02FF10090AFCE /* CurrentUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserResponse.swift; sourceTree = "<group>"; };
 		84C8EBA529C03C070090AFCE /* UserEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndpoint.swift; sourceTree = "<group>"; };
+		84C8EBA829C094CE0090AFCE /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		84C8EBAA29C094CE0090AFCE /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
+		84C8EBAB29C094CE0090AFCE /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
+		84C8EBAC29C094CE0090AFCE /* WelcomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeModels.swift; sourceTree = "<group>"; };
+		84C8EBAD29C094CE0090AFCE /* WelcomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWorker.swift; sourceTree = "<group>"; };
+		84C8EBAE29C094CE0090AFCE /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
 		84EB4E1B29BB0D3C002C64CE /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
 		84EB4E1D29BB0D66002C64CE /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		84EB4E1F29BB0DCC002C64CE /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -176,7 +188,6 @@
 				84EB4E1A29BB0D1B002C64CE /* Networking */,
 				84BAB81A29AF7D8000F5CDCC /* Application */,
 				84BAB81B29AF7D8B00F5CDCC /* Utils */,
-				8446CBDA29B0DB0C00442F53 /* WelcomeVC.swift */,
 				84BAB81D29AF7E6E00F5CDCC /* LoginVC.swift */,
 				84BAB81F29AF974000F5CDCC /* OTPVC.swift */,
 				84BAB80F29AF5F8600F5CDCC /* RegisterVC.swift */,
@@ -271,6 +282,7 @@
 		84C2C85829BF7AA900F139D8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				84C8EBA729C094290090AFCE /* Welcome */,
 				84C2C85729BF7AA400F139D8 /* Home */,
 			);
 			path = Scenes;
@@ -295,6 +307,20 @@
 				840E7E8229B9E04A003CE39C /* ChatTableViewCell.xib */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		84C8EBA729C094290090AFCE /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				84C8EBA829C094CE0090AFCE /* Welcome.storyboard */,
+				8446CBDA29B0DB0C00442F53 /* WelcomeVC.swift */,
+				84C8EBAA29C094CE0090AFCE /* WelcomePresenter.swift */,
+				84C8EBAB29C094CE0090AFCE /* WelcomeInteractor.swift */,
+				84C8EBAC29C094CE0090AFCE /* WelcomeModels.swift */,
+				84C8EBAD29C094CE0090AFCE /* WelcomeWorker.swift */,
+				84C8EBAE29C094CE0090AFCE /* WelcomeRouter.swift */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		84EB4E1A29BB0D1B002C64CE /* Networking */ = {
@@ -437,6 +463,7 @@
 				843167ED2992335400908312 /* LaunchScreen.storyboard in Resources */,
 				843167EA2992335400908312 /* Assets.xcassets in Resources */,
 				84BAB81929AF6BB000F5CDCC /* Colors.xcassets in Resources */,
+				84C8EBAF29C094CE0090AFCE /* Welcome.storyboard in Resources */,
 				840E7E9029BA30D2003CE39C /* CommunityGroupCell.xib in Resources */,
 				84BAB81629AF637A00F5CDCC /* Montserrat-Regular.ttf in Resources */,
 				840E7E8429B9E04A003CE39C /* ChatTableViewCell.xib in Resources */,
@@ -473,8 +500,10 @@
 				84BAB81029AF5F8600F5CDCC /* RegisterVC.swift in Sources */,
 				840E7E7F29B9CA9C003CE39C /* HomeVC.swift in Sources */,
 				84C8EBA629C03C070090AFCE /* UserEndpoint.swift in Sources */,
+				84C8EBB229C094CE0090AFCE /* WelcomeInteractor.swift in Sources */,
 				84C2C85429BF7A1000F139D8 /* HomeModels.swift in Sources */,
 				84BAB81E29AF7E6E00F5CDCC /* LoginVC.swift in Sources */,
+				84C8EBB129C094CE0090AFCE /* WelcomePresenter.swift in Sources */,
 				840E7E8329B9E04A003CE39C /* ChatTableViewCell.swift in Sources */,
 				84EB4E2229BB0DEE002C64CE /* Endpoint.swift in Sources */,
 				84C2C84829BF651000F139D8 /* CommunityHeader.swift in Sources */,
@@ -485,11 +514,14 @@
 				84BAB82029AF974000F5CDCC /* OTPVC.swift in Sources */,
 				84C2C85629BF7A1000F139D8 /* HomeRouter.swift in Sources */,
 				840E7E8F29BA30D2003CE39C /* CommunityGroupCell.swift in Sources */,
+				84C8EBB429C094CE0090AFCE /* WelcomeWorker.swift in Sources */,
 				84EB4E2629BB1A1B002C64CE /* AllGroupsResponse.swift in Sources */,
 				84C2C84229BF140700F139D8 /* UIImageView+Extension.swift in Sources */,
 				84EB4E1E29BB0D66002C64CE /* RequestError.swift in Sources */,
 				84EB4E2029BB0DCC002C64CE /* HTTPClient.swift in Sources */,
 				843167E12992335300908312 /* AppDelegate.swift in Sources */,
+				84C8EBB529C094CE0090AFCE /* WelcomeRouter.swift in Sources */,
+				84C8EBB329C094CE0090AFCE /* WelcomeModels.swift in Sources */,
 				843167E32992335300908312 /* SceneDelegate.swift in Sources */,
 				84C2C85529BF7A1000F139D8 /* HomeWorker.swift in Sources */,
 				8446CBDB29B0DB0C00442F53 /* WelcomeVC.swift in Sources */,
