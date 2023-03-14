@@ -8,10 +8,27 @@
 import UIKit
 
 class CommunityMainCell: UICollectionViewCell {
+    //MARK: - Properties
     private let cellIdentifier = "cellIdentifier"
     
+    @IBOutlet weak var notAMemberLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var groupViewModels: [Home.Case.ViewModel.GroupModel]?{
+        didSet{
+            guard let models = groupViewModels else{
+                notAMemberLabel.isHidden = false
+                return
+            }
+            if models.isEmpty{
+                notAMemberLabel.isHidden = false
+            }else{
+                notAMemberLabel.isHidden = true
+            }
+            collectionView.reloadData()
+        }
+    }
+    //MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,7 +47,7 @@ class CommunityMainCell: UICollectionViewCell {
 extension CommunityMainCell: UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return groupViewModels?.count ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10
@@ -41,7 +58,8 @@ extension CommunityMainCell: UICollectionViewDataSource,UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? CommunityGroupCell else{ return UICollectionViewCell()}
-        
+        guard let model = groupViewModels?[indexPath.row] else{ return cell}
+        cell.setGroup(viewModel: model)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

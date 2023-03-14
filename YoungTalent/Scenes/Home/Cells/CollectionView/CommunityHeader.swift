@@ -25,6 +25,7 @@ class CommunityHeader: UICollectionReusableView {
         button.tintColor = UIColor(named: "Blue-Dark")
         button.heightAnchor.constraint(equalToConstant: 13).isActive = true
         button.widthAnchor.constraint(equalToConstant: 13).isActive = true
+        button.addTarget(self, action: #selector(handleMoreButtonPressed), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -35,6 +36,7 @@ class CommunityHeader: UICollectionReusableView {
         button.tintColor = UIColor(named: "Blue-Dark")
         button.heightAnchor.constraint(equalToConstant: 13).isActive = true
         button.widthAnchor.constraint(equalToConstant: 13).isActive = true
+        button.addTarget(self, action: #selector(handleBackButtonPressed), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -58,6 +60,14 @@ class CommunityHeader: UICollectionReusableView {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    //MARK: - Handlers
+    @objc func handleMoreButtonPressed(){
+        print("More Groups Button Pressed...")
+    }
+    
+    @objc func handleBackButtonPressed(){
+        print("Back Button Pressed...")
     }
     
     func setupView(){

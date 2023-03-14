@@ -33,6 +33,7 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personalEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="nsC-AP-c1u">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <color key="tintColor" name="Blue-Light"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="fSV-fv-hSt"/>
                                             <constraint firstAttribute="height" constant="40" id="gdg-EN-oB8"/>
@@ -86,6 +87,7 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personalEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="XRo-gW-fMP">
                                         <rect key="frame" x="0.0" y="1" width="25" height="25"/>
+                                        <color key="tintColor" name="Blue-Dark"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="11H-TH-Gdb"/>
                                             <constraint firstAttribute="height" constant="25" id="KN4-Ef-gGt"/>
@@ -104,6 +106,7 @@
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personalEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="14d-v9-WN0">
                                         <rect key="frame" x="20" y="1" width="25" height="25"/>
+                                        <color key="tintColor" name="Blue-Dark"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="dkN-Y6-wJl"/>
                                             <constraint firstAttribute="height" constant="25" id="ome-An-M5z"/>
@@ -122,6 +125,7 @@
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personalEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="hsO-MW-Ecj">
                                         <rect key="frame" x="40" y="1" width="25" height="25"/>
+                                        <color key="tintColor" name="Blue-Dark"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="Kw8-cU-rX9"/>
                                             <constraint firstAttribute="height" constant="25" id="tgH-ac-Cfd"/>
@@ -215,6 +219,9 @@
         </namedColor>
         <namedColor name="Blue-Dark">
             <color red="0.10196078431372549" green="0.066666666666666666" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Blue-Light">
+            <color red="0.5220000147819519" green="0.49799999594688416" blue="0.70599997043609619" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Purple-Soft">
             <color red="0.96100002527236938" green="0.9570000171661377" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

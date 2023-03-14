@@ -7,19 +7,66 @@
 
 import UIKit
 
-class HomeVC: UIViewController{
+protocol HomeDisplayLogic: AnyObject {
+    func displayGroups(groupViewModels: [Home.Case.ViewModel.GroupModel])
+    func setCurrentUser(userViewModel: Home.Case.ViewModel.User)
+    func displayErrorMessage(_ errorMessage: String)
+}
+
+final class HomeVC: UIViewController{
     //MARK: - Properties
     private let tableViewCellIdentifier = "chatCellIdentifier"
     private let collectionViewCellIdentifier = "communityMainCellIdentifier"
     private let collectionViewHeaderIdentifier = "communityHeaderIdentifier"
     
+    @IBOutlet weak var currentUserProfileImageView: UIImageView!
+    @IBOutlet weak var currentUserNameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var interactor: HomeBusinessLogic?
+    var router: (HomeRoutingLogic & HomeDataPassing)?
+    
+    var groupsViewModel: [Home.Case.ViewModel.GroupModel]?
+    var currentUserViewModel: Home.Case.ViewModel.User?{
+        didSet{
+            updateCurrentUserModel()
+        }
+    }
     //MARK: - Lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        interactor?.fetchData()
     }
+    
+    // MARK: Setup
+    
+    private func setup() {
+        let viewController = self
+        let interactor = HomeInteractor()
+        let presenter = HomePresenter()
+        let router = HomeRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
     //MARK: - Handlers
     func setupView(){
         // collectionView
@@ -34,6 +81,15 @@ class HomeVC: UIViewController{
         tableView.register(UINib(nibName: "ChatTableViewCell", bundle: nil), forCellReuseIdentifier: tableViewCellIdentifier)
         tableView.separatorStyle = .none
         tableView.rowHeight = 75
+    }
+    
+    func updateCurrentUserModel(){
+        guard let currentUserViewModel = self.currentUserViewModel else{ return }
+        let titleText = currentUserViewModel.title != nil ? "(\(currentUserViewModel.title!)": ""
+        DispatchQueue.main.async {
+            self.currentUserNameLabel.text = "\(currentUserViewModel.nameSurname) \(titleText)"
+            self.currentUserProfileImageView.downloadImage(with: currentUserViewModel.profilePhoto)
+        }
     }
 }
 //MARK: - TableView Methods
@@ -72,4 +128,25 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate,UICollect
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.size.width, height: 16)
     }
+}
+//MARK: - HomeDisplayLogic
+extension HomeVC: HomeDisplayLogic{
+    
+    func setCurrentUser(userViewModel: Home.Case.ViewModel.User) {
+        self.currentUserViewModel = userViewModel
+    }
+    func displayGroups(groupViewModels: [Home.Case.ViewModel.GroupModel]) {
+        DispatchQueue.main.async {
+            let cell = self.collectionView.cellForItem(at: IndexPath(row: 0, section: 0)) as! CommunityMainCell
+            cell.groupViewModels = groupViewModels
+        }
+    }
+    func displayErrorMessage(_ errorMessage: String) {
+        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Close", style: .cancel))
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
+        }
+    }
+    
 }
