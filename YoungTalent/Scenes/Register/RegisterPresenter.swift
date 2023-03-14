@@ -8,11 +8,14 @@
 import Foundation
 
 protocol RegisterPresentationLogic: AnyObject {
-    
+    func presentConfigurations()
 }
 
 final class RegisterPresenter: RegisterPresentationLogic {
     
     weak var viewController: RegisterDisplayLogic?
     
+    func presentConfigurations() {
+        viewController?.setupView()
+    }
 }

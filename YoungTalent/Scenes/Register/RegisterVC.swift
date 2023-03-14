@@ -8,7 +8,7 @@
 import UIKit
 
 protocol RegisterDisplayLogic: AnyObject {
-    
+    func setupView()
 }
 
 class RegisterVC: UIViewController{
@@ -22,7 +22,7 @@ class RegisterVC: UIViewController{
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        interactor?.notifyViewDidLoad()
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -46,15 +46,6 @@ class RegisterVC: UIViewController{
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
-    }
-    
-    func setupView(){
-        // nameTextField
-        nameTextField.delegate = self
-        // hideKeyboard
-        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        tap.numberOfTapsRequired = 1
-        view.addGestureRecognizer(tap)
     }
 
     @objc func hideKeyboard(){
@@ -81,5 +72,12 @@ extension RegisterVC: UITextFieldDelegate{
 //MARK: - DisplayLogic
 extension RegisterVC: RegisterDisplayLogic{
     
-    
+    func setupView() {
+        // nameTextField
+        nameTextField.delegate = self
+        // hideKeyboard
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        tap.numberOfTapsRequired = 1
+        view.addGestureRecognizer(tap)
+    }
 }
