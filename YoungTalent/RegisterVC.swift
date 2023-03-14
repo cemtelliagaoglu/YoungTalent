@@ -33,7 +33,9 @@ class RegisterVC: UIViewController{
     }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
-        print("Tapped Next Button")
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "HomeVC")
+        navigationController?.pushViewController(destinationVC, animated: true)
     }
     
     @IBAction func handleBackButtonPressed(_ sender: UIButton) {
