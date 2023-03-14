@@ -33,7 +33,7 @@ class RegisterVC: UIViewController{
     }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
         let destinationVC = storyboard.instantiateViewController(withIdentifier: "HomeVC")
         navigationController?.pushViewController(destinationVC, animated: true)
     }
