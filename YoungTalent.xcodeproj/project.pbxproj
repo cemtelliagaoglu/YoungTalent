@@ -47,6 +47,12 @@
 		84C8EBB329C094CE0090AFCE /* WelcomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBAC29C094CE0090AFCE /* WelcomeModels.swift */; };
 		84C8EBB429C094CE0090AFCE /* WelcomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBAD29C094CE0090AFCE /* WelcomeWorker.swift */; };
 		84C8EBB529C094CE0090AFCE /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBAE29C094CE0090AFCE /* WelcomeRouter.swift */; };
+		84C8EBBD29C0A0BC0090AFCE /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C8EBB629C0A0BC0090AFCE /* Register.storyboard */; };
+		84C8EBBF29C0A0BC0090AFCE /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBB829C0A0BC0090AFCE /* RegisterPresenter.swift */; };
+		84C8EBC029C0A0BC0090AFCE /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBB929C0A0BC0090AFCE /* RegisterInteractor.swift */; };
+		84C8EBC129C0A0BC0090AFCE /* RegisterModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBBA29C0A0BC0090AFCE /* RegisterModels.swift */; };
+		84C8EBC229C0A0BC0090AFCE /* RegisterWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBBB29C0A0BC0090AFCE /* RegisterWorker.swift */; };
+		84C8EBC329C0A0BC0090AFCE /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBBC29C0A0BC0090AFCE /* RegisterRouter.swift */; };
 		84EB4E1C29BB0D3C002C64CE /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB4E1B29BB0D3C002C64CE /* RequestMethod.swift */; };
 		84EB4E1E29BB0D66002C64CE /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB4E1D29BB0D66002C64CE /* RequestError.swift */; };
 		84EB4E2029BB0DCC002C64CE /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB4E1F29BB0DCC002C64CE /* HTTPClient.swift */; };
@@ -119,6 +125,12 @@
 		84C8EBAC29C094CE0090AFCE /* WelcomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeModels.swift; sourceTree = "<group>"; };
 		84C8EBAD29C094CE0090AFCE /* WelcomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWorker.swift; sourceTree = "<group>"; };
 		84C8EBAE29C094CE0090AFCE /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
+		84C8EBB629C0A0BC0090AFCE /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		84C8EBB829C0A0BC0090AFCE /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		84C8EBB929C0A0BC0090AFCE /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
+		84C8EBBA29C0A0BC0090AFCE /* RegisterModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModels.swift; sourceTree = "<group>"; };
+		84C8EBBB29C0A0BC0090AFCE /* RegisterWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWorker.swift; sourceTree = "<group>"; };
+		84C8EBBC29C0A0BC0090AFCE /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
 		84EB4E1B29BB0D3C002C64CE /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
 		84EB4E1D29BB0D66002C64CE /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		84EB4E1F29BB0DCC002C64CE /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -190,7 +202,6 @@
 				84BAB81B29AF7D8B00F5CDCC /* Utils */,
 				84BAB81D29AF7E6E00F5CDCC /* LoginVC.swift */,
 				84BAB81F29AF974000F5CDCC /* OTPVC.swift */,
-				84BAB80F29AF5F8600F5CDCC /* RegisterVC.swift */,
 				84C2C85829BF7AA900F139D8 /* Scenes */,
 				843167E62992335300908312 /* Main.storyboard */,
 				843167EB2992335400908312 /* LaunchScreen.storyboard */,
@@ -283,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				84C8EBA729C094290090AFCE /* Welcome */,
+				84C8EBC429C0A0C60090AFCE /* Register */,
 				84C2C85729BF7AA400F139D8 /* Home */,
 			);
 			path = Scenes;
@@ -321,6 +333,20 @@
 				84C8EBAE29C094CE0090AFCE /* WelcomeRouter.swift */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		84C8EBC429C0A0C60090AFCE /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				84C8EBB629C0A0BC0090AFCE /* Register.storyboard */,
+				84BAB80F29AF5F8600F5CDCC /* RegisterVC.swift */,
+				84C8EBB829C0A0BC0090AFCE /* RegisterPresenter.swift */,
+				84C8EBB929C0A0BC0090AFCE /* RegisterInteractor.swift */,
+				84C8EBBA29C0A0BC0090AFCE /* RegisterModels.swift */,
+				84C8EBBB29C0A0BC0090AFCE /* RegisterWorker.swift */,
+				84C8EBBC29C0A0BC0090AFCE /* RegisterRouter.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		84EB4E1A29BB0D1B002C64CE /* Networking */ = {
@@ -460,6 +486,7 @@
 			files = (
 				84BAB81529AF637A00F5CDCC /* Montserrat-Bold.ttf in Resources */,
 				84C2C85029BF7A1000F139D8 /* Home.storyboard in Resources */,
+				84C8EBBD29C0A0BC0090AFCE /* Register.storyboard in Resources */,
 				843167ED2992335400908312 /* LaunchScreen.storyboard in Resources */,
 				843167EA2992335400908312 /* Assets.xcassets in Resources */,
 				84BAB81929AF6BB000F5CDCC /* Colors.xcassets in Resources */,
@@ -499,18 +526,21 @@
 				84EB4E2829BB1F57002C64CE /* GroupsEndpoint.swift in Sources */,
 				84BAB81029AF5F8600F5CDCC /* RegisterVC.swift in Sources */,
 				840E7E7F29B9CA9C003CE39C /* HomeVC.swift in Sources */,
+				84C8EBC029C0A0BC0090AFCE /* RegisterInteractor.swift in Sources */,
 				84C8EBA629C03C070090AFCE /* UserEndpoint.swift in Sources */,
 				84C8EBB229C094CE0090AFCE /* WelcomeInteractor.swift in Sources */,
 				84C2C85429BF7A1000F139D8 /* HomeModels.swift in Sources */,
 				84BAB81E29AF7E6E00F5CDCC /* LoginVC.swift in Sources */,
 				84C8EBB129C094CE0090AFCE /* WelcomePresenter.swift in Sources */,
 				840E7E8329B9E04A003CE39C /* ChatTableViewCell.swift in Sources */,
+				84C8EBC329C0A0BC0090AFCE /* RegisterRouter.swift in Sources */,
 				84EB4E2229BB0DEE002C64CE /* Endpoint.swift in Sources */,
 				84C2C84829BF651000F139D8 /* CommunityHeader.swift in Sources */,
 				84EB4E1C29BB0D3C002C64CE /* RequestMethod.swift in Sources */,
 				84C8EBA429C02FF10090AFCE /* CurrentUserResponse.swift in Sources */,
 				840E7E8A29B9F81F003CE39C /* CommunityMainCell.swift in Sources */,
 				84BAB81229AF5FB600F5CDCC /* UIView+Extension.swift in Sources */,
+				84C8EBC229C0A0BC0090AFCE /* RegisterWorker.swift in Sources */,
 				84BAB82029AF974000F5CDCC /* OTPVC.swift in Sources */,
 				84C2C85629BF7A1000F139D8 /* HomeRouter.swift in Sources */,
 				840E7E8F29BA30D2003CE39C /* CommunityGroupCell.swift in Sources */,
@@ -519,9 +549,11 @@
 				84C2C84229BF140700F139D8 /* UIImageView+Extension.swift in Sources */,
 				84EB4E1E29BB0D66002C64CE /* RequestError.swift in Sources */,
 				84EB4E2029BB0DCC002C64CE /* HTTPClient.swift in Sources */,
+				84C8EBBF29C0A0BC0090AFCE /* RegisterPresenter.swift in Sources */,
 				843167E12992335300908312 /* AppDelegate.swift in Sources */,
 				84C8EBB529C094CE0090AFCE /* WelcomeRouter.swift in Sources */,
 				84C8EBB329C094CE0090AFCE /* WelcomeModels.swift in Sources */,
+				84C8EBC129C0A0BC0090AFCE /* RegisterModels.swift in Sources */,
 				843167E32992335300908312 /* SceneDelegate.swift in Sources */,
 				84C2C85529BF7A1000F139D8 /* HomeWorker.swift in Sources */,
 				8446CBDB29B0DB0C00442F53 /* WelcomeVC.swift in Sources */,

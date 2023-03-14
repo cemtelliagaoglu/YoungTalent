@@ -130,7 +130,6 @@ our </string>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="back"/>
                                 <connections>
-                                    <action selector="handleBackButtonPressed:" destination="kbJ-5E-zyA" eventType="touchUpInside" id="fws-jJ-TPs"/>
                                     <action selector="handleBackButtonTapped:" destination="Cam-iH-afM" eventType="touchUpInside" id="jxx-mS-db8"/>
                                 </connections>
                             </button>
@@ -186,16 +185,16 @@ our </string>
                                 <rect key="frame" x="32" y="87" width="328" height="173"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5p4-mG-E9s">
-                                <rect key="frame" x="30" y="290" width="333" height="71.666666666666686"/>
+                                <rect key="frame" x="30" y="290" width="333" height="54.666666666666686"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify OTP" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PjZ-kM-ASF">
-                                        <rect key="frame" x="0.0" y="0.0" width="333" height="34.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="32.666666666666664"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="28"/>
                                         <color key="textColor" name="Blue-Dark"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glk-Rj-3LP">
-                                        <rect key="frame" x="0.0" y="42.333333333333314" width="333" height="29.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="40.666666666666686" width="333" height="14"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                         <color key="textColor" name="Blue-Light"/>
                                         <nil key="highlightedColor"/>
@@ -203,16 +202,16 @@ our </string>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="a0L-Cb-B6R">
-                                <rect key="frame" x="30" y="402.66666666666669" width="333" height="71.666666666666686"/>
+                                <rect key="frame" x="30" y="385.66666666666669" width="333" height="71"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OTP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ye9-3S-C50">
-                                        <rect key="frame" x="0.0" y="0.0" width="25.666666666666668" height="14.666666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="14"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                         <color key="textColor" name="Blue-Dark"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="h0Q-bG-ZDl">
-                                        <rect key="frame" x="0.0" y="21.666666666666629" width="333" height="50"/>
+                                        <rect key="frame" x="0.0" y="21" width="333" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ufi-N0-cZK">
                                                 <rect key="frame" x="0.0" y="0.0" width="79.666666666666671" height="50"/>
@@ -345,7 +344,6 @@ our </string>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="back"/>
                                 <connections>
-                                    <action selector="handleBackButtonPressed:" destination="kbJ-5E-zyA" eventType="touchUpInside" id="Qzo-YW-0J0"/>
                                     <action selector="handleBackButtonTapped:" destination="0Vc-xQ-k8v" eventType="touchUpInside" id="Rzn-cE-3gk"/>
                                 </connections>
                             </button>
@@ -384,146 +382,10 @@ our </string>
             </objects>
             <point key="canvasLocation" x="3736.6412213740455" y="-51.408450704225352"/>
         </scene>
-        <!--RegisterVC-->
-        <scene sceneID="K2Q-d0-jOH">
-            <objects>
-                <viewController storyboardIdentifier="RegisterVC" id="kbJ-5E-zyA" customClass="RegisterVC" customModule="YoungTalentDev" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bRV-CU-owD">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" image="shapedBackground" translatesAutoresizingMaskIntoConstraints="NO" id="4Ap-OX-xhY">
-                                <rect key="frame" x="-46" y="361" width="485" height="491"/>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="dng-ci-ova">
-                                <rect key="frame" x="30" y="137" width="333" height="62"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Setup Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaM-yl-Jxu">
-                                        <rect key="frame" x="0.0" y="0.0" width="217.33333333333334" height="34.333333333333336"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="28"/>
-                                        <color key="textColor" name="Blue-Dark"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill your account information below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNd-RU-1y7">
-                                        <rect key="frame" x="0.0" y="47.333333333333343" width="213.33333333333334" height="14.666666666666664"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
-                                        <color key="textColor" name="Blue-Light"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFy-YT-71e">
-                                <rect key="frame" x="30" y="389" width="333" height="14.666666666666686"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
-                                <color key="textColor" name="Blue-Dark"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r8n-TM-0zq">
-                                <rect key="frame" x="30" y="410.66666666666669" width="333" height="50"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lfI-qX-55w">
-                                        <rect key="frame" x="20" y="17" width="293" height="16"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" name="Blue-Dark"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" name="Purple-Soft"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="lfI-qX-55w" secondAttribute="bottom" constant="17" id="0Xk-AK-cqu"/>
-                                    <constraint firstItem="lfI-qX-55w" firstAttribute="top" secondItem="r8n-TM-0zq" secondAttribute="top" constant="17" id="gZn-gj-t6R"/>
-                                    <constraint firstAttribute="trailing" secondItem="lfI-qX-55w" secondAttribute="trailing" constant="20" id="sEP-6G-Gr3"/>
-                                    <constraint firstAttribute="height" constant="50" id="vgj-m9-vlX"/>
-                                    <constraint firstItem="lfI-qX-55w" firstAttribute="leading" secondItem="r8n-TM-0zq" secondAttribute="leading" constant="20" id="vpX-Iu-g6b"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="17"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDk-Hl-hQy">
-                                <rect key="frame" x="303" y="762" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="j5E-dO-rAC"/>
-                                    <constraint firstAttribute="width" constant="60" id="sQu-jN-TEj"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="done"/>
-                                <connections>
-                                    <action selector="nextButtonPressed:" destination="kbJ-5E-zyA" eventType="touchUpInside" id="84D-NM-9kk"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personalEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="ILL-ZN-7u8">
-                                <rect key="frame" x="136.66666666666666" y="249" width="119.99999999999997" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="7k3-ON-nab"/>
-                                    <constraint firstAttribute="width" constant="120" id="Qm7-Ss-Hwi"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yc1-Su-5Rk">
-                                <rect key="frame" x="30" y="50" width="20" height="57"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="e5b-sm-8yo"/>
-                                    <constraint firstAttribute="height" constant="57" id="x59-OX-eIa"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="back"/>
-                                <connections>
-                                    <action selector="handleBackButtonPressed:" destination="kbJ-5E-zyA" eventType="touchUpInside" id="oPM-hY-sRd"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="QiQ-UM-ta9"/>
-                        <color key="backgroundColor" name="backgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="4Ap-OX-xhY" firstAttribute="leading" secondItem="bRV-CU-owD" secondAttribute="leading" constant="-46" id="0WE-vl-6mI"/>
-                            <constraint firstAttribute="trailing" secondItem="4Ap-OX-xhY" secondAttribute="trailing" constant="-46" id="1SI-DM-apY"/>
-                            <constraint firstItem="ILL-ZN-7u8" firstAttribute="centerX" secondItem="bRV-CU-owD" secondAttribute="centerX" id="6C0-gt-SEP"/>
-                            <constraint firstItem="QiQ-UM-ta9" firstAttribute="trailing" secondItem="r8n-TM-0zq" secondAttribute="trailing" constant="30" id="6mL-HR-pEz"/>
-                            <constraint firstAttribute="bottom" secondItem="aDk-Hl-hQy" secondAttribute="bottom" constant="30" id="B05-CH-RnK"/>
-                            <constraint firstItem="UFy-YT-71e" firstAttribute="top" secondItem="ILL-ZN-7u8" secondAttribute="bottom" constant="20" id="BNh-2s-tvb"/>
-                            <constraint firstItem="QiQ-UM-ta9" firstAttribute="trailing" secondItem="aDk-Hl-hQy" secondAttribute="trailing" constant="30" id="FR5-5C-jR5"/>
-                            <constraint firstItem="r8n-TM-0zq" firstAttribute="leading" secondItem="QiQ-UM-ta9" secondAttribute="leading" constant="30" id="L84-0N-Gk9"/>
-                            <constraint firstItem="ILL-ZN-7u8" firstAttribute="centerX" secondItem="bRV-CU-owD" secondAttribute="centerX" id="LCD-Pu-Rkk"/>
-                            <constraint firstItem="dng-ci-ova" firstAttribute="leading" secondItem="QiQ-UM-ta9" secondAttribute="leading" constant="30" id="MFF-T7-9kX"/>
-                            <constraint firstItem="ILL-ZN-7u8" firstAttribute="top" secondItem="dng-ci-ova" secondAttribute="bottom" constant="50" id="Ok7-c0-zxO"/>
-                            <constraint firstItem="QiQ-UM-ta9" firstAttribute="trailing" secondItem="dng-ci-ova" secondAttribute="trailing" constant="30" id="Scl-mM-eny"/>
-                            <constraint firstItem="4Ap-OX-xhY" firstAttribute="top" secondItem="dng-ci-ova" secondAttribute="bottom" constant="162" id="UE6-qU-LvP"/>
-                            <constraint firstItem="QiQ-UM-ta9" firstAttribute="trailing" secondItem="UFy-YT-71e" secondAttribute="trailing" constant="30" id="WDQ-Wc-bUT"/>
-                            <constraint firstItem="yc1-Su-5Rk" firstAttribute="top" secondItem="bRV-CU-owD" secondAttribute="top" constant="50" id="Xkc-Li-Xym"/>
-                            <constraint firstItem="dng-ci-ova" firstAttribute="top" secondItem="bRV-CU-owD" secondAttribute="top" constant="137" id="YFa-gk-HnR"/>
-                            <constraint firstItem="yc1-Su-5Rk" firstAttribute="leading" secondItem="bRV-CU-owD" secondAttribute="leading" constant="30" id="bwF-Sb-LzU"/>
-                            <constraint firstAttribute="bottom" secondItem="4Ap-OX-xhY" secondAttribute="bottom" id="cu1-WJ-jk0"/>
-                            <constraint firstItem="UFy-YT-71e" firstAttribute="leading" secondItem="QiQ-UM-ta9" secondAttribute="leading" constant="30" id="iXO-dN-bZn"/>
-                            <constraint firstItem="r8n-TM-0zq" firstAttribute="top" secondItem="UFy-YT-71e" secondAttribute="bottom" constant="7" id="xUV-eX-8Hl"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="O9b-ZL-eUK"/>
-                    <connections>
-                        <outlet property="nameTextField" destination="lfI-qX-55w" id="NJR-gF-ZnI"/>
-                        <outlet property="nextButton" destination="aDk-Hl-hQy" id="hXI-o4-TJ0"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XCf-EV-sUc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2901.5267175572517" y="671.83098591549299"/>
-        </scene>
     </scenes>
     <resources>
         <image name="back" width="20" height="57.333332061767578"/>
-        <image name="done" width="120" height="107"/>
         <image name="next" width="120" height="107"/>
-        <image name="personalEmpty" width="120" height="120"/>
         <image name="security" width="310" height="233.66667175292969"/>
         <image name="shapedBackground" width="375" height="470"/>
         <namedColor name="Blue-Dark">
