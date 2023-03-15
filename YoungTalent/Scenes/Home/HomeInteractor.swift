@@ -12,21 +12,23 @@ protocol HomeBusinessLogic: AnyObject {
 }
 
 protocol HomeDataStore: AnyObject {
-//    var messagesData { get set }
-//    var groupsData{ get set }
+    var groupsData:[AllGroupsResponse.Group]?{ get set }
 }
 
 final class HomeInteractor: HomeBusinessLogic, HomeDataStore {
         
     var presenter: HomePresentationLogic?
     var worker: HomeWorkingLogic = HomeWorker()
+    var groupsData: [AllGroupsResponse.Group]?
     
     func fetchData() {
         
         worker.fetchGroups { result in
             switch result{
             case .success(let allGroupsResponse):
-                self.presenter?.presentGroups(groupsModel: allGroupsResponse.body.groups)
+                self.groupsData = allGroupsResponse.body.groups
+                guard let groupsData = self.groupsData else{ return }
+                self.presenter?.presentGroups(groupsModel: groupsData)
             case .failure(let error):
                 self.presenter?.presentErrorMessage(error.customMessage)
             }
