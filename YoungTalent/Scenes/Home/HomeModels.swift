@@ -35,7 +35,11 @@ enum Home {
             struct User{
                 public let nameSurname: String
                 public let profilePhoto: String?
-                public let title: String?
+                public let title: String
+                
+                public var fullName: String?{
+                    return "\(nameSurname) (\(title))"
+                }
             }
         }
         
