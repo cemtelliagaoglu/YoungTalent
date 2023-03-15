@@ -17,13 +17,18 @@
 		840E7E9029BA30D2003CE39C /* CommunityGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840E7E8E29BA30D2003CE39C /* CommunityGroupCell.xib */; };
 		843167E12992335300908312 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843167E02992335300908312 /* AppDelegate.swift */; };
 		843167E32992335300908312 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843167E22992335300908312 /* SceneDelegate.swift */; };
-		843167E82992335300908312 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843167E62992335300908312 /* Main.storyboard */; };
 		843167EA2992335400908312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843167E92992335400908312 /* Assets.xcassets */; };
 		843167ED2992335400908312 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843167EB2992335400908312 /* LaunchScreen.storyboard */; };
 		843167F82992335400908312 /* YoungTalentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843167F72992335400908312 /* YoungTalentTests.swift */; };
 		843168022992335400908312 /* YoungTalentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843168012992335400908312 /* YoungTalentUITests.swift */; };
 		843168042992335400908312 /* YoungTalentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843168032992335400908312 /* YoungTalentUITestsLaunchTests.swift */; };
 		8446CBDB29B0DB0C00442F53 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446CBDA29B0DB0C00442F53 /* WelcomeVC.swift */; };
+		849AC5E429C2290800C96758 /* OTP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849AC5DD29C2290800C96758 /* OTP.storyboard */; };
+		849AC5E629C2290800C96758 /* OTPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AC5DF29C2290800C96758 /* OTPPresenter.swift */; };
+		849AC5E729C2290800C96758 /* OTPInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AC5E029C2290800C96758 /* OTPInteractor.swift */; };
+		849AC5E829C2290800C96758 /* OTPModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AC5E129C2290800C96758 /* OTPModels.swift */; };
+		849AC5E929C2290800C96758 /* OTPWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AC5E229C2290800C96758 /* OTPWorker.swift */; };
+		849AC5EA29C2290800C96758 /* OTPRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AC5E329C2290800C96758 /* OTPRouter.swift */; };
 		84BAB81029AF5F8600F5CDCC /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BAB80F29AF5F8600F5CDCC /* RegisterVC.swift */; };
 		84BAB81229AF5FB600F5CDCC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BAB81129AF5FB600F5CDCC /* UIView+Extension.swift */; };
 		84BAB81529AF637A00F5CDCC /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84BAB81329AF637A00F5CDCC /* Montserrat-Bold.ttf */; };
@@ -96,7 +101,6 @@
 		843167DD2992335300908312 /* YoungTalentProd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoungTalentProd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		843167E02992335300908312 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		843167E22992335300908312 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		843167E72992335300908312 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		843167E92992335400908312 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		843167EC2992335400908312 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		843167EE2992335400908312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,6 +112,12 @@
 		843168112992338500908312 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		843168122992339400908312 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		8446CBDA29B0DB0C00442F53 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		849AC5DD29C2290800C96758 /* OTP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OTP.storyboard; sourceTree = "<group>"; };
+		849AC5DF29C2290800C96758 /* OTPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPPresenter.swift; sourceTree = "<group>"; };
+		849AC5E029C2290800C96758 /* OTPInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInteractor.swift; sourceTree = "<group>"; };
+		849AC5E129C2290800C96758 /* OTPModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPModels.swift; sourceTree = "<group>"; };
+		849AC5E229C2290800C96758 /* OTPWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPWorker.swift; sourceTree = "<group>"; };
+		849AC5E329C2290800C96758 /* OTPRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPRouter.swift; sourceTree = "<group>"; };
 		84BAB80F29AF5F8600F5CDCC /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		84BAB81129AF5FB600F5CDCC /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		84BAB81329AF637A00F5CDCC /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
@@ -212,9 +222,7 @@
 				84EB4E1A29BB0D1B002C64CE /* Networking */,
 				84BAB81A29AF7D8000F5CDCC /* Application */,
 				84BAB81B29AF7D8B00F5CDCC /* Utils */,
-				84BAB81F29AF974000F5CDCC /* OTPVC.swift */,
 				84C2C85829BF7AA900F139D8 /* Scenes */,
-				843167E62992335300908312 /* Main.storyboard */,
 				843167EB2992335400908312 /* LaunchScreen.storyboard */,
 				84BAB81C29AF7DAB00F5CDCC /* Resources */,
 			);
@@ -245,6 +253,20 @@
 				843168122992339400908312 /* Development.xcconfig */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		849AC5DC29C228E600C96758 /* OTP */ = {
+			isa = PBXGroup;
+			children = (
+				849AC5DD29C2290800C96758 /* OTP.storyboard */,
+				84BAB81F29AF974000F5CDCC /* OTPVC.swift */,
+				849AC5DF29C2290800C96758 /* OTPPresenter.swift */,
+				849AC5E029C2290800C96758 /* OTPInteractor.swift */,
+				849AC5E129C2290800C96758 /* OTPModels.swift */,
+				849AC5E229C2290800C96758 /* OTPWorker.swift */,
+				849AC5E329C2290800C96758 /* OTPRouter.swift */,
+			);
+			path = OTP;
 			sourceTree = "<group>";
 		};
 		84BAB81729AF638E00F5CDCC /* Fonts */ = {
@@ -304,8 +326,9 @@
 		84C2C85829BF7AA900F139D8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				84C8EBC529C0CDA90090AFCE /* Login */,
 				84C8EBA729C094290090AFCE /* Welcome */,
+				84C8EBC529C0CDA90090AFCE /* Login */,
+				849AC5DC29C228E600C96758 /* OTP */,
 				84C8EBC429C0A0C60090AFCE /* Register */,
 				84C2C85729BF7AA400F139D8 /* Home */,
 			);
@@ -514,6 +537,7 @@
 				84C2C85029BF7A1000F139D8 /* Home.storyboard in Resources */,
 				84C8EBCD29C0CDB80090AFCE /* Login.storyboard in Resources */,
 				84C8EBBD29C0A0BC0090AFCE /* Register.storyboard in Resources */,
+				849AC5E429C2290800C96758 /* OTP.storyboard in Resources */,
 				843167ED2992335400908312 /* LaunchScreen.storyboard in Resources */,
 				843167EA2992335400908312 /* Assets.xcassets in Resources */,
 				84BAB81929AF6BB000F5CDCC /* Colors.xcassets in Resources */,
@@ -523,7 +547,6 @@
 				840E7E8429B9E04A003CE39C /* ChatTableViewCell.xib in Resources */,
 				840E7E8B29B9F81F003CE39C /* CommunityMainCell.xib in Resources */,
 				840E7E8729B9F132003CE39C /* Montserrat-SemiBold.ttf in Resources */,
-				843167E82992335300908312 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +579,7 @@
 				84C8EBCF29C0CDB80090AFCE /* LoginPresenter.swift in Sources */,
 				840E7E7F29B9CA9C003CE39C /* HomeVC.swift in Sources */,
 				84C8EBC029C0A0BC0090AFCE /* RegisterInteractor.swift in Sources */,
+				849AC5E729C2290800C96758 /* OTPInteractor.swift in Sources */,
 				84C8EBA629C03C070090AFCE /* UserEndpoint.swift in Sources */,
 				84C8EBB229C094CE0090AFCE /* WelcomeInteractor.swift in Sources */,
 				84C2C85429BF7A1000F139D8 /* HomeModels.swift in Sources */,
@@ -583,12 +607,16 @@
 				84C8EBBF29C0A0BC0090AFCE /* RegisterPresenter.swift in Sources */,
 				84C8EBD229C0CDB80090AFCE /* LoginWorker.swift in Sources */,
 				843167E12992335300908312 /* AppDelegate.swift in Sources */,
+				849AC5E929C2290800C96758 /* OTPWorker.swift in Sources */,
+				849AC5EA29C2290800C96758 /* OTPRouter.swift in Sources */,
+				849AC5E829C2290800C96758 /* OTPModels.swift in Sources */,
 				84C8EBB529C094CE0090AFCE /* WelcomeRouter.swift in Sources */,
 				84C8EBB329C094CE0090AFCE /* WelcomeModels.swift in Sources */,
 				84C8EBC129C0A0BC0090AFCE /* RegisterModels.swift in Sources */,
 				843167E32992335300908312 /* SceneDelegate.swift in Sources */,
 				84C2C85529BF7A1000F139D8 /* HomeWorker.swift in Sources */,
 				8446CBDB29B0DB0C00442F53 /* WelcomeVC.swift in Sources */,
+				849AC5E629C2290800C96758 /* OTPPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,14 +653,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		843167E62992335300908312 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				843167E72992335300908312 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		843167EB2992335400908312 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -775,7 +795,7 @@
 				INFOPLIST_FILE = YoungTalent/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Welcome;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -808,7 +828,7 @@
 				INFOPLIST_FILE = YoungTalent/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Welcome;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -982,7 +1002,7 @@
 				INFOPLIST_FILE = YoungTalent/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Welcome;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1110,7 +1130,7 @@
 				INFOPLIST_FILE = YoungTalent/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Welcome;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
