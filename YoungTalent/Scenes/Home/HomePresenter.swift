@@ -20,17 +20,21 @@ final class HomePresenter: HomePresentationLogic {
     func presentGroups(groupsModel: [AllGroupsResponse.Group]) {
         
         var groupsViewModels: [Home.Case.ViewModel.GroupModel] = []
+        var userViewModels: [Home.Case.ViewModel.User] = []
         
         groupsModel.forEach { group in
             
             let users = group.users?.map({ user in
-                return Home.Case.ViewModel.User(nameSurname: user.nameSurname,
-                                                profilePhoto: user.profilePhoto,
-                                                title: user.title)
+                
+                let userViewModel = Home.Case.ViewModel.User(nameSurname: user.nameSurname,
+                                                             profilePhoto: user.profilePhoto,
+                                                             title: user.title)
+                userViewModels.append(userViewModel)
+                return userViewModel
             })
             
             let lastMessage = Home.Case.ViewModel.GroupLastMessage(
-                fromUsername: group.lastMessage?.from.nameSurname ?? "No Message Yet",
+                fromUsername: group.lastMessage?.from.nameSurname ?? "No Messages Yet",
                 message: group.lastMessage?.message ?? ""
             )
             
@@ -39,6 +43,7 @@ final class HomePresenter: HomePresentationLogic {
                                                                   users: users,
                                                                   lastMessage: lastMessage))
         }
+        self.viewController?.displayUsers(userViewModels: userViewModels)
         self.viewController?.displayGroups(groupViewModels: groupsViewModels)
     }
     

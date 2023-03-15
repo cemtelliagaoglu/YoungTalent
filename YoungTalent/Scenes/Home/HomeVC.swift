@@ -10,6 +10,7 @@ import UIKit
 protocol HomeDisplayLogic: AnyObject {
     func displayGroups(groupViewModels: [Home.Case.ViewModel.GroupModel])
     func setCurrentUser(userViewModel: Home.Case.ViewModel.User)
+    func displayUsers(userViewModels: [Home.Case.ViewModel.User])
     func displayErrorMessage(_ errorMessage: String)
 }
 
@@ -29,6 +30,7 @@ final class HomeVC: UIViewController{
     var router: (HomeRoutingLogic & HomeDataPassing)?
     
     var groupsViewModel: [Home.Case.ViewModel.GroupModel]?
+    var usersViewModel: [Home.Case.ViewModel.User]?
     var currentUserViewModel: Home.Case.ViewModel.User?{
         didSet{
             updateCurrentUserModel()
@@ -85,9 +87,9 @@ final class HomeVC: UIViewController{
     
     func updateCurrentUserModel(){
         guard let currentUserViewModel = self.currentUserViewModel else{ return }
-        let titleText = currentUserViewModel.title != nil ? "(\(currentUserViewModel.title!)": ""
+        
         DispatchQueue.main.async {
-            self.currentUserNameLabel.text = "\(currentUserViewModel.nameSurname) \(titleText)"
+            self.currentUserNameLabel.text = currentUserViewModel.fullName
             self.currentUserProfileImageView.downloadImage(with: currentUserViewModel.profilePhoto)
         }
     }
@@ -96,12 +98,13 @@ final class HomeVC: UIViewController{
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return usersViewModel?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellIdentifier, for: indexPath) as? ChatTableViewCell else{ return UITableViewCell() }
-        
+        guard let userViewModel = usersViewModel?[indexPath.row] else{ return cell }
+        cell.setViewModel(viewModel: userViewModel)
         return cell
     }
 }
@@ -139,6 +142,12 @@ extension HomeVC: HomeDisplayLogic{
         DispatchQueue.main.async {
             let cell = self.collectionView.cellForItem(at: IndexPath(row: 0, section: 0)) as! CommunityMainCell
             cell.groupViewModels = groupViewModels
+        }
+    }
+    func displayUsers(userViewModels: [Home.Case.ViewModel.User]){
+        self.usersViewModel = userViewModels
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
     func displayErrorMessage(_ errorMessage: String) {
