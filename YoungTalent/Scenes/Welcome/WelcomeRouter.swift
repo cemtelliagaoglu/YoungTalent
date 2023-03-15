@@ -22,7 +22,7 @@ final class WelcomeRouter: WelcomeRoutingLogic, WelcomeDataPassing {
     var dataStore: WelcomeDataStore?
     
     func routeToLogin() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
         let destinationVC = storyboard.instantiateViewController(withIdentifier: "LoginVC")
         viewController?.navigationController?.pushViewController(destinationVC, animated: true)
     }
