@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol OTPDisplayLogic: AnyObject {
+    func displayErrorMessage(_ errorMessage: String)
+    func displaySuccess()
+}
+
 class OTPVC: UIViewController{
     //MARK: - Properties
     
@@ -15,6 +20,9 @@ class OTPVC: UIViewController{
     @IBOutlet weak var textField3: UITextField!
     @IBOutlet weak var textField4: UITextField!
     
+    var interactor: OTPBusinessLogic?
+    var router: (OTPRoutingLogic & OTPDataPassing)?
+   
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +30,32 @@ class OTPVC: UIViewController{
         setupTextFields()
     }
     
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    // MARK: Setup
+    private func setup() {
+        let viewController = self
+        let interactor = OTPInteractor()
+        let presenter = OTPPresenter()
+        let router = OTPRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
     //MARK: - Handlers
     func setupTextFields(){
-        textField1.delegate = self
-        textField2.delegate = self
-        textField3.delegate = self
-        textField4.delegate = self
-        
         textField1.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         textField2.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         textField3.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
@@ -81,7 +108,7 @@ class OTPVC: UIViewController{
     }
     
     @IBAction func handleBackButtonTapped(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        router?.popVC()
     }
     
     @IBAction func handleNextButtonTapped(_ sender: UIButton) {
@@ -92,15 +119,22 @@ class OTPVC: UIViewController{
         
         let otpCode = "\(textField1.text!)\(textField2.text!)\(textField3.text!)\(textField4.text!)"
         print("Next Button Tapped... OTP Code: \(otpCode)")
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let destinationVC = storyboard.instantiateViewController(withIdentifier: "HomeVC")
-        navigationController?.pushViewController(destinationVC, animated: true)
+        interactor?.verifyOTP(otpCode)
     }
     
 }
-
-//MARK: - TextFieldDelegate
-extension OTPVC: UITextFieldDelegate{
+//MARK: - DisplayLogic
+extension OTPVC: OTPDisplayLogic{
     
+    func displaySuccess() {
+        router?.routeToHome()
+    }
     
+    func displayErrorMessage(_ errorMessage: String) {
+        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Close", style: .cancel))
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
+        }
+    }
 }

@@ -22,7 +22,7 @@ final class LoginRouter: LoginRoutingLogic, LoginDataPassing {
     var dataStore: LoginDataStore?
     
     func routeToOTP() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "OTP", bundle: nil)
         let destinationVC = storyboard.instantiateViewController(withIdentifier: "OTPVC")
         viewController?.navigationController?.pushViewController(destinationVC, animated: true)
     }
