@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wQx-lm-utX">
-                                <rect key="frame" x="0.0" y="365" width="414" height="497"/>
+                                <rect key="frame" x="0.0" y="365" width="414" height="531"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -104,7 +104,7 @@
                             <constraint firstItem="wQx-lm-utX" firstAttribute="top" secondItem="CzD-8Y-9pD" secondAttribute="bottom" constant="5" id="7Ra-7j-52Q"/>
                             <constraint firstItem="U7X-YG-x65" firstAttribute="trailing" secondItem="CzD-8Y-9pD" secondAttribute="trailing" id="9wd-OS-hP8"/>
                             <constraint firstItem="U7X-YG-x65" firstAttribute="trailing" secondItem="b4d-Aj-dHf" secondAttribute="trailing" constant="30" id="GZB-jW-ewX"/>
-                            <constraint firstItem="U7X-YG-x65" firstAttribute="bottom" secondItem="wQx-lm-utX" secondAttribute="bottom" id="NMb-Df-P7s"/>
+                            <constraint firstAttribute="bottom" secondItem="wQx-lm-utX" secondAttribute="bottom" id="NMb-Df-P7s"/>
                             <constraint firstItem="CzD-8Y-9pD" firstAttribute="leading" secondItem="U7X-YG-x65" secondAttribute="leading" id="OeE-J9-jmN"/>
                             <constraint firstItem="U7X-YG-x65" firstAttribute="trailing" secondItem="XLd-l8-8id" secondAttribute="trailing" constant="40" id="ULY-5a-Tv2"/>
                             <constraint firstItem="wQx-lm-utX" firstAttribute="top" secondItem="6sV-Ok-xRw" secondAttribute="top" constant="365" id="X0m-0D-hme"/>
