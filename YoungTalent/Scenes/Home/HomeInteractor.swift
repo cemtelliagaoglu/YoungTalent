@@ -13,6 +13,7 @@ protocol HomeBusinessLogic: AnyObject {
 
 protocol HomeDataStore: AnyObject {
     var groupsData:[AllGroupsResponse.Group]?{ get set }
+    var contacts: [User]? { get set }
 }
 
 final class HomeInteractor: HomeBusinessLogic, HomeDataStore {
@@ -20,6 +21,7 @@ final class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     var presenter: HomePresentationLogic?
     var worker: HomeWorkingLogic = HomeWorker()
     var groupsData: [AllGroupsResponse.Group]?
+    var contacts: [User]?
     
     func fetchData() {
         
@@ -38,6 +40,16 @@ final class HomeInteractor: HomeBusinessLogic, HomeDataStore {
             switch result{
             case .success(let userResponse):
                 self.presenter?.presentCurrentUser(userModel: userResponse.body)
+            case .failure(let error):
+                self.presenter?.presentErrorMessage(error.customMessage)
+            }
+        }
+        worker.fetchAllUsers { result in
+            switch result{
+            case .success(let allUsers):
+                self.contacts = allUsers.body
+                guard let contacts = self.contacts else{ return }
+                self.presenter?.presentAllContacts(contactsModel: contacts)
             case .failure(let error):
                 self.presenter?.presentErrorMessage(error.customMessage)
             }

@@ -107,6 +107,9 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource{
         cell.setViewModel(viewModel: userViewModel)
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        router?.routeToChat(index: indexPath.row)
+    }
 }
 //MARK: - CollectionView Methods
 extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{

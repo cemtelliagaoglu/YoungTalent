@@ -10,6 +10,7 @@ import Foundation
 protocol HomePresentationLogic: AnyObject {
     func presentGroups(groupsModel: [AllGroupsResponse.Group])
     func presentCurrentUser(userModel: User)
+    func presentAllContacts(contactsModel: [User])
     func presentErrorMessage(_ errorMessage: String)
 }
 
@@ -20,17 +21,14 @@ final class HomePresenter: HomePresentationLogic {
     func presentGroups(groupsModel: [AllGroupsResponse.Group]) {
         
         var groupsViewModels: [Home.Case.ViewModel.GroupModel] = []
-        var userViewModels: [Home.Case.ViewModel.User] = []
         
         groupsModel.forEach { group in
             
             let users = group.users?.map({ user in
-                
-                let userViewModel = Home.Case.ViewModel.User(nameSurname: user.nameSurname,
-                                                             profilePhoto: user.profilePhoto,
-                                                             title: user.title)
-                userViewModels.append(userViewModel)
-                return userViewModel
+
+                return Home.Case.ViewModel.User(nameSurname: user.nameSurname,
+                                                profilePhoto: user.profilePhoto,
+                                                title: user.title)
             })
             
             let lastMessage = Home.Case.ViewModel.GroupLastMessage(
@@ -43,7 +41,6 @@ final class HomePresenter: HomePresentationLogic {
                                                                   users: users,
                                                                   lastMessage: lastMessage))
         }
-        self.viewController?.displayUsers(userViewModels: userViewModels)
         self.viewController?.displayGroups(groupViewModels: groupsViewModels)
     }
     
@@ -52,6 +49,19 @@ final class HomePresenter: HomePresentationLogic {
                                                      profilePhoto: userModel.profilePhoto,
                                                      title: userModel.title)
         viewController?.setCurrentUser(userViewModel: userViewModel)
+    }
+    
+    func presentAllContacts(contactsModel: [User]) {
+        var usersViewModel = [Home.Case.ViewModel.User]()
+        
+        contactsModel.forEach { contact in
+            let userViewModel = Home.Case.ViewModel.User(
+                nameSurname: contact.nameSurname,
+                profilePhoto: contact.profilePhoto,
+                title: contact.title)
+            usersViewModel.append(userViewModel)
+        }
+        viewController?.displayUsers(userViewModels: usersViewModel)
     }
     
     func presentErrorMessage(_ errorMessage: String) {
