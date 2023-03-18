@@ -8,6 +8,9 @@
 public struct UserResponse: Codable{
     public let body: User
 }
+public struct AllUsersResponse: Codable{
+    public let body: [User]
+}
 //MARK: - User
 public struct User: Codable{
     let nameSurname: String
