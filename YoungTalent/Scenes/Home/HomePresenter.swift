@@ -9,7 +9,7 @@ import Foundation
 
 protocol HomePresentationLogic: AnyObject {
     func presentGroups(groupsModel: [AllGroupsResponse.Group])
-    func presentCurrentUser(userModel: CurrentUserResponse.User)
+    func presentCurrentUser(userModel: User)
     func presentErrorMessage(_ errorMessage: String)
 }
 
@@ -47,7 +47,7 @@ final class HomePresenter: HomePresentationLogic {
         self.viewController?.displayGroups(groupViewModels: groupsViewModels)
     }
     
-    func presentCurrentUser(userModel: CurrentUserResponse.User) {
+    func presentCurrentUser(userModel: User) {
         let userViewModel = Home.Case.ViewModel.User(nameSurname: userModel.nameSurname,
                                                      profilePhoto: userModel.profilePhoto,
                                                      title: userModel.title)

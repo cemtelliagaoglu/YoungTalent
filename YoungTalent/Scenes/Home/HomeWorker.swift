@@ -8,13 +8,13 @@
 import Foundation
 
 protocol HomeWorkingLogic: AnyObject {
-    func fetchCurrentUser(completion: @escaping ((Result<CurrentUserResponse, RequestError>) -> ()))
+    func fetchCurrentUser(completion: @escaping ((Result<UserResponse, RequestError>) -> ()))
     func fetchGroups(completion: @escaping ((Result<AllGroupsResponse, RequestError>) -> ()))
 }
 
 final class HomeWorker: HomeWorkingLogic, HTTPClient {
-    func fetchCurrentUser(completion: @escaping ((Result<CurrentUserResponse, RequestError>) -> ())) {
-        sendRequest(endpoint: UserEndpoint.currentUser, responseModel: CurrentUserResponse.self) { result in
+    func fetchCurrentUser(completion: @escaping ((Result<UserResponse, RequestError>) -> ())) {
+        sendRequest(endpoint: UserEndpoint.currentUser, responseModel: UserResponse.self) { result in
             completion(result)
         }
     }
