@@ -23,6 +23,15 @@
 		843168022992335400908312 /* YoungTalentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843168012992335400908312 /* YoungTalentUITests.swift */; };
 		843168042992335400908312 /* YoungTalentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843168032992335400908312 /* YoungTalentUITestsLaunchTests.swift */; };
 		8446CBDB29B0DB0C00442F53 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446CBDA29B0DB0C00442F53 /* WelcomeVC.swift */; };
+		848ECFA329C31D2F003EB8EB /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848ECF9C29C31D2F003EB8EB /* Chat.storyboard */; };
+		848ECFA429C31D2F003EB8EB /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848ECF9D29C31D2F003EB8EB /* ChatViewController.swift */; };
+		848ECFA529C31D2F003EB8EB /* ChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848ECF9E29C31D2F003EB8EB /* ChatPresenter.swift */; };
+		848ECFA629C31D2F003EB8EB /* ChatInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848ECF9F29C31D2F003EB8EB /* ChatInteractor.swift */; };
+		848ECFA729C31D2F003EB8EB /* ChatModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848ECFA029C31D2F003EB8EB /* ChatModels.swift */; };
+		848ECFA829C31D2F003EB8EB /* ChatWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848ECFA129C31D2F003EB8EB /* ChatWorker.swift */; };
+		848ECFA929C31D2F003EB8EB /* ChatRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848ECFA229C31D2F003EB8EB /* ChatRouter.swift */; };
+		848ECFAD29C34495003EB8EB /* ChatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848ECFAB29C34495003EB8EB /* ChatCollectionViewCell.swift */; };
+		848ECFAE29C34495003EB8EB /* ChatCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848ECFAC29C34495003EB8EB /* ChatCollectionViewCell.xib */; };
 		849AC5E429C2290800C96758 /* OTP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849AC5DD29C2290800C96758 /* OTP.storyboard */; };
 		849AC5E629C2290800C96758 /* OTPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AC5DF29C2290800C96758 /* OTPPresenter.swift */; };
 		849AC5E729C2290800C96758 /* OTPInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AC5E029C2290800C96758 /* OTPInteractor.swift */; };
@@ -44,7 +53,7 @@
 		84C2C85429BF7A1000F139D8 /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2C84D29BF7A1000F139D8 /* HomeModels.swift */; };
 		84C2C85529BF7A1000F139D8 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2C84E29BF7A1000F139D8 /* HomeWorker.swift */; };
 		84C2C85629BF7A1000F139D8 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2C84F29BF7A1000F139D8 /* HomeRouter.swift */; };
-		84C8EBA429C02FF10090AFCE /* CurrentUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBA329C02FF10090AFCE /* CurrentUserResponse.swift */; };
+		84C8EBA429C02FF10090AFCE /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBA329C02FF10090AFCE /* UserResponse.swift */; };
 		84C8EBA629C03C070090AFCE /* UserEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBA529C03C070090AFCE /* UserEndpoint.swift */; };
 		84C8EBAF29C094CE0090AFCE /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C8EBA829C094CE0090AFCE /* Welcome.storyboard */; };
 		84C8EBB129C094CE0090AFCE /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBAA29C094CE0090AFCE /* WelcomePresenter.swift */; };
@@ -112,6 +121,15 @@
 		843168112992338500908312 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		843168122992339400908312 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		8446CBDA29B0DB0C00442F53 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		848ECF9C29C31D2F003EB8EB /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		848ECF9D29C31D2F003EB8EB /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		848ECF9E29C31D2F003EB8EB /* ChatPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPresenter.swift; sourceTree = "<group>"; };
+		848ECF9F29C31D2F003EB8EB /* ChatInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInteractor.swift; sourceTree = "<group>"; };
+		848ECFA029C31D2F003EB8EB /* ChatModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModels.swift; sourceTree = "<group>"; };
+		848ECFA129C31D2F003EB8EB /* ChatWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWorker.swift; sourceTree = "<group>"; };
+		848ECFA229C31D2F003EB8EB /* ChatRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRouter.swift; sourceTree = "<group>"; };
+		848ECFAB29C34495003EB8EB /* ChatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCollectionViewCell.swift; sourceTree = "<group>"; };
+		848ECFAC29C34495003EB8EB /* ChatCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCollectionViewCell.xib; sourceTree = "<group>"; };
 		849AC5DD29C2290800C96758 /* OTP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OTP.storyboard; sourceTree = "<group>"; };
 		849AC5DF29C2290800C96758 /* OTPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPPresenter.swift; sourceTree = "<group>"; };
 		849AC5E029C2290800C96758 /* OTPInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInteractor.swift; sourceTree = "<group>"; };
@@ -133,7 +151,7 @@
 		84C2C84D29BF7A1000F139D8 /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
 		84C2C84E29BF7A1000F139D8 /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
 		84C2C84F29BF7A1000F139D8 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
-		84C8EBA329C02FF10090AFCE /* CurrentUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserResponse.swift; sourceTree = "<group>"; };
+		84C8EBA329C02FF10090AFCE /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		84C8EBA529C03C070090AFCE /* UserEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndpoint.swift; sourceTree = "<group>"; };
 		84C8EBA829C094CE0090AFCE /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		84C8EBAA29C094CE0090AFCE /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
@@ -219,8 +237,8 @@
 		843167DF2992335300908312 /* YoungTalent */ = {
 			isa = PBXGroup;
 			children = (
-				84EB4E1A29BB0D1B002C64CE /* Networking */,
 				84BAB81A29AF7D8000F5CDCC /* Application */,
+				84EB4E1A29BB0D1B002C64CE /* Networking */,
 				84BAB81B29AF7D8B00F5CDCC /* Utils */,
 				84C2C85829BF7AA900F139D8 /* Scenes */,
 				843167EB2992335400908312 /* LaunchScreen.storyboard */,
@@ -253,6 +271,30 @@
 				843168122992339400908312 /* Development.xcconfig */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		848ECF9B29C31D0D003EB8EB /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				848ECFAA29C3446C003EB8EB /* Cells */,
+				848ECF9C29C31D2F003EB8EB /* Chat.storyboard */,
+				848ECF9D29C31D2F003EB8EB /* ChatViewController.swift */,
+				848ECF9E29C31D2F003EB8EB /* ChatPresenter.swift */,
+				848ECF9F29C31D2F003EB8EB /* ChatInteractor.swift */,
+				848ECFA029C31D2F003EB8EB /* ChatModels.swift */,
+				848ECFA129C31D2F003EB8EB /* ChatWorker.swift */,
+				848ECFA229C31D2F003EB8EB /* ChatRouter.swift */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
+		848ECFAA29C3446C003EB8EB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				848ECFAB29C34495003EB8EB /* ChatCollectionViewCell.swift */,
+				848ECFAC29C34495003EB8EB /* ChatCollectionViewCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		849AC5DC29C228E600C96758 /* OTP */ = {
@@ -331,6 +373,7 @@
 				849AC5DC29C228E600C96758 /* OTP */,
 				84C8EBC429C0A0C60090AFCE /* Register */,
 				84C2C85729BF7AA400F139D8 /* Home */,
+				848ECF9B29C31D0D003EB8EB /* Chat */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -424,7 +467,7 @@
 			isa = PBXGroup;
 			children = (
 				84EB4E2529BB1A1B002C64CE /* AllGroupsResponse.swift */,
-				84C8EBA329C02FF10090AFCE /* CurrentUserResponse.swift */,
+				84C8EBA329C02FF10090AFCE /* UserResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -535,7 +578,9 @@
 			files = (
 				84BAB81529AF637A00F5CDCC /* Montserrat-Bold.ttf in Resources */,
 				84C2C85029BF7A1000F139D8 /* Home.storyboard in Resources */,
+				848ECFAE29C34495003EB8EB /* ChatCollectionViewCell.xib in Resources */,
 				84C8EBCD29C0CDB80090AFCE /* Login.storyboard in Resources */,
+				848ECFA329C31D2F003EB8EB /* Chat.storyboard in Resources */,
 				84C8EBBD29C0A0BC0090AFCE /* Register.storyboard in Resources */,
 				849AC5E429C2290800C96758 /* OTP.storyboard in Resources */,
 				843167ED2992335400908312 /* LaunchScreen.storyboard in Resources */,
@@ -577,11 +622,14 @@
 				84EB4E2829BB1F57002C64CE /* GroupsEndpoint.swift in Sources */,
 				84BAB81029AF5F8600F5CDCC /* RegisterVC.swift in Sources */,
 				84C8EBCF29C0CDB80090AFCE /* LoginPresenter.swift in Sources */,
+				848ECFA529C31D2F003EB8EB /* ChatPresenter.swift in Sources */,
 				840E7E7F29B9CA9C003CE39C /* HomeVC.swift in Sources */,
+				848ECFA929C31D2F003EB8EB /* ChatRouter.swift in Sources */,
 				84C8EBC029C0A0BC0090AFCE /* RegisterInteractor.swift in Sources */,
 				849AC5E729C2290800C96758 /* OTPInteractor.swift in Sources */,
 				84C8EBA629C03C070090AFCE /* UserEndpoint.swift in Sources */,
 				84C8EBB229C094CE0090AFCE /* WelcomeInteractor.swift in Sources */,
+				848ECFA429C31D2F003EB8EB /* ChatViewController.swift in Sources */,
 				84C2C85429BF7A1000F139D8 /* HomeModels.swift in Sources */,
 				84BAB81E29AF7E6E00F5CDCC /* LoginVC.swift in Sources */,
 				84C8EBB129C094CE0090AFCE /* WelcomePresenter.swift in Sources */,
@@ -590,7 +638,7 @@
 				84EB4E2229BB0DEE002C64CE /* Endpoint.swift in Sources */,
 				84C2C84829BF651000F139D8 /* CommunityHeader.swift in Sources */,
 				84EB4E1C29BB0D3C002C64CE /* RequestMethod.swift in Sources */,
-				84C8EBA429C02FF10090AFCE /* CurrentUserResponse.swift in Sources */,
+				84C8EBA429C02FF10090AFCE /* UserResponse.swift in Sources */,
 				840E7E8A29B9F81F003CE39C /* CommunityMainCell.swift in Sources */,
 				84BAB81229AF5FB600F5CDCC /* UIView+Extension.swift in Sources */,
 				84C8EBC229C0A0BC0090AFCE /* RegisterWorker.swift in Sources */,
@@ -600,6 +648,7 @@
 				840E7E8F29BA30D2003CE39C /* CommunityGroupCell.swift in Sources */,
 				84C8EBD329C0CDB80090AFCE /* LoginRouter.swift in Sources */,
 				84C8EBB429C094CE0090AFCE /* WelcomeWorker.swift in Sources */,
+				848ECFA729C31D2F003EB8EB /* ChatModels.swift in Sources */,
 				84EB4E2629BB1A1B002C64CE /* AllGroupsResponse.swift in Sources */,
 				84C2C84229BF140700F139D8 /* UIImageView+Extension.swift in Sources */,
 				84EB4E1E29BB0D66002C64CE /* RequestError.swift in Sources */,
@@ -609,6 +658,7 @@
 				843167E12992335300908312 /* AppDelegate.swift in Sources */,
 				849AC5E929C2290800C96758 /* OTPWorker.swift in Sources */,
 				849AC5EA29C2290800C96758 /* OTPRouter.swift in Sources */,
+				848ECFAD29C34495003EB8EB /* ChatCollectionViewCell.swift in Sources */,
 				849AC5E829C2290800C96758 /* OTPModels.swift in Sources */,
 				84C8EBB529C094CE0090AFCE /* WelcomeRouter.swift in Sources */,
 				84C8EBB329C094CE0090AFCE /* WelcomeModels.swift in Sources */,
@@ -616,7 +666,9 @@
 				843167E32992335300908312 /* SceneDelegate.swift in Sources */,
 				84C2C85529BF7A1000F139D8 /* HomeWorker.swift in Sources */,
 				8446CBDB29B0DB0C00442F53 /* WelcomeVC.swift in Sources */,
+				848ECFA829C31D2F003EB8EB /* ChatWorker.swift in Sources */,
 				849AC5E629C2290800C96758 /* OTPPresenter.swift in Sources */,
+				848ECFA629C31D2F003EB8EB /* ChatInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
