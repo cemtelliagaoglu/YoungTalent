@@ -358,8 +358,8 @@
 			isa = PBXGroup;
 			children = (
 				840E7E8529B9E050003CE39C /* Cells */,
-				84C2C84929BF7A1000F139D8 /* Home.storyboard */,
 				840E7E7E29B9CA9C003CE39C /* HomeVC.swift */,
+				84C2C84929BF7A1000F139D8 /* Home.storyboard */,
 				84C2C84B29BF7A1000F139D8 /* HomePresenter.swift */,
 				84C2C84C29BF7A1000F139D8 /* HomeInteractor.swift */,
 				84C2C84D29BF7A1000F139D8 /* HomeModels.swift */,
