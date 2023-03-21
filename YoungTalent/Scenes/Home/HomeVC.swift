@@ -31,11 +31,7 @@ final class HomeVC: UIViewController{
     
     var groupsViewModel: [Home.Case.ViewModel.GroupModel]?
     var usersViewModel: [Home.Case.ViewModel.User]?
-    var currentUserViewModel: Home.Case.ViewModel.User?{
-        didSet{
-            updateCurrentUserModel()
-        }
-    }
+    var currentUserViewModel: Home.Case.ViewModel.User?
     //MARK: - Lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -70,7 +66,7 @@ final class HomeVC: UIViewController{
     }
     
     //MARK: - Handlers
-    func setupView(){
+    private func setupView(){
         // collectionView
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -83,9 +79,7 @@ final class HomeVC: UIViewController{
         tableView.register(UINib(nibName: "ChatTableViewCell", bundle: nil), forCellReuseIdentifier: tableViewCellIdentifier)
         tableView.separatorStyle = .none
         tableView.rowHeight = 75
-    }
-    
-    func updateCurrentUserModel(){
+        // currentUser
         guard let currentUserViewModel = self.currentUserViewModel else{ return }
         
         DispatchQueue.main.async {
