@@ -8,7 +8,7 @@
 import UIKit
 
 protocol LoginRoutingLogic: AnyObject {
-    func routeToOTP()
+    func routeToHome()
     func popVC()
 }
 
@@ -21,10 +21,19 @@ final class LoginRouter: LoginRoutingLogic, LoginDataPassing {
     weak var viewController: LoginVC?
     var dataStore: LoginDataStore?
     
-    func routeToOTP() {
-        let storyboard = UIStoryboard(name: "OTP", bundle: nil)
-        let destinationVC = storyboard.instantiateViewController(withIdentifier: "OTPVC")
-        viewController?.navigationController?.pushViewController(destinationVC, animated: true)
+    func routeToHome() {
+        guard let currentUser = self.dataStore?.currentUser else{ return }
+        
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        DispatchQueue.main.async {
+            guard let destinationVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as? HomeVC else{ return }
+        
+            destinationVC.currentUserViewModel = .init(nameSurname: currentUser.nameSurname,
+                                                       profilePhoto: currentUser.profilePhoto,
+                                                       title: currentUser.title)
+            
+            self.viewController?.navigationController?.pushViewController(destinationVC, animated: true)
+        }
     }
     func popVC() {
         viewController?.navigationController?.popViewController(animated: true)
