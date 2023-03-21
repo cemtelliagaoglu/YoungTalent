@@ -11,6 +11,9 @@ public protocol HTTPClient {
     func sendRequest<T: Decodable>(endpoint: Endpoint,
                                    responseModel: T.Type,
                                    completion: @escaping (Result<T, RequestError>) -> Void)
+    
+    func sendLoginRequest(withEmail email: String, password: String,
+        completion: @escaping (Result<LoginResponse, RequestError>) -> Void)
 }
 
 public extension HTTPClient {
@@ -45,6 +48,53 @@ public extension HTTPClient {
                 switch response.statusCode {
                 case 200...299:
                     let decodedResponse = try JSONDecoder().decode(responseModel, from: data!)
+                    return completion(.success(decodedResponse))
+                case 401:
+                    return completion(.failure(.unauthorized))
+                default:
+                    return completion(.failure(.unexpectedStatusCode))
+                }
+            } catch {
+                return completion(.failure(.decode))
+            }
+        }
+        .resume()
+    }
+    
+    func sendLoginRequest(withEmail email: String, password: String,
+        completion: @escaping (Result<LoginResponse, RequestError>) -> Void) {
+
+        let endpoint = AuthEndpoint.login
+        let urlComponents = prepareURLComponents(with: endpoint)
+        
+        guard let url = urlComponents.url else {
+            return completion(.failure(.invalidURL))
+        }
+        let authData = (email + ":" + password).data(using: .utf8)!.base64EncodedString()
+
+        let header = [
+            "Authorization":"Basic \(authData)",
+            "X-Device-Id": "134ACE7F-12B1-4CB0-8640-CCA1E277A42D--",
+            "X-Platform": "OSX",
+            "X-Device-Name": "iPhone 12 Mini",
+        ]
+
+        var request = URLRequest(url: url)
+        request.httpMethod = endpoint.method.rawValue
+        request.allHTTPHeaderFields = header
+
+        if let body = endpoint.body {
+            request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
+        }
+
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            do {
+                guard let response = response as? HTTPURLResponse else {
+                    return completion(.failure(.noResponse))
+                }
+                switch response.statusCode {
+                case 200...299:
+                    let decodedResponse = try JSONDecoder().decode(LoginResponse.self, from: data!)
                     return completion(.success(decodedResponse))
                 case 401:
                     return completion(.failure(.unauthorized))
