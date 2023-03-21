@@ -64,24 +64,16 @@ public extension HTTPClient {
     func sendLoginRequest(withEmail email: String, password: String,
         completion: @escaping (Result<LoginResponse, RequestError>) -> Void) {
 
-        let endpoint = AuthEndpoint.login
+        let endpoint = AuthEndpoint.login(email, password)
         let urlComponents = prepareURLComponents(with: endpoint)
         
         guard let url = urlComponents.url else {
             return completion(.failure(.invalidURL))
         }
-        let authData = (email + ":" + password).data(using: .utf8)!.base64EncodedString()
-
-        let header = [
-            "Authorization":"Basic \(authData)",
-            "X-Device-Id": "134ACE7F-12B1-4CB0-8640-CCA1E277A42D--",
-            "X-Platform": "OSX",
-            "X-Device-Name": "iPhone 12 Mini",
-        ]
-
+        
         var request = URLRequest(url: url)
         request.httpMethod = endpoint.method.rawValue
-        request.allHTTPHeaderFields = header
+        request.allHTTPHeaderFields = endpoint.header
 
         if let body = endpoint.body {
             request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])

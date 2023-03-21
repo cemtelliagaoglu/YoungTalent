@@ -8,7 +8,7 @@
 import Foundation
 
 enum AuthEndpoint{
-    case login
+    case login(String, String)
     case logout
 }
 
@@ -45,7 +45,20 @@ extension AuthEndpoint: Endpoint{
     }
 
     public var header: [String: String]? {
-        return nil
+        switch self{
+        case let .login(email, password):
+            let authData = (email + ":" + password).data(using: .utf8)!.base64EncodedString()
+            
+            let header = [
+                "Authorization":"Basic \(authData)",
+                "X-Device-Id": "134ACE7F-12B1-4CB0-8640-CCA1E277A42D--",
+                "X-Platform": "OSX",
+                "X-Device-Name": "iPhone 12 Mini",
+            ]
+            return header
+        case .logout:
+            return nil
+        }
     }
     
 }
