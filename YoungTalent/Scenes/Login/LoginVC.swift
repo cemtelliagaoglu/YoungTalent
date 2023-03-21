@@ -8,22 +8,27 @@
 import UIKit
 
 protocol LoginDisplayLogic: AnyObject {
-    func setupView()
+    func displayLogin()
+    func displayErrorMessage(_ errorMessage: String)
+    func displayLoadingAnimation()
+    func stopLoadingAnimation()
 }
 
 class LoginVC: UIViewController{
     
     //MARK: - Properties
     @IBOutlet weak var termsAndConditionLabel: UILabel!
-    @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var phoneNumberTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var interactor: LoginBusinessLogic?
     var router: (LoginRoutingLogic & LoginDataPassing)?
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor?.notifyViewDidLoad()
+        setupView()
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -49,42 +54,15 @@ class LoginVC: UIViewController{
         router.dataStore = interactor
     }
     
-    @objc func handleTermsAndConditionTapped(){
-        print("Terms And Condition Tapped")
-    }
-    
-    @objc func dismissKeyboard(){
-        phoneNumberTextField.resignFirstResponder()
-    }
-    
-    @IBAction func nextButtonPressed(_ sender: UIButton) {
-        router?.routeToOTP()
-    }
-    
-    @IBAction func handleBackButtonTapped(_ sender: UIButton) {
-        router?.popVC()
-    }
-    
-}
-//MARK: - TextFieldDelegate
-extension LoginVC: UITextFieldDelegate{
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        phoneNumberTextField.resignFirstResponder()
-        return false
-    }
-}
-
-//MARK: - DisplayLogic
-extension LoginVC: LoginDisplayLogic{
-    func setupView() {
+    private func setupView() {
         
-        phoneNumberTextField.delegate = self
-        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         // hideKeyboard
         let viewTap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(viewTap)
         // setup termsAndConditionLabel
-        let attributedText = NSMutableAttributedString(string: "By click continue you are agree with\nour",
+        let attributedText = NSMutableAttributedString(string: "By click login you are agree with\nour",
                                                 attributes: [
                                                     .foregroundColor: UIColor(named: "Blue-Light")!,
                                                     .font: UIFont(name: "Montserrat-Regular", size: 10)!
@@ -100,5 +78,75 @@ extension LoginVC: LoginDisplayLogic{
         labelTap.numberOfTapsRequired = 1
         termsAndConditionLabel.addGestureRecognizer(labelTap)
         
+    }
+    
+    @objc func handleTermsAndConditionTapped(){
+        print("Terms And Condition Tapped")
+    }
+    
+    @objc func dismissKeyboard(){
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+    }
+    
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
+        guard let email = emailTextField.text,
+              let password = passwordTextField.text,
+              passwordTextField.hasText,
+              emailTextField.hasText else{
+            displayErrorMessage("Missing Email/Password")
+            return
+        }
+        displayLoadingAnimation()
+        interactor?.requestLoginWith(email, password)
+    }
+    
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        router?.popVC()
+    }
+}
+//MARK: - TextFieldDelegate
+extension LoginVC: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField{
+        case emailTextField:
+            passwordTextField.becomeFirstResponder()
+        case passwordTextField:
+            textField.resignFirstResponder()
+            loginButtonTapped(loginButton)
+        default:
+            textField.resignFirstResponder()
+        }
+        textField.resignFirstResponder()
+        return false
+    }
+}
+//MARK: - DisplayLogic
+extension LoginVC: LoginDisplayLogic{
+    
+    func displayLogin() {
+        router?.routeToHome()
+    }
+    
+    func displayErrorMessage(_ errorMessage: String) {
+        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Close", style: .cancel))
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
+        }
+    }
+    
+    func displayLoadingAnimation() {
+        DispatchQueue.main.async {
+            self.activityIndicator.startAnimating()
+            self.loginButton.isUserInteractionEnabled = false
+        }
+    }
+    
+    func stopLoadingAnimation() {
+        DispatchQueue.main.async {
+            self.loginButton.isUserInteractionEnabled = true
+            self.activityIndicator.stopAnimating()
+        }
     }
 }

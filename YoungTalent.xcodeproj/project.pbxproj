@@ -23,6 +23,8 @@
 		843168022992335400908312 /* YoungTalentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843168012992335400908312 /* YoungTalentUITests.swift */; };
 		843168042992335400908312 /* YoungTalentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843168032992335400908312 /* YoungTalentUITestsLaunchTests.swift */; };
 		8446CBDB29B0DB0C00442F53 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446CBDA29B0DB0C00442F53 /* WelcomeVC.swift */; };
+		846CF07729C639AB008F1A26 /* AuthEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846CF07629C639AB008F1A26 /* AuthEndpoint.swift */; };
+		846CF07929C63BCB008F1A26 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846CF07829C63BCB008F1A26 /* LoginResponse.swift */; };
 		848ECFA329C31D2F003EB8EB /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848ECF9C29C31D2F003EB8EB /* Chat.storyboard */; };
 		848ECFA429C31D2F003EB8EB /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848ECF9D29C31D2F003EB8EB /* ChatViewController.swift */; };
 		848ECFA529C31D2F003EB8EB /* ChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848ECF9E29C31D2F003EB8EB /* ChatPresenter.swift */; };
@@ -121,6 +123,8 @@
 		843168112992338500908312 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		843168122992339400908312 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		8446CBDA29B0DB0C00442F53 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		846CF07629C639AB008F1A26 /* AuthEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndpoint.swift; sourceTree = "<group>"; };
+		846CF07829C63BCB008F1A26 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		848ECF9C29C31D2F003EB8EB /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		848ECF9D29C31D2F003EB8EB /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		848ECF9E29C31D2F003EB8EB /* ChatPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPresenter.swift; sourceTree = "<group>"; };
@@ -459,6 +463,7 @@
 				84EB4E2129BB0DEE002C64CE /* Endpoint.swift */,
 				84EB4E2729BB1F57002C64CE /* GroupsEndpoint.swift */,
 				84C8EBA529C03C070090AFCE /* UserEndpoint.swift */,
+				846CF07629C639AB008F1A26 /* AuthEndpoint.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -468,6 +473,7 @@
 			children = (
 				84EB4E2529BB1A1B002C64CE /* AllGroupsResponse.swift */,
 				84C8EBA329C02FF10090AFCE /* UserResponse.swift */,
+				846CF07829C63BCB008F1A26 /* LoginResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -625,6 +631,7 @@
 				848ECFA529C31D2F003EB8EB /* ChatPresenter.swift in Sources */,
 				840E7E7F29B9CA9C003CE39C /* HomeVC.swift in Sources */,
 				848ECFA929C31D2F003EB8EB /* ChatRouter.swift in Sources */,
+				846CF07929C63BCB008F1A26 /* LoginResponse.swift in Sources */,
 				84C8EBC029C0A0BC0090AFCE /* RegisterInteractor.swift in Sources */,
 				849AC5E729C2290800C96758 /* OTPInteractor.swift in Sources */,
 				84C8EBA629C03C070090AFCE /* UserEndpoint.swift in Sources */,
@@ -642,6 +649,7 @@
 				840E7E8A29B9F81F003CE39C /* CommunityMainCell.swift in Sources */,
 				84BAB81229AF5FB600F5CDCC /* UIView+Extension.swift in Sources */,
 				84C8EBC229C0A0BC0090AFCE /* RegisterWorker.swift in Sources */,
+				846CF07729C639AB008F1A26 /* AuthEndpoint.swift in Sources */,
 				84BAB82029AF974000F5CDCC /* OTPVC.swift in Sources */,
 				84C2C85629BF7A1000F139D8 /* HomeRouter.swift in Sources */,
 				84C8EBD029C0CDB80090AFCE /* LoginInteractor.swift in Sources */,

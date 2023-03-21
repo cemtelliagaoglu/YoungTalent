@@ -8,14 +8,21 @@
 import Foundation
 
 protocol LoginPresentationLogic: AnyObject {
-    func displayData()
+    func presentLoginSucceed()
+    func presentErrorMessage(_ errorMessage: String)
 }
 
 final class LoginPresenter: LoginPresentationLogic {
     
     weak var viewController: LoginDisplayLogic?
     
-    func displayData() {
-        viewController?.setupView()
+    func presentLoginSucceed() {
+        viewController?.stopLoadingAnimation()
+        viewController?.displayLogin()
+    }
+    
+    func presentErrorMessage(_ errorMessage: String) {
+        viewController?.stopLoadingAnimation()
+        viewController?.displayErrorMessage(errorMessage)
     }
 }
