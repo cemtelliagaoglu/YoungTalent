@@ -90,10 +90,8 @@ class OTPVC: UIViewController {
                 textField3.becomeFirstResponder()
             case textField3:
                 textField4.becomeFirstResponder()
-            case textField4:
-                textField4.resignFirstResponder()
             default:
-                break
+                textField4.resignFirstResponder()
             }
         } else {
             switch textField {

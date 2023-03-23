@@ -58,7 +58,7 @@ extension GroupsEndpoint: Endpoint {
         switch self {
         case .all:
             return [
-                "Authorization": "Bearer \(accessToken)",
+                "Authorization": "Bearer \(accessToken)"
             ]
         default:
             return nil

@@ -65,16 +65,20 @@ class LoginVC: UIViewController {
         let viewTap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(viewTap)
         // setup termsAndConditionLabel
-        let attributedText = NSMutableAttributedString(string: "By click login you are agree with\nour",
-                                                       attributes: [
-                                                           .foregroundColor: UIColor(named: "Blue-Light")!,
-                                                           .font: UIFont(name: "Montserrat-Regular", size: 10)!,
-                                                       ])
-        attributedText.append(NSAttributedString(string: " Terms and Condition",
-                                                 attributes: [
-                                                     .foregroundColor: UIColor(named: "Purple-Gradient")!,
-                                                     .font: UIFont(name: "Montserrat-Bold", size: 10)!,
-                                                 ]))
+        let attributedText = NSMutableAttributedString(
+            string: "By click login you are agree with\nour",
+            attributes: [
+                .foregroundColor: UIColor(named: "Blue-Light")!,
+                .font: UIFont(name: "Montserrat-Regular", size: 10)!
+            ]
+        )
+        attributedText.append(NSAttributedString(
+            string: " Terms and Condition",
+            attributes: [
+                .foregroundColor: UIColor(named: "Purple-Gradient")!,
+                .font: UIFont(name: "Montserrat-Bold", size: 10)!
+            ]
+        ))
         termsAndConditionLabel.attributedText = attributedText
 
         let labelTap = UITapGestureRecognizer(target: self, action: #selector(handleTermsAndConditionTapped))

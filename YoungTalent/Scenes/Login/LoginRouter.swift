@@ -25,11 +25,14 @@ final class LoginRouter: LoginRoutingLogic, LoginDataPassing {
 
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         DispatchQueue.main.async {
-            guard let destinationVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as? HomeVC else { return }
+            guard let destinationVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as? HomeVC
+            else { return }
 
-            destinationVC.currentUserViewModel = .init(nameSurname: currentUser.nameSurname,
-                                                       profilePhoto: currentUser.profilePhoto,
-                                                       title: currentUser.title)
+            destinationVC.currentUserViewModel = .init(
+                nameSurname: currentUser.nameSurname,
+                profilePhoto: currentUser.profilePhoto,
+                title: currentUser.title
+            )
 
             self.viewController?.navigationController?.pushViewController(destinationVC, animated: true)
         }

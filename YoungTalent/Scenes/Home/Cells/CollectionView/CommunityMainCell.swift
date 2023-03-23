@@ -41,7 +41,10 @@ class CommunityMainCell: UICollectionViewCell {
     func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "CommunityGroupCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
+        collectionView.register(
+            UINib(nibName: "CommunityGroupCell", bundle: nil),
+            forCellWithReuseIdentifier: cellIdentifier
+        )
         collectionView.showsHorizontalScrollIndicator = false
     }
 }
@@ -53,16 +56,29 @@ extension CommunityMainCell: UICollectionViewDataSource, UICollectionViewDelegat
         groupViewModels?.count ?? 0
     }
 
-    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, minimumInteritemSpacingForSectionAt _: Int) -> CGFloat {
+    func collectionView(
+        _: UICollectionView,
+        layout _: UICollectionViewLayout,
+        minimumInteritemSpacingForSectionAt _: Int
+    ) -> CGFloat {
         10
     }
 
-    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, insetForSectionAt _: Int) -> UIEdgeInsets {
+    func collectionView(
+        _: UICollectionView,
+        layout _: UICollectionViewLayout,
+        insetForSectionAt _: Int
+    ) -> UIEdgeInsets {
         UIEdgeInsets(top: 15, left: 30, bottom: 15, right: 30)
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? CommunityGroupCell else { return UICollectionViewCell() }
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        guard let cell = collectionView
+            .dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? CommunityGroupCell
+        else { return UICollectionViewCell() }
         guard let model = groupViewModels?[indexPath.row] else { return cell }
         cell.setGroup(viewModel: model)
         return cell

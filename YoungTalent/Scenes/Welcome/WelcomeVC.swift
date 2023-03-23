@@ -79,7 +79,8 @@ extension WelcomeVC: WelcomeDisplayLogic {
     }
 
     func updateView(isDarkMode: Bool) {
-        if let window = UIApplication.shared.connectedScenes.map({ $0 as? UIWindowScene }).compactMap({ $0 }).first?.windows.first {
+        if let window = UIApplication.shared.connectedScenes.map({ $0 as? UIWindowScene }).compactMap({ $0 }).first?
+            .windows.first {
             window.overrideUserInterfaceStyle = isDarkMode ? .dark : .light
         }
     }

@@ -8,12 +8,17 @@
 import Foundation
 
 public protocol HTTPClient {
-    func sendRequest<T: Decodable>(endpoint: Endpoint,
-                                   responseModel: T.Type,
-                                   completion: @escaping (Result<T, RequestError>) -> Void)
+    func sendRequest<T: Decodable>(
+        endpoint: Endpoint,
+        responseModel: T.Type,
+        completion: @escaping (Result<T, RequestError>) -> Void
+    )
 
-    func sendLoginRequest(withEmail email: String, password: String,
-                          completion: @escaping (Result<LoginResponse, RequestError>) -> Void)
+    func sendLoginRequest(
+        withEmail email: String,
+        password: String,
+        completion: @escaping (Result<LoginResponse, RequestError>) -> Void
+    )
 }
 
 public extension HTTPClient {
@@ -59,9 +64,11 @@ public extension HTTPClient {
         .resume()
     }
 
-    func sendLoginRequest(withEmail email: String, password: String,
-                          completion: @escaping (Result<LoginResponse, RequestError>) -> Void)
-    {
+    func sendLoginRequest(
+        withEmail email: String,
+        password: String,
+        completion: @escaping (Result<LoginResponse, RequestError>) -> Void
+    ) {
         let endpoint = AuthEndpoint.login(email, password)
         let urlComponents = prepareURLComponents(with: endpoint)
 

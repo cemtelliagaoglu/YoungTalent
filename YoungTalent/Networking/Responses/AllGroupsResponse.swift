@@ -27,10 +27,10 @@ public struct AllGroupsResponse: Codable {
     public struct Message: Codable {
         public let from: User
         public let message: String
-        public let to: To
+        public let to: ToGroup
     }
 
-    public struct To: Codable {
+    public struct ToGroup: Codable {
         public let id: String
         public let name: String
         public let createdAt: String

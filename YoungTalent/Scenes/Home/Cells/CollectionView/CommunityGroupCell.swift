@@ -101,18 +101,27 @@ class CommunityGroupCell: UICollectionViewCell {
     func setGroup(viewModel: Home.Case.ViewModel.GroupModel) {
         groupNameLabel.text = viewModel.name
         groupPhotoImageView.downloadImage(with: viewModel.groupPhoto)
+        guard let boldFont = UIFont(
+            name: "Montserrat-Bold",
+            size: 10
+        ) else { return }
+        guard let semiboldFont = UIFont(name: "Montserrat-Semibold", size: 10) else { return }
 
         if let lastMessage = viewModel.lastMessage {
-            let lastMessageAttributedText = NSMutableAttributedString(string: lastMessage.fromUsername + " ",
-                                                                      attributes: [
-                                                                          .foregroundColor: UIColor(named: "Blue-Dark")!,
-                                                                          .font: UIFont(name: "Montserrat-Bold", size: 10)!,
-                                                                      ])
-            lastMessageAttributedText.append(NSAttributedString(string: lastMessage.message,
-                                                                attributes: [
-                                                                    .foregroundColor: UIColor(named: "Blue-Light")!,
-                                                                    .font: UIFont(name: "Montserrat-Semibold", size: 10)!,
-                                                                ]))
+            let lastMessageAttributedText = NSMutableAttributedString(
+                string: lastMessage.fromUsername + " ",
+                attributes: [
+                    .foregroundColor: UIColor(named: "Blue-Dark")!,
+                    .font: boldFont
+                ]
+            )
+            lastMessageAttributedText.append(NSAttributedString(
+                string: lastMessage.message,
+                attributes: [
+                    .foregroundColor: UIColor(named: "Blue-Light")!,
+                    .font: semiboldFont
+                ]
+            ))
             lastMessageLabel.attributedText = lastMessageAttributedText
         }
 

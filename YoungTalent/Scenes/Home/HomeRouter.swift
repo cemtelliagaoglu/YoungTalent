@@ -22,7 +22,8 @@ final class HomeRouter: HomeRoutingLogic, HomeDataPassing {
     func routeToChat(index: Int) {
         let storyboard = UIStoryboard(name: "Chat", bundle: nil)
         guard let destinationVC = storyboard.instantiateViewController(
-            withIdentifier: "ChatViewController") as? ChatViewController else { return }
+            withIdentifier: "ChatViewController"
+        ) as? ChatViewController else { return }
         destinationVC.router?.dataStore?.contact = dataStore?.contacts?[index]
         viewController?.navigationController?.pushViewController(destinationVC, animated: true)
     }

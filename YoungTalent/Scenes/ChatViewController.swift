@@ -68,7 +68,10 @@ final class ChatViewController: UIViewController {
     private func setupView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "ChatCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: chatCellIdentifier)
+        collectionView.register(
+            UINib(nibName: "ChatCollectionViewCell", bundle: nil),
+            forCellWithReuseIdentifier: chatCellIdentifier
+        )
     }
 
     private func updateView(images: [UIImage]) {
@@ -92,52 +95,81 @@ final class ChatViewController: UIViewController {
     }
 
     private func createCompositionalLayout1() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalHeight(1)
+        )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = .init(top: 1, leading: 1, bottom: 1, trailing: 1)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                               heightDimension: .fractionalHeight(1))
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalHeight(1)
+        )
 
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
-                                                       repeatingSubitem: item,
-                                                       count: 1)
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            repeatingSubitem: item,
+            count: 1
+        )
         let section = NSCollectionLayoutSection(group: group)
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
     }
 
     private func createCompositionalLayout2() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalHeight(1)
+        )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = .init(top: 1, leading: 1, bottom: 1, trailing: 1)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1 / 2),
-                                               heightDimension: .fractionalHeight(1))
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1 / 2),
+            heightDimension: .fractionalHeight(1)
+        )
 
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
-                                                       repeatingSubitem: item,
-                                                       count: 2)
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            repeatingSubitem: item,
+            count: 2
+        )
         let section = NSCollectionLayoutSection(group: group)
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
     }
 
     private func createCompositionalLayout3() -> UICollectionViewLayout {
-        let sizeForDouble = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let sizeForDouble = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalHeight(1)
+        )
         let doubleItems = NSCollectionLayoutItem(layoutSize: sizeForDouble)
         doubleItems.contentInsets = .init(top: 1, leading: 1, bottom: 1, trailing: 1)
-        let groupSizeForDouble = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1 / 2),
-                                                        heightDimension: .fractionalHeight(1 / 2))
+        let groupSizeForDouble = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1 / 2),
+            heightDimension: .fractionalHeight(1 / 2)
+        )
 
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSizeForDouble,
-                                                       repeatingSubitem: doubleItems,
-                                                       count: 2)
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSizeForDouble,
+            repeatingSubitem: doubleItems,
+            count: 2
+        )
 
-        let sizeForSingle = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1 / 2))
+        let sizeForSingle = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalHeight(1 / 2)
+        )
         let singleItem = NSCollectionLayoutItem(layoutSize: sizeForSingle)
         singleItem.contentInsets = .init(top: 1, leading: 1, bottom: 1, trailing: 1)
 
-        let mainGroup = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)),
-                                                         subitems: [group, singleItem])
+        let mainGroup = NSCollectionLayoutGroup.vertical(
+            layoutSize: NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(1),
+                heightDimension: .fractionalHeight(1)
+            ),
+            subitems: [group, singleItem]
+        )
 
         let section = NSCollectionLayoutSection(group: mainGroup)
         let layout = UICollectionViewCompositionalLayout(section: section)
@@ -145,15 +177,22 @@ final class ChatViewController: UIViewController {
     }
 
     private func createCompositionalLayout4() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalHeight(1)
+        )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = .init(top: 1, leading: 1, bottom: 1, trailing: 1)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1 / 2),
-                                               heightDimension: .fractionalHeight(1 / 2))
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1 / 2),
+            heightDimension: .fractionalHeight(1 / 2)
+        )
 
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
-                                                       repeatingSubitem: item,
-                                                       count: 2)
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            repeatingSubitem: item,
+            count: 2
+        )
         let section = NSCollectionLayoutSection(group: group)
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
@@ -202,8 +241,14 @@ extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return imageCount > 4 ? 4 : imageCount
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: chatCellIdentifier, for: indexPath) as? ChatCollectionViewCell else { return UICollectionViewCell() }
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: chatCellIdentifier,
+            for: indexPath
+        ) as? ChatCollectionViewCell else { return UICollectionViewCell() }
         guard let images else { return cell }
 
         cell.morePhotosView.isHidden = true

@@ -24,9 +24,11 @@ final class HomePresenter: HomePresentationLogic {
 
             let users = group.users?.map { user in
 
-                Home.Case.ViewModel.User(nameSurname: user.nameSurname,
-                                         profilePhoto: user.profilePhoto,
-                                         title: user.title)
+                Home.Case.ViewModel.User(
+                    nameSurname: user.nameSurname,
+                    profilePhoto: user.profilePhoto,
+                    title: user.title
+                )
             }
 
             let lastMessage = Home.Case.ViewModel.GroupLastMessage(
@@ -34,18 +36,22 @@ final class HomePresenter: HomePresentationLogic {
                 message: group.lastMessage?.message ?? ""
             )
 
-            groupsViewModels.append(Home.Case.ViewModel.GroupModel(name: group.name,
-                                                                   groupPhoto: group.groupPhoto,
-                                                                   users: users,
-                                                                   lastMessage: lastMessage))
+            groupsViewModels.append(Home.Case.ViewModel.GroupModel(
+                name: group.name,
+                groupPhoto: group.groupPhoto,
+                users: users,
+                lastMessage: lastMessage
+            ))
         }
         viewController?.displayGroups(groupViewModels: groupsViewModels)
     }
 
     func presentCurrentUser(userModel: User) {
-        let userViewModel = Home.Case.ViewModel.User(nameSurname: userModel.nameSurname,
-                                                     profilePhoto: userModel.profilePhoto,
-                                                     title: userModel.title)
+        let userViewModel = Home.Case.ViewModel.User(
+            nameSurname: userModel.nameSurname,
+            profilePhoto: userModel.profilePhoto,
+            title: userModel.title
+        )
         viewController?.setCurrentUser(userViewModel: userViewModel)
     }
 

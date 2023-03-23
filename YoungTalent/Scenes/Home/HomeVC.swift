@@ -73,13 +73,23 @@ final class HomeVC: UIViewController {
         // collectionView
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "CommunityMainCell", bundle: nil), forCellWithReuseIdentifier: collectionViewCellIdentifier)
-        collectionView.register(CommunityHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: collectionViewHeaderIdentifier)
+        collectionView.register(
+            UINib(nibName: "CommunityMainCell", bundle: nil),
+            forCellWithReuseIdentifier: collectionViewCellIdentifier
+        )
+        collectionView.register(
+            CommunityHeader.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: collectionViewHeaderIdentifier
+        )
 
         // tableView
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "ChatTableViewCell", bundle: nil), forCellReuseIdentifier: tableViewCellIdentifier)
+        tableView.register(
+            UINib(nibName: "ChatTableViewCell", bundle: nil),
+            forCellReuseIdentifier: tableViewCellIdentifier
+        )
         tableView.separatorStyle = .none
         tableView.rowHeight = 75
         // currentUser
@@ -100,7 +110,9 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellIdentifier, for: indexPath) as? ChatTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView
+            .dequeueReusableCell(withIdentifier: tableViewCellIdentifier, for: indexPath) as? ChatTableViewCell
+        else { return UITableViewCell() }
         guard let userViewModel = usersViewModel?[indexPath.row] else { return cell }
         cell.setViewModel(viewModel: userViewModel)
         return cell
@@ -118,8 +130,14 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
         1
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCellIdentifier, for: indexPath) as? CommunityMainCell else { return UICollectionViewCell() }
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: collectionViewCellIdentifier,
+            for: indexPath
+        ) as? CommunityMainCell else { return UICollectionViewCell() }
 
         return cell
     }
@@ -128,12 +146,24 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
         CGSize(width: UIScreen.main.bounds.size.width, height: 165)
     }
 
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind _: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: collectionViewHeaderIdentifier, for: indexPath) as? CommunityHeader else { return UICollectionReusableView() }
+    func collectionView(
+        _ collectionView: UICollectionView,
+        viewForSupplementaryElementOfKind _: String,
+        at indexPath: IndexPath
+    ) -> UICollectionReusableView {
+        guard let header = collectionView.dequeueReusableSupplementaryView(
+            ofKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: collectionViewHeaderIdentifier,
+            for: indexPath
+        ) as? CommunityHeader else { return UICollectionReusableView() }
         return header
     }
 
-    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, referenceSizeForHeaderInSection _: Int) -> CGSize {
+    func collectionView(
+        _: UICollectionView,
+        layout _: UICollectionViewLayout,
+        referenceSizeForHeaderInSection _: Int
+    ) -> CGSize {
         CGSize(width: UIScreen.main.bounds.size.width, height: 16)
     }
 }
@@ -147,7 +177,8 @@ extension HomeVC: HomeDisplayLogic {
 
     func displayGroups(groupViewModels: [Home.Case.ViewModel.GroupModel]) {
         DispatchQueue.main.async {
-            let cell = self.collectionView.cellForItem(at: IndexPath(row: 0, section: 0)) as! CommunityMainCell
+            guard let cell = self.collectionView.cellForItem(at: IndexPath(row: 0, section: 0)) as? CommunityMainCell
+            else { return }
             cell.groupViewModels = groupViewModels
         }
     }
