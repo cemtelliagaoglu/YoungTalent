@@ -16,16 +16,15 @@ protocol ChatDataStore: AnyObject {
 }
 
 final class ChatInteractor: ChatBusinessLogic, ChatDataStore {
-    
     var presenter: ChatPresentationLogic?
     var worker: ChatWorkingLogic = ChatWorker()
     var contact: User?
-    
+
     func fetchData() {
         // fetch contact
-        if let contact = contact{
+        if let contact {
             presenter?.presentContact(.init(user: contact))
-        }else{
+        } else {
             presenter?.presentErrorMessage("Failed to load contact info")
         }
     }

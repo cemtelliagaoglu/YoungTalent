@@ -18,12 +18,12 @@ public protocol Endpoint {
     var queryItems: [URLQueryItem]? { get }
 }
 
-extension Endpoint {
-    public var scheme: String {
-        return "http"
+public extension Endpoint {
+    var scheme: String {
+        "http"
     }
 
-    public var host: String {
-        return "momentumv2.mobven.com"
+    var host: String {
+        "momentumv2.mobven.com"
     }
 }

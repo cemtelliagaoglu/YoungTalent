@@ -8,12 +8,11 @@
 import Foundation
 
 protocol OTPWorkingLogic: AnyObject {
-    func verifyOTPCode(_ otpCode: String, completion: @escaping(() -> ()))
+    func verifyOTPCode(_ otpCode: String, completion: @escaping (() -> Void))
 }
 
 final class OTPWorker: OTPWorkingLogic {
-    
-    func verifyOTPCode(_ otpCode: String, completion: @escaping (() -> ())) {
+    func verifyOTPCode(_: String, completion: @escaping (() -> Void)) {
         completion()
     }
 }

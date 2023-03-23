@@ -9,22 +9,13 @@ import Foundation
 
 // swiftlint:disable nesting
 enum Welcome {
-    
     enum Case {
-        
-        struct Request {
-            
-        }
-        
-        struct Response {
-            
-        }
-        
-        struct ViewModel {
-            
-        }
-        
+        struct Request {}
+
+        struct Response {}
+
+        struct ViewModel {}
     }
-    
 }
+
 // swiftlint:enable nesting

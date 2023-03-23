@@ -13,14 +13,13 @@ protocol LoginPresentationLogic: AnyObject {
 }
 
 final class LoginPresenter: LoginPresentationLogic {
-    
     weak var viewController: LoginDisplayLogic?
-    
+
     func presentLoginSucceed() {
         viewController?.stopLoadingAnimation()
         viewController?.displayLogin()
     }
-    
+
     func presentErrorMessage(_ errorMessage: String) {
         viewController?.stopLoadingAnimation()
         viewController?.displayErrorMessage(errorMessage)

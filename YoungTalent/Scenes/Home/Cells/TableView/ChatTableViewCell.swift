@@ -8,38 +8,40 @@
 import UIKit
 
 class ChatTableViewCell: UITableViewCell {
-    //MARK: - Properties
+    // MARK: - Properties
 
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var categoryColorView: UIView!
-    
-    var userViewModel: Home.Case.ViewModel.User?{
-        didSet{
+    @IBOutlet var profileImageView: UIImageView!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var messageLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var categoryColorView: UIView!
+
+    var userViewModel: Home.Case.ViewModel.User? {
+        didSet {
             updateView()
         }
     }
-    //MARK: - Lifecycle
+
+    // MARK: - Lifecycle
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
-        
     }
-    //MARK: - Handler
-    func setViewModel(viewModel: Home.Case.ViewModel.User){
-        self.userViewModel = viewModel
+
+    // MARK: - Handler
+
+    func setViewModel(viewModel: Home.Case.ViewModel.User) {
+        userViewModel = viewModel
     }
-    
-    func updateView(){
-        guard let viewModel = self.userViewModel else{ return }
+
+    func updateView() {
+        guard let viewModel = userViewModel else { return }
         DispatchQueue.main.async {
             self.nameLabel.text = viewModel.fullName
             self.profileImageView.downloadImage(with: viewModel.profilePhoto)

@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol RegisterWorkingLogic: AnyObject {
-    
-}
+protocol RegisterWorkingLogic: AnyObject {}
 
-final class RegisterWorker: RegisterWorkingLogic {
-    
-}
+final class RegisterWorker: RegisterWorkingLogic {}

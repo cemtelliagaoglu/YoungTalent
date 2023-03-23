@@ -13,12 +13,12 @@ protocol WelcomePresentationLogic: AnyObject {
 }
 
 final class WelcomePresenter: WelcomePresentationLogic {
-    
     weak var viewController: WelcomeDisplayLogic?
-    
+
     func presentConfigurations(isDarkMode: Bool?) {
         viewController?.setupView(isDarkMode: isDarkMode ?? false)
     }
+
     func presentDarkMode(_ isDarkMode: Bool) {
         viewController?.updateView(isDarkMode: isDarkMode)
     }

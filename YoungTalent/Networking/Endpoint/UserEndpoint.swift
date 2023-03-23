@@ -7,17 +7,16 @@
 
 import Foundation
 
-public enum UserEndpoint{
+public enum UserEndpoint {
     case currentUser
     case allUsers
 }
 
 extension UserEndpoint: Endpoint {
-    
     public var queryItems: [URLQueryItem]? {
-        return nil
+        nil
     }
-    
+
     public var path: String {
         switch self {
         case .currentUser:
@@ -26,11 +25,11 @@ extension UserEndpoint: Endpoint {
             return "/api/v1/auth"
         }
     }
-    
-    public var port: Int{
-        return 7076
+
+    public var port: Int {
+        7076
     }
-    
+
     public var method: RequestMethod {
         switch self {
         case .currentUser:
@@ -39,17 +38,15 @@ extension UserEndpoint: Endpoint {
             return .get
         }
     }
-    
-    public var body: [String : String]? {
-        return nil
+
+    public var body: [String: String]? {
+        nil
     }
 
     public var header: [String: String]? {
         // TODO: Access Token to use in Bearer header, could be get and set via Singleton Keychain Manager
-        guard let accessToken = UserDefaults.standard.value(forKey: "accessToken") as? String else{ return nil }
-        
+        guard let accessToken = UserDefaults.standard.value(forKey: "accessToken") as? String else { return nil }
+
         return ["Authorization": "Bearer \(accessToken)"]
     }
-    
 }
-

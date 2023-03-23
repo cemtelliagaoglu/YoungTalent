@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol ChatWorkingLogic: AnyObject {
-    
-}
+protocol ChatWorkingLogic: AnyObject {}
 
-final class ChatWorker: ChatWorkingLogic {
-    
-}
+final class ChatWorker: ChatWorkingLogic {}

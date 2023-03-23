@@ -17,14 +17,13 @@ protocol OTPDataPassing: AnyObject {
 }
 
 final class OTPRouter: OTPRoutingLogic, OTPDataPassing {
-    
     weak var viewController: OTPVC?
     var dataStore: OTPDataStore?
-    
+
     func popVC() {
         viewController?.navigationController?.popViewController(animated: true)
     }
-    
+
     func routeToHome() {
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         let destinationVC = storyboard.instantiateViewController(withIdentifier: "HomeVC")

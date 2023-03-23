@@ -16,14 +16,14 @@ protocol HomeDataPassing: AnyObject {
 }
 
 final class HomeRouter: HomeRoutingLogic, HomeDataPassing {
-    
     weak var viewController: HomeVC?
     var dataStore: HomeDataStore?
-    
+
     func routeToChat(index: Int) {
         let storyboard = UIStoryboard(name: "Chat", bundle: nil)
-        let destinationVC = storyboard.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
-        destinationVC.router?.dataStore?.contact = self.dataStore?.contacts?[index]
-        self.viewController?.navigationController?.pushViewController(destinationVC, animated: true)
+        guard let destinationVC = storyboard.instantiateViewController(
+            withIdentifier: "ChatViewController") as? ChatViewController else { return }
+        destinationVC.router?.dataStore?.contact = dataStore?.contacts?[index]
+        viewController?.navigationController?.pushViewController(destinationVC, animated: true)
     }
 }

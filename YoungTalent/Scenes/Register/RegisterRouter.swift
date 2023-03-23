@@ -17,18 +17,16 @@ protocol RegisterDataPassing: AnyObject {
 }
 
 final class RegisterRouter: RegisterRoutingLogic, RegisterDataPassing {
-    
     weak var viewController: RegisterVC?
     var dataStore: RegisterDataStore?
-    
+
     func popVC() {
         viewController?.navigationController?.popViewController(animated: true)
     }
-    
+
     func routeToHome() {
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         let destinationVC = storyboard.instantiateViewController(withIdentifier: "HomeVC")
         viewController?.navigationController?.pushViewController(destinationVC, animated: true)
     }
-    
 }

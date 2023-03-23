@@ -11,30 +11,34 @@ protocol RegisterDisplayLogic: AnyObject {
     func setupView()
 }
 
-class RegisterVC: UIViewController{
-    //MARK: - Properties
-    
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var nextButton: UIButton!
-    
+class RegisterVC: UIViewController {
+    // MARK: - Properties
+
+    @IBOutlet var nameTextField: UITextField!
+    @IBOutlet var nextButton: UIButton!
+
     var interactor: RegisterBusinessLogic?
     var router: (RegisterRoutingLogic & RegisterDataPassing)?
-    //MARK: - Lifecycle
+
+    // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor?.notifyViewDidLoad()
     }
-    
+
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
-    //MARK: - Handlers
+
+    // MARK: - Handlers
+
     private func setup() {
         let viewController = self
         let interactor = RegisterInteractor()
@@ -48,30 +52,32 @@ class RegisterVC: UIViewController{
         router.dataStore = interactor
     }
 
-    @objc func hideKeyboard(){
+    @objc func hideKeyboard() {
         nameTextField.endEditing(true)
     }
-    
-    @IBAction func nextButtonPressed(_ sender: UIButton) {
+
+    @IBAction func nextButtonPressed(_: UIButton) {
         router?.routeToHome()
     }
-    
-    @IBAction func handleBackButtonPressed(_ sender: UIButton) {
+
+    @IBAction func handleBackButtonPressed(_: UIButton) {
         router?.popVC()
     }
-    
 }
-//MARK: - TextFieldDelegate
-extension RegisterVC: UITextFieldDelegate{
+
+// MARK: - TextFieldDelegate
+
+extension RegisterVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         nextButtonPressed(nextButton)
         return false
     }
 }
-//MARK: - DisplayLogic
-extension RegisterVC: RegisterDisplayLogic{
-    
+
+// MARK: - DisplayLogic
+
+extension RegisterVC: RegisterDisplayLogic {
     func setupView() {
         // nameTextField
         nameTextField.delegate = self

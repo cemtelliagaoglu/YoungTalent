@@ -8,14 +8,12 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
 
-
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+    func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        guard let isDarkMode = UserDefaults.standard.object(forKey: "isDarkMode") as? Bool else{ return }
-        
+        guard let isDarkMode = UserDefaults.standard.object(forKey: "isDarkMode") as? Bool else { return }
+
         let window = UIWindow(windowScene: windowScene)
         let storyboard = UIStoryboard(name: "Welcome", bundle: nil)
         let welcomeViewController = storyboard.instantiateViewController(withIdentifier: "WelcomeVC")
@@ -24,8 +22,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = rootViewController
         self.window = window
         window.makeKeyAndVisible()
-        window.overrideUserInterfaceStyle = isDarkMode ? .dark: .light
+        window.overrideUserInterfaceStyle = isDarkMode ? .dark : .light
     }
-
 }
-

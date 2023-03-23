@@ -17,15 +17,15 @@ protocol WelcomeDataPassing: AnyObject {
 }
 
 final class WelcomeRouter: WelcomeRoutingLogic, WelcomeDataPassing {
-    
     weak var viewController: WelcomeVC?
     var dataStore: WelcomeDataStore?
-    
+
     func routeToLogin() {
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
         let destinationVC = storyboard.instantiateViewController(withIdentifier: "LoginVC")
         viewController?.navigationController?.pushViewController(destinationVC, animated: true)
     }
+
     func routeToRegister() {
         let storyboard = UIStoryboard(name: "Register", bundle: nil)
         let destinationVC = storyboard.instantiateViewController(withIdentifier: "RegisterVC")

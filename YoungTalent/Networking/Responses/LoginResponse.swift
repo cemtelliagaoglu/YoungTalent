@@ -18,7 +18,6 @@ public struct LoginResponse: Codable {
         public let id: String
         public let nameSurname: String
         public let title: String
-
         public let profilePhoto: String?
         public let accessToken: String
         public let refreshToken: String

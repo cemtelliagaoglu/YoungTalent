@@ -18,20 +18,18 @@ protocol ChatDataPassing: AnyObject {
 }
 
 final class ChatRouter: ChatRoutingLogic, ChatDataPassing {
-    
     weak var viewController: ChatViewController?
     var dataStore: ChatDataStore?
-    
-    func routeToPHPicker(){
+
+    func routeToPHPicker() {
         var config = PHPickerConfiguration()
         config.selectionLimit = 20
         let pickerViewController = PHPickerViewController(configuration: config)
         pickerViewController.delegate = viewController
         viewController?.present(pickerViewController, animated: true)
     }
-    
+
     func popVC() {
         viewController?.navigationController?.popViewController(animated: true)
     }
-    
 }

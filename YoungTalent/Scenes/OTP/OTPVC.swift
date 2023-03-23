@@ -12,36 +12,39 @@ protocol OTPDisplayLogic: AnyObject {
     func displaySuccess()
 }
 
-class OTPVC: UIViewController{
-    //MARK: - Properties
-    
-    @IBOutlet weak var textField1: UITextField!
-    @IBOutlet weak var textField2: UITextField!
-    @IBOutlet weak var textField3: UITextField!
-    @IBOutlet weak var textField4: UITextField!
-    
+class OTPVC: UIViewController {
+    // MARK: - Properties
+
+    @IBOutlet var textField1: UITextField!
+    @IBOutlet var textField2: UITextField!
+    @IBOutlet var textField3: UITextField!
+    @IBOutlet var textField4: UITextField!
+
     var interactor: OTPBusinessLogic?
     var router: (OTPRoutingLogic & OTPDataPassing)?
-   
-    //MARK: - Lifecycle
+
+    // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupTextFields()
     }
-    
+
     // MARK: Object lifecycle
-    
+
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
+
     // MARK: Setup
+
     private func setup() {
         let viewController = self
         let interactor = OTPInteractor()
@@ -54,32 +57,33 @@ class OTPVC: UIViewController{
         router.viewController = viewController
         router.dataStore = interactor
     }
-    //MARK: - Handlers
-    func setupTextFields(){
+
+    // MARK: - Handlers
+
+    func setupTextFields() {
         textField1.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         textField2.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         textField3.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         textField4.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
-    
-    func setupView(){
+
+    func setupView() {
         // keyboard
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.numberOfTapsRequired = 1
         view.addGestureRecognizer(tap)
-        
     }
-    
-    @objc func dismissKeyboard(){
+
+    @objc func dismissKeyboard() {
         textField1.endEditing(true)
         textField2.endEditing(true)
         textField3.endEditing(true)
         textField4.endEditing(true)
     }
-    @objc func textDidChange(_ textField: UITextField){
-        
-        if textField.text!.count == 1{
-            switch textField{
+
+    @objc func textDidChange(_ textField: UITextField) {
+        if textField.text!.count == 1 {
+            switch textField {
             case textField1:
                 textField2.becomeFirstResponder()
             case textField2:
@@ -91,8 +95,8 @@ class OTPVC: UIViewController{
             default:
                 break
             }
-        }else{
-            switch textField{
+        } else {
+            switch textField {
             case textField4:
                 textField3.becomeFirstResponder()
             case textField3:
@@ -106,30 +110,30 @@ class OTPVC: UIViewController{
             }
         }
     }
-    
-    @IBAction func handleBackButtonTapped(_ sender: UIButton) {
+
+    @IBAction func handleBackButtonTapped(_: UIButton) {
         router?.popVC()
     }
-    
-    @IBAction func handleNextButtonTapped(_ sender: UIButton) {
+
+    @IBAction func handleNextButtonTapped(_: UIButton) {
         guard textField1.hasText,
               textField2.hasText,
               textField3.hasText,
-              textField4.hasText else{ return }
-        
+              textField4.hasText else { return }
+
         let otpCode = "\(textField1.text!)\(textField2.text!)\(textField3.text!)\(textField4.text!)"
         print("Next Button Tapped... OTP Code: \(otpCode)")
         interactor?.verifyOTP(otpCode)
     }
-    
 }
-//MARK: - DisplayLogic
-extension OTPVC: OTPDisplayLogic{
-    
+
+// MARK: - DisplayLogic
+
+extension OTPVC: OTPDisplayLogic {
     func displaySuccess() {
         router?.routeToHome()
     }
-    
+
     func displayErrorMessage(_ errorMessage: String) {
         let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Close", style: .cancel))

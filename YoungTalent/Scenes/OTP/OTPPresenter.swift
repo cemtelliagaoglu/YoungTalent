@@ -13,13 +13,12 @@ protocol OTPPresentationLogic: AnyObject {
 }
 
 final class OTPPresenter: OTPPresentationLogic {
-    
     weak var viewController: OTPDisplayLogic?
-    
+
     func presentSuccess() {
         viewController?.displaySuccess()
     }
-    
+
     func presentErrorMessage(_ errorMessage: String) {
         viewController?.displayErrorMessage(errorMessage)
     }

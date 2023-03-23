@@ -7,16 +7,14 @@
 
 import UIKit
 
-extension UIImageView{
-    
-    func downloadImage(with urlPath: String?){
-        
-        if let urlPath = urlPath{
+extension UIImageView {
+    func downloadImage(with urlPath: String?) {
+        if let urlPath {
             let request = URLRequest(url: URL(string: "http://\(urlPath)")!)
-            
-            URLSession.shared.dataTask(with: request, completionHandler: ({ (data, response, error) in
-                
-                if error != nil{
+
+            URLSession.shared.dataTask(with: request, completionHandler: ({ data, _, error in
+
+                if error != nil {
                     print(error!)
                 }
                 if let imageData = data {
@@ -24,9 +22,8 @@ extension UIImageView{
                         self.image = UIImage(data: imageData) ?? UIImage(named: "personalEmpty")
                     }
                 }
-            })
-            ).resume()
-        }else{
+            })).resume()
+        } else {
             // if urlPath is nil
             DispatchQueue.main.async {
                 self.image = UIImage(named: "personalEmpty")

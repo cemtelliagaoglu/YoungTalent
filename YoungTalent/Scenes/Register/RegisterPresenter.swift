@@ -12,9 +12,8 @@ protocol RegisterPresentationLogic: AnyObject {
 }
 
 final class RegisterPresenter: RegisterPresentationLogic {
-    
     weak var viewController: RegisterDisplayLogic?
-    
+
     func presentConfigurations() {
         viewController?.setupView()
     }

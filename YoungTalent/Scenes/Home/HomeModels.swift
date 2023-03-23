@@ -9,45 +9,35 @@ import Foundation
 
 // swiftlint:disable nesting
 enum Home {
-    
     enum Case {
-        
-        struct Request {
-            
-        }
-        
-        struct Response {
-            
-        }
-        
-        struct ViewModel {
-            
-            struct GroupModel{
+        struct Request {}
+
+        struct Response {}
+
+        enum ViewModel {
+            struct GroupModel {
                 let name: String
                 let groupPhoto: String?
                 let users: [User]?
                 let lastMessage: GroupLastMessage?
             }
-            struct GroupLastMessage{
+
+            struct GroupLastMessage {
                 let fromUsername: String
                 let message: String
             }
-            struct User{
+
+            struct User {
                 public let nameSurname: String
                 public let profilePhoto: String?
                 public let title: String
-                
-                public var fullName: String?{
-                    return "\(nameSurname) (\(title))"
+
+                public var fullName: String? {
+                    "\(nameSurname) (\(title))"
                 }
             }
         }
-        
-        
     }
-    
 }
+
 // swiftlint:enable nesting
-
-
-

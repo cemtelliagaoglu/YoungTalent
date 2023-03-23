@@ -9,30 +9,25 @@ import Foundation
 
 // swiftlint:disable nesting
 enum Chat {
-    
     enum Case {
-        
-        struct Request {
-            
-        }
-        
+        struct Request {}
+
         struct Response {
             let user: User
         }
-        
-        struct ViewModel {
-            struct User{
+
+        enum ViewModel {
+            struct User {
                 let nameSurname: String
                 let profilePhoto: String?
                 let title: String
-                
-                var fullName: String?{
-                    return "\(nameSurname) (\(title))"
+
+                var fullName: String? {
+                    "\(nameSurname) (\(title))"
                 }
             }
         }
-        
     }
-    
 }
+
 // swiftlint:enable nesting

@@ -8,8 +8,8 @@
 import UIKit
 
 class CommunityHeader: UICollectionReusableView {
-    //MARK: - Properties
-    
+    // MARK: - Properties
+
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Community"
@@ -18,7 +18,7 @@ class CommunityHeader: UICollectionReusableView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     lazy var moreButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(systemName: "chevron.right"), for: .normal)
@@ -29,7 +29,7 @@ class CommunityHeader: UICollectionReusableView {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
+
     lazy var backButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
@@ -40,7 +40,7 @@ class CommunityHeader: UICollectionReusableView {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
+
     lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [backButton, titleLabel, moreButton])
         backButton.isHidden = true
@@ -51,33 +51,37 @@ class CommunityHeader: UICollectionReusableView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
-    
-    //MARK: - Lifecycle
+
+    // MARK: - Lifecycle
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
     }
 
-    required init?(coder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    //MARK: - Handlers
-    @objc func handleMoreButtonPressed(){
+
+    // MARK: - Handlers
+
+    @objc func handleMoreButtonPressed() {
         print("More Groups Button Pressed...")
     }
-    
-    @objc func handleBackButtonPressed(){
+
+    @objc func handleBackButtonPressed() {
         print("Back Button Pressed...")
     }
-    
-    func setupView(){
+
+    func setupView() {
         addSubview(stackView)
-        
+
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: topAnchor),
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
 }

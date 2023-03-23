@@ -16,24 +16,22 @@ protocol LoginDataStore: AnyObject {
 }
 
 final class LoginInteractor: LoginBusinessLogic, LoginDataStore {
-    
     var presenter: LoginPresentationLogic?
     var worker: LoginWorkingLogic = LoginWorker()
     var currentUser: LoginResponse.LoginBody?
-    
+
     func requestLoginWith(_ email: String, _ password: String) {
-        
-        self.worker.requestLogin(email: email, password: password) { result in
-            switch result{
-            case .success(let response):
-                if response.error == true{
+        worker.requestLogin(email: email, password: password) { result in
+            switch result {
+            case let .success(response):
+                if response.error == true {
                     self.presenter?.presentErrorMessage(response.reason)
-                }else{
+                } else {
                     UserDefaults.standard.set(response.body?.accessToken, forKey: "accessToken")
                     self.currentUser = response.body
                     self.presenter?.presentLoginSucceed()
                 }
-            case .failure(let error):
+            case let .failure(error):
                 self.presenter?.presentErrorMessage(error.customMessage)
             }
         }

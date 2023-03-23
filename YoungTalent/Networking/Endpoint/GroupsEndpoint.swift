@@ -14,7 +14,6 @@ public enum GroupsEndpoint {
 }
 
 extension GroupsEndpoint: Endpoint {
-    
     public var queryItems: [URLQueryItem]? {
         switch self {
         case .all:
@@ -25,7 +24,7 @@ extension GroupsEndpoint: Endpoint {
             return nil
         }
     }
-    
+
     public var path: String {
         switch self {
         case .all:
@@ -34,11 +33,11 @@ extension GroupsEndpoint: Endpoint {
             return ""
         }
     }
-    
-    public var port: Int{
-        return 7076
+
+    public var port: Int {
+        7076
     }
-    
+
     public var method: RequestMethod {
         switch self {
         case .all:
@@ -47,15 +46,15 @@ extension GroupsEndpoint: Endpoint {
             return .get
         }
     }
-    
-    public var body: [String : String]? {
-        return nil
+
+    public var body: [String: String]? {
+        nil
     }
 
     public var header: [String: String]? {
         // TODO: Access Token to use in Bearer header, could be get and set via Singleton Keychain Manager
-        guard let accessToken = UserDefaults.standard.value(forKey: "accessToken") as? String else{ return nil }
-        
+        guard let accessToken = UserDefaults.standard.value(forKey: "accessToken") as? String else { return nil }
+
         switch self {
         case .all:
             return [
@@ -65,5 +64,4 @@ extension GroupsEndpoint: Endpoint {
             return nil
         }
     }
-    
 }
