@@ -41,6 +41,8 @@
 		849AC5E929C2290800C96758 /* OTPWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AC5E229C2290800C96758 /* OTPWorker.swift */; };
 		849AC5EA29C2290800C96758 /* OTPRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AC5E329C2290800C96758 /* OTPRouter.swift */; };
 		84A7023029CD973B0012F539 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7022F29CD973B0012F539 /* UIViewController+Extension.swift */; };
+		84A7023229CDBA2F0012F539 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7023129CDBA2F0012F539 /* KeychainHelper.swift */; };
+		84A7023429CDBD210012F539 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7023329CDBD210012F539 /* Constants.swift */; };
 		84BAB81029AF5F8600F5CDCC /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BAB80F29AF5F8600F5CDCC /* RegisterVC.swift */; };
 		84BAB81229AF5FB600F5CDCC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BAB81129AF5FB600F5CDCC /* UIView+Extension.swift */; };
 		84BAB81529AF637A00F5CDCC /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84BAB81329AF637A00F5CDCC /* Montserrat-Bold.ttf */; };
@@ -142,6 +144,8 @@
 		849AC5E229C2290800C96758 /* OTPWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPWorker.swift; sourceTree = "<group>"; };
 		849AC5E329C2290800C96758 /* OTPRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPRouter.swift; sourceTree = "<group>"; };
 		84A7022F29CD973B0012F539 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		84A7023129CDBA2F0012F539 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		84A7023329CDBD210012F539 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		84BAB80F29AF5F8600F5CDCC /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		84BAB81129AF5FB600F5CDCC /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		84BAB81329AF637A00F5CDCC /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
@@ -342,6 +346,8 @@
 				84BAB81129AF5FB600F5CDCC /* UIView+Extension.swift */,
 				84C2C84129BF140700F139D8 /* UIImageView+Extension.swift */,
 				84A7022F29CD973B0012F539 /* UIViewController+Extension.swift */,
+				84A7023129CDBA2F0012F539 /* KeychainHelper.swift */,
+				84A7023329CDBD210012F539 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -652,6 +658,8 @@
 				84C8EBD129C0CDB80090AFCE /* LoginModels.swift in Sources */,
 				84C2C85329BF7A1000F139D8 /* HomeInteractor.swift in Sources */,
 				84EB4E2829BB1F57002C64CE /* GroupsEndpoint.swift in Sources */,
+				84A7023229CDBA2F0012F539 /* KeychainHelper.swift in Sources */,
+				84A7023429CDBD210012F539 /* Constants.swift in Sources */,
 				84BAB81029AF5F8600F5CDCC /* RegisterVC.swift in Sources */,
 				84C8EBCF29C0CDB80090AFCE /* LoginPresenter.swift in Sources */,
 				848ECFA529C31D2F003EB8EB /* ChatPresenter.swift in Sources */,
