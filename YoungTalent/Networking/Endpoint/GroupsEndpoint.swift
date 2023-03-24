@@ -52,8 +52,11 @@ extension GroupsEndpoint: Endpoint {
     }
 
     public var header: [String: String]? {
-        // TODO: Access Token to use in Bearer header, could be get and set via Singleton Keychain Manager
-        guard let accessToken = UserDefaults.standard.value(forKey: "accessToken") as? String else { return nil }
+        guard let tokenData = KeychainHelper.shared.loadData(
+            service: KeychainConstants.service,
+            account: KeychainConstants.account
+        ) else { return nil }
+        guard let accessToken = String(data: tokenData, encoding: .utf8) else { return nil }
 
         switch self {
         case .all:
