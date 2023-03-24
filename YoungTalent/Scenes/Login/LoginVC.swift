@@ -139,11 +139,7 @@ extension LoginVC: LoginDisplayLogic {
     }
 
     func displayErrorMessage(_ errorMessage: String) {
-        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Close", style: .cancel))
-        DispatchQueue.main.async {
-            self.present(alert, animated: true)
-        }
+        presentAlert(title: "Error", message: errorMessage)
     }
 
     func displayLoadingAnimation() {
