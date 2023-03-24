@@ -321,6 +321,16 @@
 			path = OTP;
 			sourceTree = "<group>";
 		};
+		84A7023629CDCF160012F539 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				84BAB81129AF5FB600F5CDCC /* UIView+Extension.swift */,
+				84C2C84129BF140700F139D8 /* UIImageView+Extension.swift */,
+				84A7022F29CD973B0012F539 /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		84BAB81729AF638E00F5CDCC /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,9 +353,7 @@
 		84BAB81B29AF7D8B00F5CDCC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				84BAB81129AF5FB600F5CDCC /* UIView+Extension.swift */,
-				84C2C84129BF140700F139D8 /* UIImageView+Extension.swift */,
-				84A7022F29CD973B0012F539 /* UIViewController+Extension.swift */,
+				84A7023629CDCF160012F539 /* Extensions */,
 				84A7023129CDBA2F0012F539 /* KeychainHelper.swift */,
 				84A7023329CDBD210012F539 /* Constants.swift */,
 			);
