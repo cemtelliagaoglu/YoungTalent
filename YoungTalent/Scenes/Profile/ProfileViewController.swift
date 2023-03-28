@@ -19,6 +19,7 @@ final class ProfileViewController: UIViewController {
     @IBOutlet var genderPickerView: UIPickerView!
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var webView: WKWebView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var doneButton: UIButton!
 
     var interactor: ProfileBusinessLogic?
@@ -63,6 +64,45 @@ final class ProfileViewController: UIViewController {
         genderPickerView.delegate = self
         genderPickerView.dataSource = self
         datePicker.addTarget(self, action: #selector(dateDidSelect), for: .valueChanged)
+        setupWebView()
+        configureToolbar()
+    }
+
+    private func setupWebView() {
+        webView.navigationDelegate = self
+        guard let url = URL(string: "https://www.linkedin.com/in/cem-telliagaoglu/") else { return }
+
+        DispatchQueue.main.async { [weak self] in
+            self?.webView.load(URLRequest(url: url))
+            self?.webView.allowsBackForwardNavigationGestures = true
+        }
+    }
+
+    private func configureToolbar() {
+        navigationController?.isToolbarHidden = false
+
+        let refreshButton = UIBarButtonItem(
+            barButtonSystemItem: .refresh,
+            target: webView,
+            action: #selector(webView.reload)
+        )
+        refreshButton.tintColor = UIColor(named: "Blue-Dark")
+        let backButton = UIBarButtonItem(
+            image: UIImage(systemName: "arrow.backward"),
+            style: .plain,
+            target: webView,
+            action: #selector(webView.goBack)
+        )
+        backButton.tintColor = UIColor(named: "Blue-Dark")
+        let forwardButton = UIBarButtonItem(
+            image: UIImage(systemName: "arrow.forward"),
+            style: .plain,
+            target: webView,
+            action: #selector(webView.goForward)
+        )
+        forwardButton.tintColor = UIColor(named: "Blue-Dark")
+
+        toolbarItems = [refreshButton, backButton, forwardButton]
     }
 
     @IBAction func doneButtonPressed(_ sender: UIButton) {
@@ -124,5 +164,38 @@ extension ProfileViewController: ProfileDisplayLogic {
 
     func displayErrorMessage(_ errorMessage: String) {
         router?.showAlert(title: "Error", message: errorMessage)
+    }
+}
+
+// MARK: - WebView
+
+extension ProfileViewController: WKNavigationDelegate {
+    func webView(
+        _ webView: WKWebView,
+        decidePolicyFor navigationAction: WKNavigationAction,
+        decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
+    ) {
+        guard let url = navigationAction.request.url else {
+            decisionHandler(.cancel)
+            return
+        }
+        if url.scheme == "mailto" || url.scheme == "tel" {
+            UIApplication.shared.open(url)
+            decisionHandler(.cancel)
+        } else {
+            if url.host == "www.linkedin.com" {
+                decisionHandler(.allow)
+            } else {
+                decisionHandler(.cancel)
+            }
+        }
+    }
+
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        activityIndicator.startAnimating()
+    }
+
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        activityIndicator.stopAnimating()
     }
 }
