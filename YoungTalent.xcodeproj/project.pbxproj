@@ -34,6 +34,13 @@
 		848ECFA929C31D2F003EB8EB /* ChatRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848ECFA229C31D2F003EB8EB /* ChatRouter.swift */; };
 		848ECFAD29C34495003EB8EB /* ChatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848ECFAB29C34495003EB8EB /* ChatCollectionViewCell.swift */; };
 		848ECFAE29C34495003EB8EB /* ChatCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848ECFAC29C34495003EB8EB /* ChatCollectionViewCell.xib */; };
+		8493347529D215920051ED90 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8493346E29D215920051ED90 /* Profile.storyboard */; };
+		8493347629D215920051ED90 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493346F29D215920051ED90 /* ProfileViewController.swift */; };
+		8493347729D215920051ED90 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493347029D215920051ED90 /* ProfilePresenter.swift */; };
+		8493347829D215920051ED90 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493347129D215920051ED90 /* ProfileInteractor.swift */; };
+		8493347929D215920051ED90 /* ProfileModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493347229D215920051ED90 /* ProfileModels.swift */; };
+		8493347A29D215920051ED90 /* ProfileWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493347329D215920051ED90 /* ProfileWorker.swift */; };
+		8493347B29D215920051ED90 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493347429D215920051ED90 /* ProfileRouter.swift */; };
 		849AC5E429C2290800C96758 /* OTP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849AC5DD29C2290800C96758 /* OTP.storyboard */; };
 		849AC5E629C2290800C96758 /* OTPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AC5DF29C2290800C96758 /* OTPPresenter.swift */; };
 		849AC5E729C2290800C96758 /* OTPInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AC5E029C2290800C96758 /* OTPInteractor.swift */; };
@@ -137,6 +144,13 @@
 		848ECFA229C31D2F003EB8EB /* ChatRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRouter.swift; sourceTree = "<group>"; };
 		848ECFAB29C34495003EB8EB /* ChatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCollectionViewCell.swift; sourceTree = "<group>"; };
 		848ECFAC29C34495003EB8EB /* ChatCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCollectionViewCell.xib; sourceTree = "<group>"; };
+		8493346E29D215920051ED90 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		8493346F29D215920051ED90 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		8493347029D215920051ED90 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		8493347129D215920051ED90 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		8493347229D215920051ED90 /* ProfileModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModels.swift; sourceTree = "<group>"; };
+		8493347329D215920051ED90 /* ProfileWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWorker.swift; sourceTree = "<group>"; };
+		8493347429D215920051ED90 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		849AC5DD29C2290800C96758 /* OTP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OTP.storyboard; sourceTree = "<group>"; };
 		849AC5DF29C2290800C96758 /* OTPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPPresenter.swift; sourceTree = "<group>"; };
 		849AC5E029C2290800C96758 /* OTPInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInteractor.swift; sourceTree = "<group>"; };
@@ -307,6 +321,20 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		8493346D29D215700051ED90 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				8493346E29D215920051ED90 /* Profile.storyboard */,
+				8493346F29D215920051ED90 /* ProfileViewController.swift */,
+				8493347029D215920051ED90 /* ProfilePresenter.swift */,
+				8493347129D215920051ED90 /* ProfileInteractor.swift */,
+				8493347229D215920051ED90 /* ProfileModels.swift */,
+				8493347329D215920051ED90 /* ProfileWorker.swift */,
+				8493347429D215920051ED90 /* ProfileRouter.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		849AC5DC29C228E600C96758 /* OTP */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +423,7 @@
 				84C8EBC429C0A0C60090AFCE /* Register */,
 				84C2C85729BF7AA400F139D8 /* Home */,
 				848ECF9B29C31D0D003EB8EB /* Chat */,
+				8493346D29D215700051ED90 /* Profile */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -613,6 +642,7 @@
 				84C8EBAF29C094CE0090AFCE /* Welcome.storyboard in Resources */,
 				840E7E9029BA30D2003CE39C /* CommunityGroupCell.xib in Resources */,
 				84BAB81629AF637A00F5CDCC /* Montserrat-Regular.ttf in Resources */,
+				8493347529D215920051ED90 /* Profile.storyboard in Resources */,
 				840E7E8429B9E04A003CE39C /* ChatTableViewCell.xib in Resources */,
 				840E7E8B29B9F81F003CE39C /* CommunityMainCell.xib in Resources */,
 				840E7E8729B9F132003CE39C /* Montserrat-SemiBold.ttf in Resources */,
@@ -662,6 +692,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8493347B29D215920051ED90 /* ProfileRouter.swift in Sources */,
 				84C2C85229BF7A1000F139D8 /* HomePresenter.swift in Sources */,
 				84C8EBD129C0CDB80090AFCE /* LoginModels.swift in Sources */,
 				84C2C85329BF7A1000F139D8 /* HomeInteractor.swift in Sources */,
@@ -675,6 +706,7 @@
 				848ECFA929C31D2F003EB8EB /* ChatRouter.swift in Sources */,
 				846CF07929C63BCB008F1A26 /* LoginResponse.swift in Sources */,
 				84C8EBC029C0A0BC0090AFCE /* RegisterInteractor.swift in Sources */,
+				8493347629D215920051ED90 /* ProfileViewController.swift in Sources */,
 				849AC5E729C2290800C96758 /* OTPInteractor.swift in Sources */,
 				84C8EBA629C03C070090AFCE /* UserEndpoint.swift in Sources */,
 				84C8EBB229C094CE0090AFCE /* WelcomeInteractor.swift in Sources */,
@@ -683,6 +715,7 @@
 				84BAB81E29AF7E6E00F5CDCC /* LoginVC.swift in Sources */,
 				84C8EBB129C094CE0090AFCE /* WelcomePresenter.swift in Sources */,
 				840E7E8329B9E04A003CE39C /* ChatTableViewCell.swift in Sources */,
+				8493347829D215920051ED90 /* ProfileInteractor.swift in Sources */,
 				84C8EBC329C0A0BC0090AFCE /* RegisterRouter.swift in Sources */,
 				84EB4E2229BB0DEE002C64CE /* Endpoint.swift in Sources */,
 				84C2C84829BF651000F139D8 /* CommunityHeader.swift in Sources */,
@@ -693,12 +726,15 @@
 				84C8EBC229C0A0BC0090AFCE /* RegisterWorker.swift in Sources */,
 				846CF07729C639AB008F1A26 /* AuthEndpoint.swift in Sources */,
 				84BAB82029AF974000F5CDCC /* OTPVC.swift in Sources */,
+				8493347929D215920051ED90 /* ProfileModels.swift in Sources */,
+				8493347A29D215920051ED90 /* ProfileWorker.swift in Sources */,
 				84C2C85629BF7A1000F139D8 /* HomeRouter.swift in Sources */,
 				84C8EBD029C0CDB80090AFCE /* LoginInteractor.swift in Sources */,
 				840E7E8F29BA30D2003CE39C /* CommunityGroupCell.swift in Sources */,
 				84A7023029CD973B0012F539 /* UIViewController+Extension.swift in Sources */,
 				84C8EBD329C0CDB80090AFCE /* LoginRouter.swift in Sources */,
 				84C8EBB429C094CE0090AFCE /* WelcomeWorker.swift in Sources */,
+				8493347729D215920051ED90 /* ProfilePresenter.swift in Sources */,
 				848ECFA729C31D2F003EB8EB /* ChatModels.swift in Sources */,
 				84EB4E2629BB1A1B002C64CE /* AllGroupsResponse.swift in Sources */,
 				84C2C84229BF140700F139D8 /* UIImageView+Extension.swift in Sources */,

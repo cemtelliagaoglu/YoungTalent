@@ -9,6 +9,7 @@ import UIKit
 
 protocol HomeRoutingLogic: AnyObject {
     func routeToChat(index: Int)
+    func routeToProfile()
 }
 
 protocol HomeDataPassing: AnyObject {
@@ -26,5 +27,15 @@ final class HomeRouter: HomeRoutingLogic, HomeDataPassing {
         ) as? ChatViewController else { return }
         destinationVC.router?.dataStore?.contact = dataStore?.contacts?[index]
         viewController?.navigationController?.pushViewController(destinationVC, animated: true)
+    }
+
+    func routeToProfile() {
+        DispatchQueue.main.async { [weak self] in
+            let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+            let destinationVC = storyboard.instantiateViewController(
+                withIdentifier: "ProfileViewController"
+            )
+            self?.viewController?.navigationController?.pushViewController(destinationVC, animated: true)
+        }
     }
 }

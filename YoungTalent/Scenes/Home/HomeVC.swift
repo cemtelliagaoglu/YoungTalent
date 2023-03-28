@@ -99,6 +99,18 @@ final class HomeVC: UIViewController {
             self.currentUserNameLabel.text = currentUserViewModel.fullName
             self.currentUserProfileImageView.downloadImage(with: currentUserViewModel.profilePhoto)
         }
+        currentUserProfileImageView.addGestureRecognizer(createProfileGesture())
+        currentUserNameLabel.addGestureRecognizer(createProfileGesture())
+    }
+
+    private func createProfileGesture() -> UITapGestureRecognizer {
+        let profileTap = UITapGestureRecognizer()
+        profileTap.addTarget(self, action: #selector(handleProfileTapped))
+        return profileTap
+    }
+
+    @objc private func handleProfileTapped() {
+        router?.routeToProfile()
     }
 }
 
