@@ -31,6 +31,10 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="DTJ-jd-POx">
+                                <rect key="frame" x="188.5" y="615" width="37" height="37"/>
+                                <color key="color" name="Blue-Dark"/>
+                            </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xfu-UY-7h6">
                                 <rect key="frame" x="20" y="120" width="374" height="150"/>
                                 <subviews>
@@ -131,17 +135,20 @@
                             <constraint firstItem="DE1-LG-FhX" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Xfu-UY-7h6" secondAttribute="bottom" constant="50" id="4f4-0J-9lz"/>
                             <constraint firstItem="7bX-Hi-f6c" firstAttribute="top" secondItem="chM-je-gA4" secondAttribute="top" constant="50" id="PoL-c8-3ta"/>
                             <constraint firstItem="u1g-yx-vCT" firstAttribute="leading" secondItem="acR-sl-ate" secondAttribute="leading" constant="30" id="Q7Z-fS-nUi"/>
+                            <constraint firstItem="DTJ-jd-POx" firstAttribute="centerX" secondItem="DE1-LG-FhX" secondAttribute="centerX" id="ROc-dY-nf9"/>
                             <constraint firstItem="acR-sl-ate" firstAttribute="trailing" secondItem="7bX-Hi-f6c" secondAttribute="trailing" constant="30" id="Tmh-7A-Tco"/>
                             <constraint firstItem="Xfu-UY-7h6" firstAttribute="top" secondItem="chM-je-gA4" secondAttribute="top" constant="120" id="WDz-S0-e95"/>
                             <constraint firstItem="DE1-LG-FhX" firstAttribute="leading" secondItem="acR-sl-ate" secondAttribute="leading" id="d5b-b8-GAt"/>
                             <constraint firstItem="Xfu-UY-7h6" firstAttribute="leading" secondItem="acR-sl-ate" secondAttribute="leading" constant="20" id="gfr-sF-Akm"/>
                             <constraint firstItem="acR-sl-ate" firstAttribute="trailing" secondItem="Xfu-UY-7h6" secondAttribute="trailing" constant="20" id="hgw-gd-Qn6"/>
+                            <constraint firstItem="DTJ-jd-POx" firstAttribute="centerY" secondItem="DE1-LG-FhX" secondAttribute="centerY" id="olh-qN-d5L"/>
                             <constraint firstItem="acR-sl-ate" firstAttribute="bottom" secondItem="DE1-LG-FhX" secondAttribute="bottom" id="tqQ-Wn-GgS"/>
                             <constraint firstItem="DE1-LG-FhX" firstAttribute="top" secondItem="acR-sl-ate" secondAttribute="centerY" constant="-50" id="w9g-Wq-roz"/>
                             <constraint firstItem="acR-sl-ate" firstAttribute="trailing" secondItem="DE1-LG-FhX" secondAttribute="trailing" id="ye4-BE-gZS"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="DTJ-jd-POx" id="RtW-Xy-QzP"/>
                         <outlet property="datePicker" destination="Pc5-5A-tKy" id="DIr-wA-gTg"/>
                         <outlet property="doneButton" destination="7bX-Hi-f6c" id="4Ev-EZ-JDX"/>
                         <outlet property="genderPickerView" destination="lvP-xK-VJ1" id="Qoi-rE-TTs"/>
