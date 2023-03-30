@@ -26,6 +26,13 @@ final class ProfileViewController: UIViewController {
     var router: (ProfileRoutingLogic & ProfileDataPassing)?
 
     private let genders = ["Male", "Female"]
+    private var viewModel: Profile.Case.ViewModel? {
+        didSet {
+            updateView()
+            guard let oldValue else { return }
+            doneButton.isHidden = oldValue == viewModel ? true : false
+        }
+    }
 
     // MARK: - Lifecycle
 
@@ -60,12 +67,15 @@ final class ProfileViewController: UIViewController {
         router.dataStore = interactor
     }
 
+    // MARK: - Handlers
+
     private func setupView() {
         genderPickerView.delegate = self
         genderPickerView.dataSource = self
         datePicker.addTarget(self, action: #selector(dateDidSelect), for: .valueChanged)
         setupWebView()
         configureToolbar()
+        doneButton.isHidden = true
     }
 
     private func setupWebView() {
@@ -76,6 +86,13 @@ final class ProfileViewController: UIViewController {
             self?.webView.load(URLRequest(url: url))
             self?.webView.allowsBackForwardNavigationGestures = true
         }
+    }
+
+    private func updateView() {
+        guard let viewModel else { return }
+        let genderRow = viewModel.gender == "Male" ? 0 : 1
+        genderPickerView.selectRow(genderRow, inComponent: 0, animated: false)
+        datePicker.date = viewModel.dateOfBirth
     }
 
     private func configureToolbar() {
@@ -106,7 +123,9 @@ final class ProfileViewController: UIViewController {
     }
 
     @IBAction func doneButtonPressed(_ sender: UIButton) {
-        print("Date: \(datePicker.date) \nGender: \(genders[genderPickerView.selectedRow(inComponent: 0)])")
+        let gender = genders[genderPickerView.selectedRow(inComponent: 0)]
+        let date = datePicker.date
+        interactor?.saveProfile(dateOfBirth: date, gender: gender)
     }
 
     @IBAction func backButtonPressed(_ sender: UIButton) {
@@ -114,7 +133,7 @@ final class ProfileViewController: UIViewController {
     }
 
     @objc private func dateDidSelect() {
-        interactor?.saveDate(datePicker.date)
+        viewModel?.dateOfBirth = datePicker.date
         dismiss(animated: true)
     }
 }
@@ -135,7 +154,7 @@ extension ProfileViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        interactor?.saveGender(genders[row])
+        doneButton.isHidden = genders[row] == viewModel?.gender ? true : false
     }
 
     func pickerView(
@@ -157,9 +176,7 @@ extension ProfileViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
 extension ProfileViewController: ProfileDisplayLogic {
     func displayUserProfile(viewModel: Profile.Case.ViewModel) {
-        let genderRow = viewModel.gender == "Male" ? 0 : 1
-        genderPickerView.selectRow(genderRow, inComponent: 0, animated: false)
-        datePicker.date = viewModel.dateOfBirth
+        self.viewModel = viewModel
     }
 
     func displayErrorMessage(_ errorMessage: String) {
