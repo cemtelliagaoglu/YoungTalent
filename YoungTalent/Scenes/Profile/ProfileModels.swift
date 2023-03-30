@@ -10,16 +10,16 @@ import Foundation
 // swiftlint:disable nesting
 enum Profile {
     enum Case {
-        struct Request {}
-
-        struct Response {
+        struct Request {
             let dateOfBirth: Date
             let gender: String
         }
 
-        struct ViewModel {
-            let dateOfBirth: Date
-            let gender: String
+        struct Response {}
+
+        struct ViewModel: Equatable {
+            var dateOfBirth: Date
+            var gender: String
         }
     }
 }
