@@ -21,6 +21,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKP-xj-y7b">
+                                <rect key="frame" x="0.0" y="832" width="430" height="100"/>
+                                <color key="backgroundColor" name="backgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="BCD-Ac-QCm"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wQx-lm-utX">
                                 <rect key="frame" x="0.0" y="365" width="430" height="567"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
@@ -77,7 +84,7 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4d-Aj-dHf">
+                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4d-Aj-dHf">
                                 <rect key="frame" x="340" y="767" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="km5-NB-1kv"/>
@@ -103,6 +110,9 @@
                             <constraint firstAttribute="bottom" secondItem="b4d-Aj-dHf" secondAttribute="bottom" constant="105" id="fDK-fo-ffZ"/>
                             <constraint firstItem="wQx-lm-utX" firstAttribute="leading" secondItem="U7X-YG-x65" secondAttribute="leading" id="iQG-yB-e6N"/>
                             <constraint firstItem="U7X-YG-x65" firstAttribute="trailing" secondItem="wQx-lm-utX" secondAttribute="trailing" id="nnX-AH-qxW"/>
+                            <constraint firstItem="rKP-xj-y7b" firstAttribute="leading" secondItem="U7X-YG-x65" secondAttribute="leading" id="rMl-mp-QJs"/>
+                            <constraint firstItem="U7X-YG-x65" firstAttribute="trailing" secondItem="rKP-xj-y7b" secondAttribute="trailing" id="rNz-m5-cbm"/>
+                            <constraint firstAttribute="bottom" secondItem="rKP-xj-y7b" secondAttribute="bottom" id="uWh-gQ-MbL"/>
                         </constraints>
                     </view>
                     <connections>
