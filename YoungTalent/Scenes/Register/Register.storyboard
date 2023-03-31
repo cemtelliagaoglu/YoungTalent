@@ -24,8 +24,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" image="shapedBackground" translatesAutoresizingMaskIntoConstraints="NO" id="rd1-9K-XAp">
-                                <rect key="frame" x="-46" y="361.5" width="506" height="534.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" image="shapedBackground" translatesAutoresizingMaskIntoConstraints="NO" id="rd1-9K-XAp">
+                                <rect key="frame" x="-46" y="309" width="506" height="587"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="isC-eI-PaP">
                                 <rect key="frame" x="30" y="137" width="354" height="62.5"/>
@@ -133,7 +133,7 @@
                             <constraint firstItem="tYX-cZ-FhM" firstAttribute="trailing" secondItem="isC-eI-PaP" secondAttribute="trailing" constant="30" id="MWW-cA-6fI"/>
                             <constraint firstItem="KPM-rN-NxY" firstAttribute="top" secondItem="PtB-nG-v04" secondAttribute="top" constant="50" id="Pe4-s1-o0r"/>
                             <constraint firstItem="tYX-cZ-FhM" firstAttribute="trailing" secondItem="b0g-9X-DDa" secondAttribute="trailing" constant="30" id="ZtB-j0-0wm"/>
-                            <constraint firstItem="rd1-9K-XAp" firstAttribute="top" secondItem="isC-eI-PaP" secondAttribute="bottom" constant="162" id="jiC-Aa-KD8"/>
+                            <constraint firstItem="rd1-9K-XAp" firstAttribute="top" secondItem="PtB-nG-v04" secondAttribute="top" constant="309" id="jiC-Aa-KD8"/>
                             <constraint firstItem="JFt-n1-SDe" firstAttribute="top" secondItem="isC-eI-PaP" secondAttribute="bottom" constant="50" id="lR9-f2-cuu"/>
                             <constraint firstAttribute="trailing" secondItem="rd1-9K-XAp" secondAttribute="trailing" constant="-46" id="nqE-It-wU2"/>
                             <constraint firstItem="UWV-qd-h2O" firstAttribute="leading" secondItem="tYX-cZ-FhM" secondAttribute="leading" constant="30" id="opN-BE-Aco"/>
