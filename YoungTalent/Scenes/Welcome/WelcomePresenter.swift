@@ -10,6 +10,7 @@ import Foundation
 protocol WelcomePresentationLogic: AnyObject {
     func presentConfigurations(isDarkMode: Bool?)
     func presentDarkMode(_ isDarkMode: Bool)
+    func presentUserLoggedIn()
 }
 
 final class WelcomePresenter: WelcomePresentationLogic {
@@ -21,5 +22,9 @@ final class WelcomePresenter: WelcomePresentationLogic {
 
     func presentDarkMode(_ isDarkMode: Bool) {
         viewController?.updateView(isDarkMode: isDarkMode)
+    }
+
+    func presentUserLoggedIn() {
+        viewController?.displayUserLoggedIn()
     }
 }
