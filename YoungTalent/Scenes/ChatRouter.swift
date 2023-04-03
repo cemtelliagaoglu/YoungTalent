@@ -11,6 +11,7 @@ import PhotosUI
 protocol ChatRoutingLogic: AnyObject {
     func popVC()
     func routeToPHPicker()
+    func routeToMediaDetails(images: [UIImage]?)
 }
 
 protocol ChatDataPassing: AnyObject {
@@ -31,5 +32,13 @@ final class ChatRouter: ChatRoutingLogic, ChatDataPassing {
 
     func popVC() {
         viewController?.navigationController?.popViewController(animated: true)
+    }
+
+    func routeToMediaDetails(images: [UIImage]?) {
+        DispatchQueue.main.async { [weak self] in
+            let destination = MediaPageViewController()
+            destination.images = images
+            self?.viewController?.navigationController?.pushViewController(destination, animated: true)
+        }
     }
 }
