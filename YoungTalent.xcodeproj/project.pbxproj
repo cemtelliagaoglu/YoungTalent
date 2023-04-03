@@ -96,6 +96,7 @@
 		84EB4E2229BB0DEE002C64CE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB4E2129BB0DEE002C64CE /* Endpoint.swift */; };
 		84EB4E2629BB1A1B002C64CE /* AllGroupsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB4E2529BB1A1B002C64CE /* AllGroupsResponse.swift */; };
 		84EB4E2829BB1F57002C64CE /* GroupsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB4E2729BB1F57002C64CE /* GroupsEndpoint.swift */; };
+		84F28E3A29DAB91100200370 /* RefreshResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F28E3929DAB91100200370 /* RefreshResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +212,7 @@
 		84EB4E2129BB0DEE002C64CE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		84EB4E2529BB1A1B002C64CE /* AllGroupsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsResponse.swift; sourceTree = "<group>"; };
 		84EB4E2729BB1F57002C64CE /* GroupsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsEndpoint.swift; sourceTree = "<group>"; };
+		84F28E3929DAB91100200370 /* RefreshResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -551,6 +553,7 @@
 				84EB4E2529BB1A1B002C64CE /* AllGroupsResponse.swift */,
 				84C8EBA329C02FF10090AFCE /* UserResponse.swift */,
 				846CF07829C63BCB008F1A26 /* LoginResponse.swift */,
+				84F28E3929DAB91100200370 /* RefreshResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -753,6 +756,7 @@
 				84C2C84829BF651000F139D8 /* CommunityHeader.swift in Sources */,
 				84EB4E1C29BB0D3C002C64CE /* RequestMethod.swift in Sources */,
 				84C8EBA429C02FF10090AFCE /* UserResponse.swift in Sources */,
+				84F28E3A29DAB91100200370 /* RefreshResponse.swift in Sources */,
 				840E7E8A29B9F81F003CE39C /* CommunityMainCell.swift in Sources */,
 				84BAB81229AF5FB600F5CDCC /* UIView+Extension.swift in Sources */,
 				84C8EBC229C0A0BC0090AFCE /* RegisterWorker.swift in Sources */,

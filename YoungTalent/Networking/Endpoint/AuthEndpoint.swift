@@ -9,6 +9,7 @@ import Foundation
 
 enum AuthEndpoint {
     case login(String, String)
+    case refresh
     case logout
 }
 
@@ -21,6 +22,8 @@ extension AuthEndpoint: Endpoint {
         switch self {
         case .login:
             return "/api/v1/auth/login"
+        case .refresh:
+            return "/api/v1/auth/refresh"
         case .logout:
             return "/api/v1/auth/logout"
         }
@@ -55,6 +58,14 @@ extension AuthEndpoint: Endpoint {
                 "X-Device-Name": "iPhone 12 Mini"
             ]
             return header
+        case .refresh:
+            guard let refreshToken = KeychainHelper.shared.loadData(
+                service: KeychainConstants.refreshTokenService,
+                account: KeychainConstants.account
+            ),
+                let refreshTokenString = String(data: refreshToken, encoding: .utf8)
+            else { return nil }
+            return ["Authorization": "Refresh \(refreshTokenString)"]
         case .logout:
             return nil
         }

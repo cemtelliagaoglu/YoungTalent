@@ -10,6 +10,7 @@ import UIKit
 protocol WelcomeDisplayLogic: AnyObject {
     func setupView(isDarkMode: Bool)
     func updateView(isDarkMode: Bool)
+    func displayUserLoggedIn()
 }
 
 final class WelcomeVC: UIViewController {
@@ -26,7 +27,7 @@ final class WelcomeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor?.notifyViewDidLoad()
+        interactor?.fetchConfigurations()
     }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -83,5 +84,9 @@ extension WelcomeVC: WelcomeDisplayLogic {
             .windows.first {
             window.overrideUserInterfaceStyle = isDarkMode ? .dark : .light
         }
+    }
+
+    func displayUserLoggedIn() {
+        router?.routeToHome()
     }
 }

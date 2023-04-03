@@ -53,7 +53,7 @@ extension GroupsEndpoint: Endpoint {
 
     public var header: [String: String]? {
         guard let tokenData = KeychainHelper.shared.loadData(
-            service: KeychainConstants.service,
+            service: KeychainConstants.accessTokenService,
             account: KeychainConstants.account
         ) else { return nil }
         guard let accessToken = String(data: tokenData, encoding: .utf8) else { return nil }

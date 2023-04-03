@@ -28,10 +28,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efG-gM-62w">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="690.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="710.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8o7-Ce-eSS">
-                                                <rect key="frame" x="30" y="30" width="354" height="626.5"/>
+                                                <rect key="frame" x="30" y="50" width="354" height="626.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="B6b-BA-YTw">
                                                         <rect key="frame" x="0.0" y="0.0" width="354" height="521.5"/>
@@ -119,7 +119,7 @@
                                             <constraint firstItem="8o7-Ce-eSS" firstAttribute="leading" secondItem="efG-gM-62w" secondAttribute="leading" constant="30" id="JXE-Dx-I2v"/>
                                             <constraint firstAttribute="trailing" secondItem="8o7-Ce-eSS" secondAttribute="trailing" constant="30" id="btB-vk-91O"/>
                                             <constraint firstAttribute="bottom" secondItem="8o7-Ce-eSS" secondAttribute="bottom" constant="34" id="rIk-Rc-RB8"/>
-                                            <constraint firstItem="8o7-Ce-eSS" firstAttribute="top" secondItem="efG-gM-62w" secondAttribute="top" constant="30" id="sbk-PX-Mlp"/>
+                                            <constraint firstItem="8o7-Ce-eSS" firstAttribute="top" secondItem="efG-gM-62w" secondAttribute="top" constant="50" id="sbk-PX-Mlp"/>
                                         </constraints>
                                     </view>
                                 </subviews>

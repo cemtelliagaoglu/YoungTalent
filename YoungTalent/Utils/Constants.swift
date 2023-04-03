@@ -8,6 +8,7 @@
 import Foundation
 
 struct KeychainConstants {
-    static let service = "access-token"
+    static let refreshTokenService = "refresh-token"
+    static let accessTokenService = "access-token"
     static let account = "YoungTalent"
 }
