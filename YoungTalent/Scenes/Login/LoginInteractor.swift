@@ -27,13 +27,22 @@ final class LoginInteractor: LoginBusinessLogic, LoginDataStore {
                 if response.error == true {
                     self.presenter?.presentErrorMessage(response.reason)
                 } else {
-                    guard let tokenString = response.body?.accessToken else {
+                    guard let accessTokenString = response.body?.accessToken,
+                          let refreshTokenString = response.body?.refreshToken
+                    else {
                         self.presenter?.presentErrorMessage("Failed to fetch access token")
                         return
                     }
+
                     KeychainHelper.shared.saveData(
-                        Data(tokenString.utf8),
-                        service: KeychainConstants.service,
+                        Data(accessTokenString.utf8),
+                        service: KeychainConstants.accessTokenService,
+                        account: KeychainConstants.account
+                    )
+
+                    KeychainHelper.shared.saveData(
+                        Data(refreshTokenString.utf8),
+                        service: KeychainConstants.refreshTokenService,
                         account: KeychainConstants.account
                     )
                     self.currentUser = response.body
