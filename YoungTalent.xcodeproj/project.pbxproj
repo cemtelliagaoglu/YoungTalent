@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840DB1A429DB21BE00B687CD /* MediaPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DB1A329DB21BE00B687CD /* MediaPageViewController.swift */; };
+		840DB1A729DB220E00B687CD /* MediaDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DB1A529DB220E00B687CD /* MediaDetailsViewController.swift */; };
+		840DB1A829DB220E00B687CD /* MediaDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840DB1A629DB220E00B687CD /* MediaDetailsViewController.xib */; };
 		840E7E7F29B9CA9C003CE39C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E7E7E29B9CA9C003CE39C /* HomeVC.swift */; };
 		840E7E8329B9E04A003CE39C /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E7E8129B9E04A003CE39C /* ChatTableViewCell.swift */; };
 		840E7E8429B9E04A003CE39C /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840E7E8229B9E04A003CE39C /* ChatTableViewCell.xib */; };
@@ -117,6 +120,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		840DB1A329DB21BE00B687CD /* MediaPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPageViewController.swift; sourceTree = "<group>"; };
+		840DB1A529DB220E00B687CD /* MediaDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailsViewController.swift; sourceTree = "<group>"; };
+		840DB1A629DB220E00B687CD /* MediaDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaDetailsViewController.xib; sourceTree = "<group>"; };
 		840E7E7E29B9CA9C003CE39C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		840E7E8129B9E04A003CE39C /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		840E7E8229B9E04A003CE39C /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
@@ -337,6 +343,9 @@
 				848ECF9C29C31D2F003EB8EB /* Chat.storyboard */,
 				848ECF9D29C31D2F003EB8EB /* ChatViewController.swift */,
 				848ECF9E29C31D2F003EB8EB /* ChatPresenter.swift */,
+				840DB1A329DB21BE00B687CD /* MediaPageViewController.swift */,
+				840DB1A529DB220E00B687CD /* MediaDetailsViewController.swift */,
+				840DB1A629DB220E00B687CD /* MediaDetailsViewController.xib */,
 				848ECF9F29C31D2F003EB8EB /* ChatInteractor.swift */,
 				848ECFA029C31D2F003EB8EB /* ChatModels.swift */,
 				848ECFA129C31D2F003EB8EB /* ChatWorker.swift */,
@@ -677,6 +686,7 @@
 				840E7E9029BA30D2003CE39C /* CommunityGroupCell.xib in Resources */,
 				84BAB81629AF637A00F5CDCC /* Montserrat-Regular.ttf in Resources */,
 				8493347529D215920051ED90 /* Profile.storyboard in Resources */,
+				840DB1A829DB220E00B687CD /* MediaDetailsViewController.xib in Resources */,
 				840E7E8429B9E04A003CE39C /* ChatTableViewCell.xib in Resources */,
 				840E7E8B29B9F81F003CE39C /* CommunityMainCell.xib in Resources */,
 				840E7E8729B9F132003CE39C /* Montserrat-SemiBold.ttf in Resources */,
@@ -734,6 +744,7 @@
 				84A7023229CDBA2F0012F539 /* KeychainHelper.swift in Sources */,
 				84A7023429CDBD210012F539 /* Constants.swift in Sources */,
 				84BAB81029AF5F8600F5CDCC /* RegisterVC.swift in Sources */,
+				840DB1A729DB220E00B687CD /* MediaDetailsViewController.swift in Sources */,
 				84C8EBCF29C0CDB80090AFCE /* LoginPresenter.swift in Sources */,
 				848ECFA529C31D2F003EB8EB /* ChatPresenter.swift in Sources */,
 				840E7E7F29B9CA9C003CE39C /* HomeVC.swift in Sources */,
@@ -777,6 +788,7 @@
 				8417345F29D4826200FBDBEB /* CoreDataError.swift in Sources */,
 				84C2C84229BF140700F139D8 /* UIImageView+Extension.swift in Sources */,
 				84EB4E1E29BB0D66002C64CE /* RequestError.swift in Sources */,
+				840DB1A429DB21BE00B687CD /* MediaPageViewController.swift in Sources */,
 				84EB4E2029BB0DCC002C64CE /* HTTPClient.swift in Sources */,
 				84C8EBBF29C0A0BC0090AFCE /* RegisterPresenter.swift in Sources */,
 				84C8EBD229C0CDB80090AFCE /* LoginWorker.swift in Sources */,

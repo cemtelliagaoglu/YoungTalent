@@ -260,6 +260,10 @@ extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.selectedImageView.image = images[indexPath.item]
         return cell
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        router?.routeToMediaDetails(images: images)
+    }
 }
 
 // MARK: - DisplayLogic
