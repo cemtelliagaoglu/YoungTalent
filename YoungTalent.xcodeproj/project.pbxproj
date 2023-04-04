@@ -19,6 +19,9 @@
 		840E7E8F29BA30D2003CE39C /* CommunityGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E7E8D29BA30D2003CE39C /* CommunityGroupCell.swift */; };
 		840E7E9029BA30D2003CE39C /* CommunityGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840E7E8E29BA30D2003CE39C /* CommunityGroupCell.xib */; };
 		8417345F29D4826200FBDBEB /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417345E29D4826200FBDBEB /* CoreDataError.swift */; };
+		841CF81E29DC621A002A6901 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CF81D29DC621A002A6901 /* MapManager.swift */; };
+		841CF82129DC841D002A6901 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CF81F29DC841D002A6901 /* MapViewController.swift */; };
+		841CF82229DC841D002A6901 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841CF82029DC841D002A6901 /* MapViewController.xib */; };
 		843167E12992335300908312 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843167E02992335300908312 /* AppDelegate.swift */; };
 		843167E32992335300908312 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843167E22992335300908312 /* SceneDelegate.swift */; };
 		843167EA2992335400908312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843167E92992335400908312 /* Assets.xcassets */; };
@@ -132,6 +135,9 @@
 		840E7E8D29BA30D2003CE39C /* CommunityGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityGroupCell.swift; sourceTree = "<group>"; };
 		840E7E8E29BA30D2003CE39C /* CommunityGroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityGroupCell.xib; sourceTree = "<group>"; };
 		8417345E29D4826200FBDBEB /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
+		841CF81D29DC621A002A6901 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
+		841CF81F29DC841D002A6901 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		841CF82029DC841D002A6901 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		843167DD2992335300908312 /* YoungTalentProd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoungTalentProd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		843167E02992335300908312 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		843167E22992335300908312 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -255,6 +261,18 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		84287AF129DC951F00B34BC8 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				840DB1A329DB21BE00B687CD /* MediaPageViewController.swift */,
+				840DB1A529DB220E00B687CD /* MediaDetailsViewController.swift */,
+				840DB1A629DB220E00B687CD /* MediaDetailsViewController.xib */,
+				841CF81F29DC841D002A6901 /* MapViewController.swift */,
+				841CF82029DC841D002A6901 /* MapViewController.xib */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		843167D42992335200908312 = {
 			isa = PBXGroup;
 			children = (
@@ -340,12 +358,10 @@
 			isa = PBXGroup;
 			children = (
 				848ECFAA29C3446C003EB8EB /* Cells */,
+				84287AF129DC951F00B34BC8 /* Details */,
 				848ECF9C29C31D2F003EB8EB /* Chat.storyboard */,
 				848ECF9D29C31D2F003EB8EB /* ChatViewController.swift */,
 				848ECF9E29C31D2F003EB8EB /* ChatPresenter.swift */,
-				840DB1A329DB21BE00B687CD /* MediaPageViewController.swift */,
-				840DB1A529DB220E00B687CD /* MediaDetailsViewController.swift */,
-				840DB1A629DB220E00B687CD /* MediaDetailsViewController.xib */,
 				848ECF9F29C31D2F003EB8EB /* ChatInteractor.swift */,
 				848ECFA029C31D2F003EB8EB /* ChatModels.swift */,
 				848ECFA129C31D2F003EB8EB /* ChatWorker.swift */,
@@ -426,6 +442,7 @@
 				84A7023629CDCF160012F539 /* Extensions */,
 				84A7023129CDBA2F0012F539 /* KeychainHelper.swift */,
 				84A7023329CDBD210012F539 /* Constants.swift */,
+				841CF81D29DC621A002A6901 /* MapManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -678,6 +695,7 @@
 				84C8EBCD29C0CDB80090AFCE /* Login.storyboard in Resources */,
 				848ECFA329C31D2F003EB8EB /* Chat.storyboard in Resources */,
 				84C8EBBD29C0A0BC0090AFCE /* Register.storyboard in Resources */,
+				841CF82229DC841D002A6901 /* MapViewController.xib in Resources */,
 				849AC5E429C2290800C96758 /* OTP.storyboard in Resources */,
 				843167ED2992335400908312 /* LaunchScreen.storyboard in Resources */,
 				843167EA2992335400908312 /* Assets.xcassets in Resources */,
@@ -763,6 +781,7 @@
 				840E7E8329B9E04A003CE39C /* ChatTableViewCell.swift in Sources */,
 				8493347829D215920051ED90 /* ProfileInteractor.swift in Sources */,
 				84C8EBC329C0A0BC0090AFCE /* RegisterRouter.swift in Sources */,
+				841CF82129DC841D002A6901 /* MapViewController.swift in Sources */,
 				84EB4E2229BB0DEE002C64CE /* Endpoint.swift in Sources */,
 				84C2C84829BF651000F139D8 /* CommunityHeader.swift in Sources */,
 				84EB4E1C29BB0D3C002C64CE /* RequestMethod.swift in Sources */,
@@ -788,6 +807,7 @@
 				8417345F29D4826200FBDBEB /* CoreDataError.swift in Sources */,
 				84C2C84229BF140700F139D8 /* UIImageView+Extension.swift in Sources */,
 				84EB4E1E29BB0D66002C64CE /* RequestError.swift in Sources */,
+				841CF81E29DC621A002A6901 /* MapManager.swift in Sources */,
 				840DB1A429DB21BE00B687CD /* MediaPageViewController.swift in Sources */,
 				84EB4E2029BB0DCC002C64CE /* HTTPClient.swift in Sources */,
 				84C8EBBF29C0A0BC0090AFCE /* RegisterPresenter.swift in Sources */,
