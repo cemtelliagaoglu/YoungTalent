@@ -42,8 +42,8 @@ final class WelcomeInteractor: WelcomeBusinessLogic, WelcomeDataStore {
                 )
                 self?.currentUserData = response.body
                 self?.presenter?.presentUserLoggedIn()
-            case let .failure(error):
-                print(error.customMessage)
+            case .failure:
+                break
             }
         }
         worker.fetchData { isDarkMode in
