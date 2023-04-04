@@ -12,6 +12,8 @@ protocol ChatRoutingLogic: AnyObject {
     func popVC()
     func routeToPHPicker()
     func routeToMediaDetails(images: [UIImage]?)
+    func routeToMapView()
+    func showAlert(title: String, message: String)
 }
 
 protocol ChatDataPassing: AnyObject {
@@ -40,5 +42,18 @@ final class ChatRouter: ChatRoutingLogic, ChatDataPassing {
             destination.images = images
             self?.viewController?.navigationController?.pushViewController(destination, animated: true)
         }
+    }
+
+    func routeToMapView() {
+        guard let location = dataStore?.location else { return }
+        DispatchQueue.main.async { [weak self] in
+            let destination = MapViewController()
+            destination.viewModel = location
+            self?.viewController?.navigationController?.pushViewController(destination, animated: true)
+        }
+    }
+
+    func showAlert(title: String, message: String) {
+        viewController?.presentAlert(title: title, message: message)
     }
 }
