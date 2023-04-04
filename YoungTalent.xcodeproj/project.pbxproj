@@ -261,6 +261,18 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		84287AF129DC951F00B34BC8 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				840DB1A329DB21BE00B687CD /* MediaPageViewController.swift */,
+				840DB1A529DB220E00B687CD /* MediaDetailsViewController.swift */,
+				840DB1A629DB220E00B687CD /* MediaDetailsViewController.xib */,
+				841CF81F29DC841D002A6901 /* MapViewController.swift */,
+				841CF82029DC841D002A6901 /* MapViewController.xib */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		843167D42992335200908312 = {
 			isa = PBXGroup;
 			children = (
@@ -346,14 +358,10 @@
 			isa = PBXGroup;
 			children = (
 				848ECFAA29C3446C003EB8EB /* Cells */,
+				84287AF129DC951F00B34BC8 /* Details */,
 				848ECF9C29C31D2F003EB8EB /* Chat.storyboard */,
 				848ECF9D29C31D2F003EB8EB /* ChatViewController.swift */,
 				848ECF9E29C31D2F003EB8EB /* ChatPresenter.swift */,
-				840DB1A329DB21BE00B687CD /* MediaPageViewController.swift */,
-				840DB1A529DB220E00B687CD /* MediaDetailsViewController.swift */,
-				840DB1A629DB220E00B687CD /* MediaDetailsViewController.xib */,
-				841CF81F29DC841D002A6901 /* MapViewController.swift */,
-				841CF82029DC841D002A6901 /* MapViewController.xib */,
 				848ECF9F29C31D2F003EB8EB /* ChatInteractor.swift */,
 				848ECFA029C31D2F003EB8EB /* ChatModels.swift */,
 				848ECFA129C31D2F003EB8EB /* ChatWorker.swift */,
