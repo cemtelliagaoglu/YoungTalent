@@ -24,6 +24,7 @@ final class ChatViewController: UIViewController {
     @IBOutlet var contactLoginStatusLabel: UILabel!
     @IBOutlet var addMediaButton: UIButton!
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var mapImageView: UIImageView!
 
     var interactor: ChatBusinessLogic?
     var router: (ChatRoutingLogic & ChatDataPassing)?
@@ -72,6 +73,8 @@ final class ChatViewController: UIViewController {
             UINib(nibName: "ChatCollectionViewCell", bundle: nil),
             forCellWithReuseIdentifier: chatCellIdentifier
         )
+        let tap = UITapGestureRecognizer(target: self, action: #selector(mapImageViewTapped))
+        mapImageView.addGestureRecognizer(tap)
     }
 
     private func updateView(images: [UIImage]) {
@@ -205,6 +208,24 @@ final class ChatViewController: UIViewController {
     @IBAction func backButtonPressed(_: UIButton) {
         router?.popVC()
     }
+
+    @objc private func mapImageViewTapped() {
+        router?.routeToMapView()
+    }
+
+    @IBAction func sendLocationButtonPressed(_ sender: UIButton) {
+        interactor?.fetchLocation()
+        NotificationCenter.default.addObserver(
+            forName: .sharedLocation,
+            object: nil,
+            queue: .main
+        ) { [weak self] notification in
+            guard let object = notification.object as? [String: Any],
+                  let thumbnail = object["image"] as? UIImage
+            else { return }
+            self?.mapImageView.image = thumbnail
+        }
+    }
 }
 
 // MARK: - PHPickerDelegate
@@ -275,6 +296,6 @@ extension ChatViewController: ChatDisplayLogic {
     }
 
     func displayErrorMessage(_ errorMessage: String) {
-        presentAlert(title: "Error", message: errorMessage)
+        router?.showAlert(title: "Error", message: errorMessage)
     }
 }
