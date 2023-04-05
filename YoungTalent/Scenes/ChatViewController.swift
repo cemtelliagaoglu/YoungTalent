@@ -5,6 +5,7 @@
 //  Created by admin on 16.03.2023.
 //
 
+import CommonUI
 import PhotosUI
 import UIKit
 
@@ -18,7 +19,7 @@ final class ChatViewController: UIViewController {
 
     private let chatCellIdentifier = "chatCollectionViewCellIdentifier"
 
-    @IBOutlet var backButton: UIButton!
+    @IBOutlet var backButton: CommonButton!
     @IBOutlet var contactImageView: UIImageView!
     @IBOutlet var contactNameLabel: UILabel!
     @IBOutlet var contactLoginStatusLabel: UILabel!
@@ -205,7 +206,7 @@ final class ChatViewController: UIViewController {
         router?.routeToPHPicker()
     }
 
-    @IBAction func backButtonPressed(_: UIButton) {
+    @IBAction func backButtonPressed(_: CommonButton) {
         router?.popVC()
     }
 

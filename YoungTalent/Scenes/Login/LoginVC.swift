@@ -5,6 +5,7 @@
 //  Created by admin on 1.03.2023.
 //
 
+import CommonUI
 import UIKit
 
 protocol LoginDisplayLogic: AnyObject {
@@ -22,6 +23,7 @@ class LoginVC: UIViewController {
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var backButton: CommonButton!
 
     var interactor: LoginBusinessLogic?
     var router: (LoginRoutingLogic & LoginDataPassing)?
@@ -59,6 +61,7 @@ class LoginVC: UIViewController {
     }
 
     private func setupView() {
+        backButton.setButton(image: UIImage(named: "back"))
         emailTextField.delegate = self
         passwordTextField.delegate = self
         // hideKeyboard
@@ -108,7 +111,7 @@ class LoginVC: UIViewController {
         interactor?.requestLoginWith(email, password)
     }
 
-    @IBAction func backButtonTapped(_: UIButton) {
+    @IBAction func backButtonTapped(_ sender: CommonButton) {
         router?.popVC()
     }
 }

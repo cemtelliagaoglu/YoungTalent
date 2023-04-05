@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -151,18 +152,6 @@ our </string>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A14-4g-i3w">
-                                <rect key="frame" x="30" y="30" width="20" height="57"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="i5V-1F-ZKd"/>
-                                    <constraint firstAttribute="height" constant="57" id="svJ-Za-jbu"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="back"/>
-                                <connections>
-                                    <action selector="backButtonTapped:" destination="C76-Dv-su4" eventType="touchUpInside" id="Pfq-s6-7Vz"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNv-rM-Ptj">
                                 <rect key="frame" x="158" y="480.5" width="98.5" height="47"/>
                                 <color key="backgroundColor" name="Purple-Soft"/>
@@ -191,6 +180,17 @@ our </string>
                                 <rect key="frame" x="197" y="494" width="20" height="20"/>
                                 <color key="color" name="Blue-Dark"/>
                             </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tEA-05-x6T" customClass="CommonButton" customModule="CommonUI">
+                                <rect key="frame" x="30" y="50" width="20" height="57"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="XWu-fr-4cF"/>
+                                    <constraint firstAttribute="height" constant="57" id="jD9-2I-K1J"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="C76-Dv-su4" eventType="touchUpInside" id="5s6-mn-Prx"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YUC-t7-had"/>
                         <color key="backgroundColor" name="backgroundColor"/>
@@ -198,15 +198,15 @@ our </string>
                             <constraint firstItem="YUC-t7-had" firstAttribute="trailing" secondItem="dKn-fa-MVO" secondAttribute="trailing" constant="-46" id="0VU-JT-J0X"/>
                             <constraint firstItem="dKn-fa-MVO" firstAttribute="leading" secondItem="YUC-t7-had" secondAttribute="leading" constant="-46" id="0ux-QP-Mkh"/>
                             <constraint firstItem="RNB-Ci-fza" firstAttribute="centerY" secondItem="vNv-rM-Ptj" secondAttribute="centerY" id="5JQ-9n-W3L"/>
+                            <constraint firstItem="tEA-05-x6T" firstAttribute="top" secondItem="1U6-vQ-bHu" secondAttribute="top" constant="50" id="9KZ-lp-cHS"/>
                             <constraint firstItem="YUC-t7-had" firstAttribute="trailing" secondItem="Eqz-1V-uar" secondAttribute="trailing" constant="30" id="A0m-O9-Mqk"/>
                             <constraint firstAttribute="bottom" secondItem="dKn-fa-MVO" secondAttribute="bottom" id="EkK-XI-9BG"/>
                             <constraint firstItem="Jar-cJ-0pT" firstAttribute="top" secondItem="vNv-rM-Ptj" secondAttribute="bottom" constant="20" id="HbN-vV-n4e"/>
-                            <constraint firstItem="A14-4g-i3w" firstAttribute="top" secondItem="1U6-vQ-bHu" secondAttribute="top" constant="30" id="Ket-jN-VDP"/>
+                            <constraint firstItem="tEA-05-x6T" firstAttribute="leading" secondItem="YUC-t7-had" secondAttribute="leading" constant="30" id="JJ7-e1-VGA"/>
                             <constraint firstItem="RNB-Ci-fza" firstAttribute="centerX" secondItem="vNv-rM-Ptj" secondAttribute="centerX" id="Mvd-3k-0Hl"/>
                             <constraint firstItem="vNv-rM-Ptj" firstAttribute="top" secondItem="Lzz-wF-qZG" secondAttribute="bottom" constant="30" id="Tjs-0d-HzD"/>
                             <constraint firstItem="Eqz-1V-uar" firstAttribute="top" secondItem="1U6-vQ-bHu" secondAttribute="top" constant="167" id="Tke-OR-rG2"/>
                             <constraint firstItem="Lzz-wF-qZG" firstAttribute="top" secondItem="Eqz-1V-uar" secondAttribute="bottom" constant="70" id="Wfu-e2-rmH"/>
-                            <constraint firstItem="A14-4g-i3w" firstAttribute="leading" secondItem="YUC-t7-had" secondAttribute="leading" constant="30" id="ZO0-2r-Xrp"/>
                             <constraint firstItem="YUC-t7-had" firstAttribute="trailing" secondItem="Lzz-wF-qZG" secondAttribute="trailing" constant="30" id="pUf-pW-re0"/>
                             <constraint firstItem="Eqz-1V-uar" firstAttribute="leading" secondItem="YUC-t7-had" secondAttribute="leading" constant="30" id="rHz-jm-ohW"/>
                             <constraint firstItem="vNv-rM-Ptj" firstAttribute="centerX" secondItem="1U6-vQ-bHu" secondAttribute="centerX" id="sX2-bc-9BJ"/>
@@ -221,6 +221,7 @@ our </string>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="RNB-Ci-fza" id="ukV-b9-bBt"/>
+                        <outlet property="backButton" destination="tEA-05-x6T" id="hpe-KT-9su"/>
                         <outlet property="emailTextField" destination="7sK-TZ-bE7" id="BB4-pm-npf"/>
                         <outlet property="loginButton" destination="vNv-rM-Ptj" id="yYh-9M-njI"/>
                         <outlet property="passwordTextField" destination="at5-lX-xVC" id="14r-eY-0Do"/>
@@ -233,7 +234,6 @@ our </string>
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="20" height="57.5"/>
         <image name="shapedBackground" width="375" height="470"/>
         <namedColor name="Blue">
             <color red="0.38823529411764707" green="0.37254901960784315" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -250,5 +250,8 @@ our </string>
         <namedColor name="backgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
