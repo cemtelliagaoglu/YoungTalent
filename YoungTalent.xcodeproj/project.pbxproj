@@ -61,6 +61,7 @@
 		84A7023029CD973B0012F539 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7022F29CD973B0012F539 /* UIViewController+Extension.swift */; };
 		84A7023229CDBA2F0012F539 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7023129CDBA2F0012F539 /* KeychainHelper.swift */; };
 		84A7023429CDBD210012F539 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7023329CDBD210012F539 /* Constants.swift */; };
+		84B0C70C29DD714D00C3306C /* CommonUI in Frameworks */ = {isa = PBXBuildFile; productRef = 84B0C70B29DD714D00C3306C /* CommonUI */; };
 		84BAB81029AF5F8600F5CDCC /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BAB80F29AF5F8600F5CDCC /* RegisterVC.swift */; };
 		84BAB81229AF5FB600F5CDCC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BAB81129AF5FB600F5CDCC /* UIView+Extension.swift */; };
 		84BAB81529AF637A00F5CDCC /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84BAB81329AF637A00F5CDCC /* Montserrat-Bold.ttf */; };
@@ -123,6 +124,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		840A87DA29DD6FB000316E74 /* CommonUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CommonUI; path = ../CommonUI; sourceTree = "<group>"; };
 		840DB1A329DB21BE00B687CD /* MediaPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPageViewController.swift; sourceTree = "<group>"; };
 		840DB1A529DB220E00B687CD /* MediaDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailsViewController.swift; sourceTree = "<group>"; };
 		840DB1A629DB220E00B687CD /* MediaDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaDetailsViewController.xib; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B0C70C29DD714D00C3306C /* CommonUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +255,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		840A87D929DD6FB000316E74 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				840A87DA29DD6FB000316E74 /* CommonUI */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		840E7E8529B9E050003CE39C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,11 +287,13 @@
 		843167D42992335200908312 = {
 			isa = PBXGroup;
 			children = (
+				840A87D929DD6FB000316E74 /* Packages */,
 				843168102992337400908312 /* Configuration */,
 				843167DF2992335300908312 /* YoungTalent */,
 				843167F62992335400908312 /* YoungTalentTests */,
 				843168002992335400908312 /* YoungTalentUITests */,
 				843167DE2992335300908312 /* Products */,
+				84B0C70A29DD714D00C3306C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -415,6 +428,13 @@
 				84A7022F29CD973B0012F539 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		84B0C70A29DD714D00C3306C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		84BAB81729AF638E00F5CDCC /* Fonts */ = {
@@ -601,6 +621,9 @@
 			dependencies = (
 			);
 			name = YoungTalent;
+			packageProductDependencies = (
+				84B0C70B29DD714D00C3306C /* CommonUI */,
+			);
 			productName = YoungTalent;
 			productReference = 843167DD2992335300908312 /* YoungTalentProd.app */;
 			productType = "com.apple.product-type.application";
@@ -1447,6 +1470,13 @@
 			defaultConfigurationName = ProductionDebug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		84B0C70B29DD714D00C3306C /* CommonUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CommonUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		8485031929D3660E00626B14 /* YoungTalent.xcdatamodeld */ = {
