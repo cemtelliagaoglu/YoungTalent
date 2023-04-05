@@ -32,6 +32,7 @@
 		8446CBDB29B0DB0C00442F53 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446CBDA29B0DB0C00442F53 /* WelcomeVC.swift */; };
 		846CF07729C639AB008F1A26 /* AuthEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846CF07629C639AB008F1A26 /* AuthEndpoint.swift */; };
 		846CF07929C63BCB008F1A26 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846CF07829C63BCB008F1A26 /* LoginResponse.swift */; };
+		847795F829DDA65C0044E548 /* CommonUI in Frameworks */ = {isa = PBXBuildFile; productRef = 847795F729DDA65C0044E548 /* CommonUI */; };
 		8485031B29D3660E00626B14 /* YoungTalent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8485031929D3660E00626B14 /* YoungTalent.xcdatamodeld */; };
 		8485031D29D367D800626B14 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485031C29D367D800626B14 /* CoreDataManager.swift */; };
 		8485032029D37EBD00626B14 /* UserProfile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485031E29D37EBD00626B14 /* UserProfile+CoreDataClass.swift */; };
@@ -61,7 +62,6 @@
 		84A7023029CD973B0012F539 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7022F29CD973B0012F539 /* UIViewController+Extension.swift */; };
 		84A7023229CDBA2F0012F539 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7023129CDBA2F0012F539 /* KeychainHelper.swift */; };
 		84A7023429CDBD210012F539 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7023329CDBD210012F539 /* Constants.swift */; };
-		84B0C70C29DD714D00C3306C /* CommonUI in Frameworks */ = {isa = PBXBuildFile; productRef = 84B0C70B29DD714D00C3306C /* CommonUI */; };
 		84BAB81029AF5F8600F5CDCC /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BAB80F29AF5F8600F5CDCC /* RegisterVC.swift */; };
 		84BAB81229AF5FB600F5CDCC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BAB81129AF5FB600F5CDCC /* UIView+Extension.swift */; };
 		84BAB81529AF637A00F5CDCC /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84BAB81329AF637A00F5CDCC /* Montserrat-Bold.ttf */; };
@@ -124,7 +124,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		840A87DA29DD6FB000316E74 /* CommonUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CommonUI; path = ../CommonUI; sourceTree = "<group>"; };
+		840A87DA29DD6FB000316E74 /* CommonUI */ = {isa = PBXFileReference; lastKnownFileType = text; name = CommonUI; path = ../CommonUI; sourceTree = "<group>"; };
 		840DB1A329DB21BE00B687CD /* MediaPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPageViewController.swift; sourceTree = "<group>"; };
 		840DB1A529DB220E00B687CD /* MediaDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailsViewController.swift; sourceTree = "<group>"; };
 		840DB1A629DB220E00B687CD /* MediaDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaDetailsViewController.xib; sourceTree = "<group>"; };
@@ -156,6 +156,7 @@
 		8446CBDA29B0DB0C00442F53 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		846CF07629C639AB008F1A26 /* AuthEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndpoint.swift; sourceTree = "<group>"; };
 		846CF07829C63BCB008F1A26 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		847795F529DDA4AE0044E548 /* CommonUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CommonUI; sourceTree = "<group>"; };
 		8485031A29D3660E00626B14 /* YoungTalent.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YoungTalent.xcdatamodel; sourceTree = "<group>"; };
 		8485031C29D367D800626B14 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		8485031E29D37EBD00626B14 /* UserProfile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProfile+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -234,7 +235,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84B0C70C29DD714D00C3306C /* CommonUI in Frameworks */,
+				847795F829DDA65C0044E548 /* CommonUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				840A87DA29DD6FB000316E74 /* CommonUI */,
+				847795F529DDA4AE0044E548 /* CommonUI */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -622,7 +624,7 @@
 			);
 			name = YoungTalent;
 			packageProductDependencies = (
-				84B0C70B29DD714D00C3306C /* CommonUI */,
+				847795F729DDA65C0044E548 /* CommonUI */,
 			);
 			productName = YoungTalent;
 			productReference = 843167DD2992335300908312 /* YoungTalentProd.app */;
@@ -1472,7 +1474,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		84B0C70B29DD714D00C3306C /* CommonUI */ = {
+		847795F729DDA65C0044E548 /* CommonUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CommonUI;
 		};
