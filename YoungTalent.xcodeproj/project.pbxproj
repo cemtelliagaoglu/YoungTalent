@@ -124,7 +124,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		840A87DA29DD6FB000316E74 /* CommonUI */ = {isa = PBXFileReference; lastKnownFileType = text; name = CommonUI; path = ../CommonUI; sourceTree = "<group>"; };
 		840DB1A329DB21BE00B687CD /* MediaPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPageViewController.swift; sourceTree = "<group>"; };
 		840DB1A529DB220E00B687CD /* MediaDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailsViewController.swift; sourceTree = "<group>"; };
 		840DB1A629DB220E00B687CD /* MediaDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaDetailsViewController.xib; sourceTree = "<group>"; };
@@ -259,7 +258,6 @@
 		840A87D929DD6FB000316E74 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				840A87DA29DD6FB000316E74 /* CommonUI */,
 				847795F529DDA4AE0044E548 /* CommonUI */,
 			);
 			name = Packages;
