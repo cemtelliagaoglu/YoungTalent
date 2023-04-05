@@ -5,6 +5,7 @@
 //  Created by admin on 1.03.2023.
 //
 
+import CommonUI
 import UIKit
 
 protocol RegisterDisplayLogic: AnyObject {
@@ -15,7 +16,8 @@ class RegisterVC: UIViewController {
     // MARK: - Properties
 
     @IBOutlet var nameTextField: UITextField!
-    @IBOutlet var nextButton: UIButton!
+    @IBOutlet var nextButton: CommonButton!
+    @IBOutlet var backButton: CommonButton!
 
     var interactor: RegisterBusinessLogic?
     var router: (RegisterRoutingLogic & RegisterDataPassing)?
@@ -56,11 +58,11 @@ class RegisterVC: UIViewController {
         nameTextField.endEditing(true)
     }
 
-    @IBAction func nextButtonPressed(_: UIButton) {
+    @IBAction func nextButtonPressed(_ sender: CommonButton) {
         router?.routeToHome()
     }
 
-    @IBAction func handleBackButtonPressed(_: UIButton) {
+    @IBAction func backButtonPressed(_ sender: CommonButton) {
         router?.popVC()
     }
 }
@@ -79,6 +81,7 @@ extension RegisterVC: UITextFieldDelegate {
 
 extension RegisterVC: RegisterDisplayLogic {
     func setupView() {
+        backButton.setButton(image: UIImage(named: "back"))
         // nameTextField
         nameTextField.delegate = self
         // hideKeyboard

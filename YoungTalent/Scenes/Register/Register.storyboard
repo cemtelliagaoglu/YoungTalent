@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -83,18 +84,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0g-9X-DDa">
-                                <rect key="frame" x="324" y="806" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="b8m-pP-orR"/>
-                                    <constraint firstAttribute="width" constant="60" id="boS-8q-983"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="done"/>
-                                <connections>
-                                    <action selector="nextButtonPressed:" destination="Xeu-dq-WX2" eventType="touchUpInside" id="gwP-CE-hJt"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personalEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="JFt-n1-SDe">
                                 <rect key="frame" x="147" y="249.5" width="120" height="120"/>
                                 <constraints>
@@ -102,16 +91,27 @@
                                     <constraint firstAttribute="width" constant="120" id="hHd-ln-DQB"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPM-rN-NxY">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rK5-Aw-tAc" customClass="CommonButton" customModule="CommonUI">
                                 <rect key="frame" x="30" y="50" width="20" height="57"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="25Y-cQ-mvw"/>
-                                    <constraint firstAttribute="height" constant="57" id="jJE-c7-1xM"/>
+                                    <constraint firstAttribute="width" constant="20" id="0KO-b9-Z43"/>
+                                    <constraint firstAttribute="height" constant="57" id="iKY-sm-aMM"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="Xeu-dq-WX2" eventType="touchUpInside" id="Bai-j9-37Q"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRD-AH-VVh" customClass="CommonButton" customModule="CommonUI">
+                                <rect key="frame" x="324" y="806" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="8Nw-YZ-Jry"/>
+                                    <constraint firstAttribute="height" constant="60" id="znn-Ca-8g7"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="back"/>
+                                <buttonConfiguration key="configuration" style="plain" image="done"/>
                                 <connections>
-                                    <action selector="handleBackButtonPressed:" destination="Xeu-dq-WX2" eventType="touchUpInside" id="SI1-3f-rdh"/>
+                                    <action selector="nextButtonPressed:" destination="Xeu-dq-WX2" eventType="touchUpInside" id="bDy-Hc-Fbf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -119,20 +119,20 @@
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="rHC-t1-4Ki" firstAttribute="top" secondItem="JFt-n1-SDe" secondAttribute="bottom" constant="20" id="01R-I3-1PG"/>
+                            <constraint firstItem="tYX-cZ-FhM" firstAttribute="trailing" secondItem="NRD-AH-VVh" secondAttribute="trailing" constant="30" id="0QC-7O-aKS"/>
                             <constraint firstItem="UWV-qd-h2O" firstAttribute="top" secondItem="rHC-t1-4Ki" secondAttribute="bottom" constant="7" id="0jc-mz-Faj"/>
                             <constraint firstItem="JFt-n1-SDe" firstAttribute="centerX" secondItem="PtB-nG-v04" secondAttribute="centerX" id="1Ru-xC-p7F"/>
                             <constraint firstItem="rHC-t1-4Ki" firstAttribute="leading" secondItem="tYX-cZ-FhM" secondAttribute="leading" constant="30" id="1Yx-KV-MTt"/>
-                            <constraint firstItem="KPM-rN-NxY" firstAttribute="leading" secondItem="PtB-nG-v04" secondAttribute="leading" constant="30" id="3RY-eF-Xoa"/>
                             <constraint firstItem="tYX-cZ-FhM" firstAttribute="trailing" secondItem="UWV-qd-h2O" secondAttribute="trailing" constant="30" id="6M2-7a-S4g"/>
                             <constraint firstItem="isC-eI-PaP" firstAttribute="leading" secondItem="tYX-cZ-FhM" secondAttribute="leading" constant="30" id="8jP-kD-PO1"/>
-                            <constraint firstAttribute="bottom" secondItem="b0g-9X-DDa" secondAttribute="bottom" constant="30" id="CL9-jO-SxF"/>
+                            <constraint firstAttribute="bottom" secondItem="NRD-AH-VVh" secondAttribute="bottom" constant="30" id="BPP-tJ-lPF"/>
                             <constraint firstItem="rd1-9K-XAp" firstAttribute="leading" secondItem="PtB-nG-v04" secondAttribute="leading" constant="-46" id="Ek9-U8-DGL"/>
                             <constraint firstItem="JFt-n1-SDe" firstAttribute="centerX" secondItem="PtB-nG-v04" secondAttribute="centerX" id="Hcx-1D-x0W"/>
                             <constraint firstAttribute="bottom" secondItem="rd1-9K-XAp" secondAttribute="bottom" id="JpD-JY-uxs"/>
                             <constraint firstItem="tYX-cZ-FhM" firstAttribute="trailing" secondItem="rHC-t1-4Ki" secondAttribute="trailing" constant="30" id="LFc-EU-yiv"/>
                             <constraint firstItem="tYX-cZ-FhM" firstAttribute="trailing" secondItem="isC-eI-PaP" secondAttribute="trailing" constant="30" id="MWW-cA-6fI"/>
-                            <constraint firstItem="KPM-rN-NxY" firstAttribute="top" secondItem="PtB-nG-v04" secondAttribute="top" constant="50" id="Pe4-s1-o0r"/>
-                            <constraint firstItem="tYX-cZ-FhM" firstAttribute="trailing" secondItem="b0g-9X-DDa" secondAttribute="trailing" constant="30" id="ZtB-j0-0wm"/>
+                            <constraint firstItem="rK5-Aw-tAc" firstAttribute="leading" secondItem="tYX-cZ-FhM" secondAttribute="leading" constant="30" id="cnX-hc-qDy"/>
+                            <constraint firstItem="rK5-Aw-tAc" firstAttribute="top" secondItem="PtB-nG-v04" secondAttribute="top" constant="50" id="fGX-ql-vV5"/>
                             <constraint firstItem="rd1-9K-XAp" firstAttribute="top" secondItem="PtB-nG-v04" secondAttribute="top" constant="309" id="jiC-Aa-KD8"/>
                             <constraint firstItem="JFt-n1-SDe" firstAttribute="top" secondItem="isC-eI-PaP" secondAttribute="bottom" constant="50" id="lR9-f2-cuu"/>
                             <constraint firstAttribute="trailing" secondItem="rd1-9K-XAp" secondAttribute="trailing" constant="-46" id="nqE-It-wU2"/>
@@ -142,17 +142,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="h8N-6w-2BZ"/>
                     <connections>
+                        <outlet property="backButton" destination="rK5-Aw-tAc" id="j2V-QV-chD"/>
                         <outlet property="nameTextField" destination="bP2-ei-XMA" id="dw8-ax-ftS"/>
-                        <outlet property="nextButton" destination="b0g-9X-DDa" id="lvo-ER-hl5"/>
+                        <outlet property="nextButton" destination="NRD-AH-VVh" id="JJg-OO-Nh4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wS7-DG-R7D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2901.5267175572517" y="671.83098591549299"/>
+            <point key="canvasLocation" x="2901.449275362319" y="671.65178571428567"/>
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="20" height="57.5"/>
         <image name="done" width="120" height="107"/>
         <image name="personalEmpty" width="120" height="120"/>
         <image name="shapedBackground" width="375" height="470"/>
@@ -168,5 +168,8 @@
         <namedColor name="backgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
