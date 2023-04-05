@@ -95,19 +95,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1g-yx-vCT">
-                                <rect key="frame" x="30" y="50" width="20" height="57"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="6jh-3C-eNq"/>
-                                    <constraint firstAttribute="height" constant="57" id="JHP-Qo-bmn"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="back"/>
-                                <connections>
-                                    <action selector="backButtonPressed:" destination="nxe-uw-h5I" eventType="touchUpInside" id="XLr-ON-hqz"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bX-Hi-f6c">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bX-Hi-f6c" customClass="CommonButton" customModule="CommonUI">
                                 <rect key="frame" x="354" y="50" width="30" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="SMH-Hy-H47"/>
@@ -127,14 +115,23 @@
                                     <action selector="doneButtonPressed:" destination="nxe-uw-h5I" eventType="touchUpInside" id="GOw-Aa-zph"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFR-Gs-7Ly" customClass="CommonButton" customModule="CommonUI">
+                                <rect key="frame" x="30" y="50" width="20" height="57"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="7jS-yr-XfM"/>
+                                    <constraint firstAttribute="width" constant="20" id="naV-Kq-57h"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="nxe-uw-h5I" eventType="touchUpInside" id="GNL-OK-CcL"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="acR-sl-ate"/>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
-                            <constraint firstItem="u1g-yx-vCT" firstAttribute="top" secondItem="chM-je-gA4" secondAttribute="top" constant="50" id="3kC-HF-WSR"/>
                             <constraint firstItem="DE1-LG-FhX" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Xfu-UY-7h6" secondAttribute="bottom" constant="50" id="4f4-0J-9lz"/>
                             <constraint firstItem="7bX-Hi-f6c" firstAttribute="top" secondItem="chM-je-gA4" secondAttribute="top" constant="50" id="PoL-c8-3ta"/>
-                            <constraint firstItem="u1g-yx-vCT" firstAttribute="leading" secondItem="acR-sl-ate" secondAttribute="leading" constant="30" id="Q7Z-fS-nUi"/>
                             <constraint firstItem="DTJ-jd-POx" firstAttribute="centerX" secondItem="DE1-LG-FhX" secondAttribute="centerX" id="ROc-dY-nf9"/>
                             <constraint firstItem="acR-sl-ate" firstAttribute="trailing" secondItem="7bX-Hi-f6c" secondAttribute="trailing" constant="30" id="Tmh-7A-Tco"/>
                             <constraint firstItem="Xfu-UY-7h6" firstAttribute="top" secondItem="chM-je-gA4" secondAttribute="top" constant="120" id="WDz-S0-e95"/>
@@ -142,13 +139,16 @@
                             <constraint firstItem="Xfu-UY-7h6" firstAttribute="leading" secondItem="acR-sl-ate" secondAttribute="leading" constant="20" id="gfr-sF-Akm"/>
                             <constraint firstItem="acR-sl-ate" firstAttribute="trailing" secondItem="Xfu-UY-7h6" secondAttribute="trailing" constant="20" id="hgw-gd-Qn6"/>
                             <constraint firstItem="DTJ-jd-POx" firstAttribute="centerY" secondItem="DE1-LG-FhX" secondAttribute="centerY" id="olh-qN-d5L"/>
+                            <constraint firstItem="kFR-Gs-7Ly" firstAttribute="leading" secondItem="chM-je-gA4" secondAttribute="leading" constant="30" id="sEj-cc-Zmo"/>
                             <constraint firstItem="acR-sl-ate" firstAttribute="bottom" secondItem="DE1-LG-FhX" secondAttribute="bottom" id="tqQ-Wn-GgS"/>
                             <constraint firstItem="DE1-LG-FhX" firstAttribute="top" secondItem="acR-sl-ate" secondAttribute="centerY" constant="-50" id="w9g-Wq-roz"/>
+                            <constraint firstItem="kFR-Gs-7Ly" firstAttribute="top" secondItem="chM-je-gA4" secondAttribute="top" constant="50" id="yPV-tg-g8e"/>
                             <constraint firstItem="acR-sl-ate" firstAttribute="trailing" secondItem="DE1-LG-FhX" secondAttribute="trailing" id="ye4-BE-gZS"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="DTJ-jd-POx" id="RtW-Xy-QzP"/>
+                        <outlet property="backButton" destination="kFR-Gs-7Ly" id="fxS-nc-YY1"/>
                         <outlet property="datePicker" destination="Pc5-5A-tKy" id="DIr-wA-gTg"/>
                         <outlet property="doneButton" destination="7bX-Hi-f6c" id="4Ev-EZ-JDX"/>
                         <outlet property="genderPickerView" destination="lvP-xK-VJ1" id="Qoi-rE-TTs"/>
@@ -161,7 +161,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="20" height="57.5"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <namedColor name="Blue-Dark">
             <color red="0.10196078431372549" green="0.066666666666666666" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -177,6 +176,9 @@
         </namedColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>

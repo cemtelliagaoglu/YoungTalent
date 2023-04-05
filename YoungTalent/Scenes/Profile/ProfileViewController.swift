@@ -5,6 +5,7 @@
 //  Created by admin on 27.03.2023.
 //
 
+import CommonUI
 import UIKit
 import WebKit
 
@@ -20,7 +21,8 @@ final class ProfileViewController: UIViewController {
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var webView: WKWebView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet var doneButton: UIButton!
+    @IBOutlet var doneButton: CommonButton!
+    @IBOutlet var backButton: CommonButton!
 
     var interactor: ProfileBusinessLogic?
     var router: (ProfileRoutingLogic & ProfileDataPassing)?
@@ -29,8 +31,6 @@ final class ProfileViewController: UIViewController {
     private var viewModel: Profile.Case.ViewModel? {
         didSet {
             updateView()
-            guard let oldValue else { return }
-            doneButton.isHidden = oldValue == viewModel ? true : false
         }
     }
 
@@ -70,6 +70,7 @@ final class ProfileViewController: UIViewController {
     // MARK: - Handlers
 
     private func setupView() {
+        backButton.setButton(image: UIImage(named: "back"))
         genderPickerView.delegate = self
         genderPickerView.dataSource = self
         datePicker.addTarget(self, action: #selector(dateDidSelect), for: .valueChanged)
@@ -122,18 +123,19 @@ final class ProfileViewController: UIViewController {
         toolbarItems = [refreshButton, backButton, forwardButton]
     }
 
-    @IBAction func doneButtonPressed(_ sender: UIButton) {
+    @IBAction func doneButtonPressed(_ sender: CommonButton) {
         let gender = genders[genderPickerView.selectedRow(inComponent: 0)]
         let date = datePicker.date
         interactor?.saveProfile(dateOfBirth: date, gender: gender)
+        doneButton.isHidden = true
     }
 
-    @IBAction func backButtonPressed(_ sender: UIButton) {
+    @IBAction func backButtonPressed(_ sender: CommonButton) {
         router?.popViewController()
     }
 
     @objc private func dateDidSelect() {
-        viewModel?.dateOfBirth = datePicker.date
+        doneButton.isHidden = datePicker.date == viewModel?.dateOfBirth ? true : false
         dismiss(animated: true)
     }
 }
