@@ -10,7 +10,7 @@ let package = Package(
         .library(
             name: "CommonUI",
             targets: ["CommonUI"]
-        ),
+        )
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -26,6 +26,6 @@ let package = Package(
         .testTarget(
             name: "CommonUITests",
             dependencies: ["CommonUI"]
-        ),
+        )
     ]
 )
