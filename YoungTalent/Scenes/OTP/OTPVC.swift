@@ -5,6 +5,7 @@
 //  Created by admin on 1.03.2023.
 //
 
+import CommonUI
 import UIKit
 
 protocol OTPDisplayLogic: AnyObject {
@@ -19,6 +20,8 @@ class OTPVC: UIViewController {
     @IBOutlet var textField2: UITextField!
     @IBOutlet var textField3: UITextField!
     @IBOutlet var textField4: UITextField!
+    @IBOutlet var backButton: CommonButton!
+    @IBOutlet var nextButton: CommonButton!
 
     var interactor: OTPBusinessLogic?
     var router: (OTPRoutingLogic & OTPDataPassing)?
@@ -68,6 +71,8 @@ class OTPVC: UIViewController {
     }
 
     func setupView() {
+        backButton.setButton(image: UIImage(named: "back"))
+        nextButton.setButton(image: UIImage(named: "next"))
         // keyboard
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.numberOfTapsRequired = 1
@@ -109,11 +114,11 @@ class OTPVC: UIViewController {
         }
     }
 
-    @IBAction func handleBackButtonTapped(_: UIButton) {
+    @IBAction func backButtonPressed(_ sender: CommonButton) {
         router?.popVC()
     }
 
-    @IBAction func handleNextButtonTapped(_: UIButton) {
+    @IBAction func nextButtonPressed(_ sender: CommonButton) {
         guard textField1.hasText,
               textField2.hasText,
               textField3.hasText,

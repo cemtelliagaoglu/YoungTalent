@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -166,49 +167,45 @@
                                     <constraint firstAttribute="trailing" secondItem="hEM-Qb-3FY" secondAttribute="trailing" id="WGn-8T-BPS"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iao-gF-976">
-                                <rect key="frame" x="324" y="772" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="bQ8-b7-Dlu"/>
-                                    <constraint firstAttribute="width" constant="60" id="d9z-e9-JEr"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="lZj-Dd-urs"/>
-                                    <constraint firstAttribute="height" constant="60" id="tdf-Kk-rbi"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="next"/>
-                                <connections>
-                                    <action selector="handleNextButtonTapped:" destination="ofv-T6-SmX" eventType="touchUpInside" id="0Na-So-SME"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ZA-as-e4K">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEd-Nw-ZgS" customClass="CommonButton" customModule="CommonUI">
                                 <rect key="frame" x="30" y="30" width="20" height="57"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="mlr-bX-fdB"/>
-                                    <constraint firstAttribute="width" constant="20" id="q5J-pf-NwD"/>
+                                    <constraint firstAttribute="height" constant="57" id="CVJ-VH-XWB"/>
+                                    <constraint firstAttribute="width" constant="20" id="xZk-9v-Nz5"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="back"/>
                                 <connections>
-                                    <action selector="handleBackButtonTapped:" destination="ofv-T6-SmX" eventType="touchUpInside" id="I2E-4v-w2z"/>
+                                    <action selector="backButtonPressed:" destination="ofv-T6-SmX" eventType="touchUpInside" id="DNC-or-l0Z"/>
                                 </connections>
-                            </button>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uvY-n9-5ZS" customClass="CommonButton" customModule="CommonUI">
+                                <rect key="frame" x="324" y="772" width="60" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="C9I-cJ-wTV"/>
+                                    <constraint firstAttribute="height" constant="60" id="bMs-SP-Ueh"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="ofv-T6-SmX" eventType="touchUpInside" id="IY0-ow-OXi"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BFc-PE-OIs"/>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
-                            <constraint firstItem="BFc-PE-OIs" firstAttribute="trailing" secondItem="iao-gF-976" secondAttribute="trailing" constant="30" id="26N-G7-MYu"/>
                             <constraint firstItem="BrI-XT-aGx" firstAttribute="leading" secondItem="BFc-PE-OIs" secondAttribute="leading" constant="30" id="53i-Bo-PmL"/>
                             <constraint firstAttribute="trailing" secondItem="kLF-2c-HaT" secondAttribute="trailing" constant="-46" id="838-P1-F6a"/>
                             <constraint firstItem="JNq-of-0lc" firstAttribute="top" secondItem="BrI-XT-aGx" secondAttribute="bottom" constant="41" id="EOo-9A-a3x"/>
+                            <constraint firstItem="BFc-PE-OIs" firstAttribute="trailing" secondItem="uvY-n9-5ZS" secondAttribute="trailing" constant="30" id="JVV-33-hub"/>
                             <constraint firstItem="jLc-ot-iG6" firstAttribute="top" secondItem="icU-ST-khg" secondAttribute="top" constant="87" id="Ssp-7d-sLx"/>
                             <constraint firstItem="kLF-2c-HaT" firstAttribute="top" secondItem="jLc-ot-iG6" secondAttribute="bottom" constant="53" id="XYa-Kq-GQQ"/>
-                            <constraint firstItem="9ZA-as-e4K" firstAttribute="top" secondItem="icU-ST-khg" secondAttribute="top" constant="30" id="aJ5-uP-9os"/>
-                            <constraint firstItem="9ZA-as-e4K" firstAttribute="leading" secondItem="BFc-PE-OIs" secondAttribute="leading" constant="30" id="fNc-cA-b9W"/>
                             <constraint firstItem="kLF-2c-HaT" firstAttribute="leading" secondItem="icU-ST-khg" secondAttribute="leading" constant="-46" id="ghr-HP-oIf"/>
                             <constraint firstItem="BFc-PE-OIs" firstAttribute="trailing" secondItem="jLc-ot-iG6" secondAttribute="trailing" constant="33" id="lrD-qM-irL"/>
+                            <constraint firstItem="BFc-PE-OIs" firstAttribute="bottom" secondItem="uvY-n9-5ZS" secondAttribute="bottom" constant="30" id="mhi-Uu-KiG"/>
+                            <constraint firstItem="cEd-Nw-ZgS" firstAttribute="top" secondItem="icU-ST-khg" secondAttribute="top" constant="30" id="n51-Wk-wQH"/>
                             <constraint firstItem="BFc-PE-OIs" firstAttribute="trailing" secondItem="BrI-XT-aGx" secondAttribute="trailing" constant="30" id="q0r-F4-uQe"/>
-                            <constraint firstItem="BFc-PE-OIs" firstAttribute="bottom" secondItem="iao-gF-976" secondAttribute="bottom" constant="30" id="uk2-2a-690"/>
                             <constraint firstAttribute="bottom" secondItem="kLF-2c-HaT" secondAttribute="bottom" id="vDU-dh-vkx"/>
+                            <constraint firstItem="cEd-Nw-ZgS" firstAttribute="leading" secondItem="icU-ST-khg" secondAttribute="leading" constant="30" id="wSM-Xa-4ig"/>
                             <constraint firstItem="BrI-XT-aGx" firstAttribute="top" secondItem="jLc-ot-iG6" secondAttribute="bottom" constant="30" id="xyk-WP-zO2"/>
                             <constraint firstItem="jLc-ot-iG6" firstAttribute="leading" secondItem="BFc-PE-OIs" secondAttribute="leading" constant="32" id="yZN-cK-OLZ"/>
                             <constraint firstItem="JNq-of-0lc" firstAttribute="leading" secondItem="BFc-PE-OIs" secondAttribute="leading" constant="30" id="zGb-sB-bzS"/>
@@ -217,6 +214,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="75s-IE-7pg"/>
                     <connections>
+                        <outlet property="backButton" destination="cEd-Nw-ZgS" id="tpM-df-71a"/>
+                        <outlet property="nextButton" destination="uvY-n9-5ZS" id="I97-wY-gOE"/>
                         <outlet property="textField1" destination="0qv-e8-mLJ" id="A5a-7q-6JD"/>
                         <outlet property="textField2" destination="jXg-LM-qcm" id="jcd-Qm-saK"/>
                         <outlet property="textField3" destination="fRa-Jn-fvt" id="J8r-NJ-rvg"/>
@@ -229,8 +228,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="20" height="57.5"/>
-        <image name="next" width="120" height="107"/>
         <image name="security" width="310" height="234"/>
         <image name="shapedBackground" width="375" height="470"/>
         <namedColor name="Blue-Dark">
@@ -245,5 +242,8 @@
         <namedColor name="backgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
