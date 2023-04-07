@@ -43,9 +43,12 @@ final class HomeWorker: HomeWorkingLogic, HTTPClient {
     }
 
     func updateDarkMode(completion: @escaping ((Bool) -> Void)) {
-        guard let isDarkMode = UserDefaults.standard.object(forKey: "isDarkMode") as? Bool
-        else { return }
-        UserDefaults.standard.setValue(!isDarkMode, forKey: "isDarkMode")
-        completion(!isDarkMode)
+        if let isDarkMode = UserDefaults.standard.object(forKey: "isDarkMode") as? Bool {
+            UserDefaults.standard.setValue(!isDarkMode, forKey: "isDarkMode")
+            completion(!isDarkMode)
+        } else {
+            UserDefaults.standard.setValue(true, forKey: "isDarkMode")
+            completion(true)
+        }
     }
 }
