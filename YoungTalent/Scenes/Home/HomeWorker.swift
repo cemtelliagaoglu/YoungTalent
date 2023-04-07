@@ -11,6 +11,8 @@ protocol HomeWorkingLogic: AnyObject {
     func fetchCurrentUser(completion: @escaping ((Result<UserResponse, RequestError>) -> Void))
     func fetchGroups(completion: @escaping ((Result<AllGroupsResponse, RequestError>) -> Void))
     func fetchAllUsers(completion: @escaping ((Result<AllUsersResponse, RequestError>) -> Void))
+    func deleteRefreshToken(completion: @escaping (() -> Void))
+    func updateDarkMode(completion: @escaping ((Bool) -> Void))
 }
 
 final class HomeWorker: HomeWorkingLogic, HTTPClient {
@@ -30,5 +32,20 @@ final class HomeWorker: HomeWorkingLogic, HTTPClient {
         sendRequest(endpoint: UserEndpoint.allUsers, responseModel: AllUsersResponse.self) { result in
             completion(result)
         }
+    }
+
+    func deleteRefreshToken(completion: @escaping (() -> Void)) {
+        KeychainHelper.shared.deleteData(
+            service: KeychainConstants.refreshTokenService,
+            account: KeychainConstants.account
+        )
+        completion()
+    }
+
+    func updateDarkMode(completion: @escaping ((Bool) -> Void)) {
+        guard let isDarkMode = UserDefaults.standard.object(forKey: "isDarkMode") as? Bool
+        else { return }
+        UserDefaults.standard.setValue(!isDarkMode, forKey: "isDarkMode")
+        completion(!isDarkMode)
     }
 }
