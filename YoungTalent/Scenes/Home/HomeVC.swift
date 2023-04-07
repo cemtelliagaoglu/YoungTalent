@@ -11,6 +11,8 @@ protocol HomeDisplayLogic: AnyObject {
     func displayGroups(groupViewModels: [Home.Case.ViewModel.GroupModel])
     func setCurrentUser(userViewModel: Home.Case.ViewModel.User)
     func displayUsers(userViewModels: [Home.Case.ViewModel.User])
+    func displayLogout()
+    func displayNewTheme(_ isDarkMode: Bool)
     func displayErrorMessage(_ errorMessage: String)
 }
 
@@ -26,6 +28,8 @@ final class HomeVC: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchButton: UIButton!
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var settingsView: UIView!
 
     var interactor: HomeBusinessLogic?
     var router: (HomeRoutingLogic & HomeDataPassing)?
@@ -33,6 +37,8 @@ final class HomeVC: UIViewController {
     var groupsViewModel: [Home.Case.ViewModel.GroupModel]?
     var usersViewModel: [Home.Case.ViewModel.User]?
     var currentUserViewModel: Home.Case.ViewModel.User?
+
+    lazy var viewGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(toggleSettingsView))
 
     // MARK: - Lifecycle
 
@@ -70,6 +76,8 @@ final class HomeVC: UIViewController {
     // MARK: - Handlers
 
     private func setupView() {
+        viewGestureRecognizer.isEnabled = false
+        view.addGestureRecognizer(viewGestureRecognizer)
         // collectionView
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -109,8 +117,35 @@ final class HomeVC: UIViewController {
         return profileTap
     }
 
+    @objc private func toggleSettingsView() {
+        viewGestureRecognizer.isEnabled = false
+        settingsView.hideAnimation(isHidden: true)
+    }
+
     @objc private func handleProfileTapped() {
+        settingsView.hideAnimation(isHidden: false)
+        viewGestureRecognizer.isEnabled = true
+    }
+
+    @IBAction func profileButtonPressed(_ sender: UIButton) {
         router?.routeToProfile()
+    }
+
+    @IBAction func switchThemePressed(_ sender: UIButton) {
+        activityIndicator.startAnimating()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) { [weak self] in
+            self?.interactor?.switchTheme()
+        }
+    }
+
+    @IBAction func logoutPressed(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Logout", message: "Are you sure to logout?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "No", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Yes", style: .default) { [weak self] _ in
+            self?.activityIndicator.startAnimating()
+            self?.interactor?.requestLogout()
+        })
+        present(alert, animated: true)
     }
 }
 
@@ -199,6 +234,19 @@ extension HomeVC: HomeDisplayLogic {
         usersViewModel = userViewModels
         DispatchQueue.main.async {
             self.tableView.reloadData()
+        }
+    }
+
+    func displayLogout() {
+        activityIndicator.stopAnimating()
+        router?.popToRoot()
+    }
+
+    func displayNewTheme(_ isDarkMode: Bool) {
+        activityIndicator.stopAnimating()
+        if let window = UIApplication.shared.connectedScenes.map({ $0 as? UIWindowScene }).compactMap({ $0 }).first?
+            .windows.first {
+            window.overrideUserInterfaceStyle = isDarkMode ? .dark : .light
         }
     }
 
