@@ -10,6 +10,7 @@ import UIKit
 protocol HomeRoutingLogic: AnyObject {
     func routeToChat(index: Int)
     func routeToProfile()
+    func popToRoot()
 }
 
 protocol HomeDataPassing: AnyObject {
@@ -37,5 +38,9 @@ final class HomeRouter: HomeRoutingLogic, HomeDataPassing {
             )
             self?.viewController?.navigationController?.pushViewController(destinationVC, animated: true)
         }
+    }
+
+    func popToRoot() {
+        viewController?.navigationController?.popToRootViewController(animated: true)
     }
 }

@@ -9,6 +9,8 @@ import Foundation
 
 protocol HomeBusinessLogic: AnyObject {
     func fetchData()
+    func switchTheme()
+    func requestLogout()
 }
 
 protocol HomeDataStore: AnyObject {
@@ -51,6 +53,18 @@ final class HomeInteractor: HomeBusinessLogic, HomeDataStore {
             case let .failure(error):
                 self.presenter?.presentErrorMessage(error.customMessage)
             }
+        }
+    }
+
+    func requestLogout() {
+        worker.deleteRefreshToken { [weak self] in
+            self?.presenter?.presentLogoutSuccess()
+        }
+    }
+
+    func switchTheme() {
+        worker.updateDarkMode { [weak self] isDarkMode in
+            self?.presenter?.presentNewTheme(isDarkMode)
         }
     }
 }
