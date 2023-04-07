@@ -11,6 +11,8 @@ protocol HomePresentationLogic: AnyObject {
     func presentGroups(groupsModel: [AllGroupsResponse.Group])
     func presentCurrentUser(userModel: User)
     func presentAllContacts(contactsModel: [User])
+    func presentLogoutSuccess()
+    func presentNewTheme(_ isDarkMode: Bool)
     func presentErrorMessage(_ errorMessage: String)
 }
 
@@ -67,6 +69,14 @@ final class HomePresenter: HomePresentationLogic {
             usersViewModel.append(userViewModel)
         }
         viewController?.displayUsers(userViewModels: usersViewModel)
+    }
+
+    func presentLogoutSuccess() {
+        viewController?.displayLogout()
+    }
+
+    func presentNewTheme(_ isDarkMode: Bool) {
+        viewController?.displayNewTheme(isDarkMode)
     }
 
     func presentErrorMessage(_ errorMessage: String) {
