@@ -34,4 +34,10 @@ extension UIView {
             layer.borderColor = newValue?.cgColor
         }
     }
+
+    func hideAnimation(isHidden: Bool) {
+        UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve) { [weak self] in
+            self?.isHidden = isHidden
+        }
+    }
 }
