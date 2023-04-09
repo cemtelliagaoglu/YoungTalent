@@ -46,6 +46,7 @@ class MediaPageViewController: UIPageViewController {
         let viewController = MediaDetailsViewController()
         viewController.index = index
         viewController.image = image
+        viewController.viewingMode = .image
         return viewController
     }
 }

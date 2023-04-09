@@ -77,6 +77,7 @@
 		84C2C85429BF7A1000F139D8 /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2C84D29BF7A1000F139D8 /* HomeModels.swift */; };
 		84C2C85529BF7A1000F139D8 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2C84E29BF7A1000F139D8 /* HomeWorker.swift */; };
 		84C2C85629BF7A1000F139D8 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2C84F29BF7A1000F139D8 /* HomeRouter.swift */; };
+		84C3AF3529E2BA050062DBD0 /* testVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84C3AF3429E2B6950062DBD0 /* testVideo.mp4 */; };
 		84C8EBA429C02FF10090AFCE /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBA329C02FF10090AFCE /* UserResponse.swift */; };
 		84C8EBA629C03C070090AFCE /* UserEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBA529C03C070090AFCE /* UserEndpoint.swift */; };
 		84C8EBAF29C094CE0090AFCE /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C8EBA829C094CE0090AFCE /* Welcome.storyboard */; };
@@ -97,6 +98,7 @@
 		84C8EBD129C0CDB80090AFCE /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBCA29C0CDB80090AFCE /* LoginModels.swift */; };
 		84C8EBD229C0CDB80090AFCE /* LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBCB29C0CDB80090AFCE /* LoginWorker.swift */; };
 		84C8EBD329C0CDB80090AFCE /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8EBCC29C0CDB80090AFCE /* LoginRouter.swift */; };
+		84D07E8729E2EA840047B863 /* CMTime+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D07E8629E2EA840047B863 /* CMTime+Extension.swift */; };
 		84EB4E1C29BB0D3C002C64CE /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB4E1B29BB0D3C002C64CE /* RequestMethod.swift */; };
 		84EB4E1E29BB0D66002C64CE /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB4E1D29BB0D66002C64CE /* RequestError.swift */; };
 		84EB4E2029BB0DCC002C64CE /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB4E1F29BB0DCC002C64CE /* HTTPClient.swift */; };
@@ -200,6 +202,7 @@
 		84C2C84D29BF7A1000F139D8 /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
 		84C2C84E29BF7A1000F139D8 /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
 		84C2C84F29BF7A1000F139D8 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		84C3AF3429E2B6950062DBD0 /* testVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = testVideo.mp4; sourceTree = "<group>"; };
 		84C8EBA329C02FF10090AFCE /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		84C8EBA529C03C070090AFCE /* UserEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndpoint.swift; sourceTree = "<group>"; };
 		84C8EBA829C094CE0090AFCE /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
@@ -220,6 +223,7 @@
 		84C8EBCA29C0CDB80090AFCE /* LoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
 		84C8EBCB29C0CDB80090AFCE /* LoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorker.swift; sourceTree = "<group>"; };
 		84C8EBCC29C0CDB80090AFCE /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		84D07E8629E2EA840047B863 /* CMTime+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMTime+Extension.swift"; sourceTree = "<group>"; };
 		84EB4E1B29BB0D3C002C64CE /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
 		84EB4E1D29BB0D66002C64CE /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		84EB4E1F29BB0DCC002C64CE /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -426,6 +430,7 @@
 				84BAB81129AF5FB600F5CDCC /* UIView+Extension.swift */,
 				84C2C84129BF140700F139D8 /* UIImageView+Extension.swift */,
 				84A7022F29CD973B0012F539 /* UIViewController+Extension.swift */,
+				84D07E8629E2EA840047B863 /* CMTime+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -470,6 +475,7 @@
 		84BAB81C29AF7DAB00F5CDCC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				84C3AF3429E2B6950062DBD0 /* testVideo.mp4 */,
 				843167E92992335400908312 /* Assets.xcassets */,
 				84BAB81829AF6BB000F5CDCC /* Colors.xcassets */,
 				843167EE2992335400908312 /* Info.plist */,
@@ -715,6 +721,7 @@
 				84BAB81529AF637A00F5CDCC /* Montserrat-Bold.ttf in Resources */,
 				84C2C85029BF7A1000F139D8 /* Home.storyboard in Resources */,
 				848ECFAE29C34495003EB8EB /* ChatCollectionViewCell.xib in Resources */,
+				84C3AF3529E2BA050062DBD0 /* testVideo.mp4 in Resources */,
 				84C8EBCD29C0CDB80090AFCE /* Login.storyboard in Resources */,
 				848ECFA329C31D2F003EB8EB /* Chat.storyboard in Resources */,
 				84C8EBBD29C0A0BC0090AFCE /* Register.storyboard in Resources */,
@@ -781,6 +788,7 @@
 				84C2C85229BF7A1000F139D8 /* HomePresenter.swift in Sources */,
 				84C8EBD129C0CDB80090AFCE /* LoginModels.swift in Sources */,
 				84C2C85329BF7A1000F139D8 /* HomeInteractor.swift in Sources */,
+				84D07E8729E2EA840047B863 /* CMTime+Extension.swift in Sources */,
 				84EB4E2829BB1F57002C64CE /* GroupsEndpoint.swift in Sources */,
 				84A7023229CDBA2F0012F539 /* KeychainHelper.swift in Sources */,
 				84A7023429CDBD210012F539 /* Constants.swift in Sources */,
