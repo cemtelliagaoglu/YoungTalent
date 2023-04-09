@@ -223,7 +223,13 @@ final class ChatViewController: UIViewController {
         ) { [weak self] notification in
             guard let object = notification.object as? [String: Any],
                   let thumbnail = object["image"] as? UIImage
-            else { return }
+            else {
+                if let object = notification.object as? [String: Any],
+                   let errorMessage = object["error"] as? String {
+                    self?.displayErrorMessage(errorMessage)
+                }
+                return
+            }
             self?.mapImageView.image = thumbnail
         }
     }
