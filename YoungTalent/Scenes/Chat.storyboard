@@ -44,7 +44,7 @@
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0f1-YN-4ML">
-                                                <rect key="frame" x="35" y="8.6666666666666643" width="236" height="40"/>
+                                                <rect key="frame" x="35" y="8.6666666666666643" width="298" height="40"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personalEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="Gc5-GK-dZF">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -59,7 +59,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="KAZ-V4-QS4">
-                                                        <rect key="frame" x="50" y="6.3333333333333357" width="186" height="27"/>
+                                                        <rect key="frame" x="50" y="6.3333333333333357" width="248" height="27"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Milendra" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gn2-a8-pf0">
                                                                 <rect key="frame" x="0.0" y="0.0" width="55.333333333333336" height="14.666666666666666"/>
@@ -77,16 +77,6 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMP-km-vvu">
-                                                <rect key="frame" x="286" y="11.333333333333336" width="47" height="34.333333333333336"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system">
-                                                    <color key="baseForegroundColor" name="Blue-Dark"/>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="addMediaButtonPressed:" destination="nxe-uw-h5I" eventType="touchUpInside" id="Sw0-tb-iRn"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -155,6 +145,9 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="addMedia"/>
+                                                <connections>
+                                                    <action selector="addMediaButtonPressed:" destination="nxe-uw-h5I" eventType="touchUpInside" id="Iy0-nO-gmK"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N8M-87-pyX">
                                                 <rect key="frame" x="40" y="8" width="223" height="14"/>
@@ -220,7 +213,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addMediaButton" destination="fMP-km-vvu" id="MPF-Po-att"/>
+                        <outlet property="addMediaButton" destination="wfE-yb-pSm" id="6MG-po-WsF"/>
                         <outlet property="backButton" destination="UWx-gn-VQk" id="sCJ-6s-S1f"/>
                         <outlet property="collectionView" destination="Y6F-uD-cfJ" id="69Z-Ci-tXm"/>
                         <outlet property="contactImageView" destination="Gc5-GK-dZF" id="wVl-jO-mbd"/>
@@ -239,7 +232,6 @@
         <image name="back" width="20" height="57.333332061767578"/>
         <image name="location.circle.fill" catalog="system" width="128" height="123"/>
         <image name="personalEmpty" width="120" height="120"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="Blue">
             <color red="0.38823529411764707" green="0.37254901960784315" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
