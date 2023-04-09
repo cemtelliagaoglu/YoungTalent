@@ -10,19 +10,17 @@ import Foundation
 protocol LoginWorkingLogic: AnyObject {
     func requestLogin(
         email: String,
-        password: String,
-        completion: @escaping ((Result<LoginResponse, RequestError>) -> Void)
-    )
+        password: String
+    ) async throws -> LoginResponse
 }
 
 final class LoginWorker: LoginWorkingLogic, HTTPClient {
-    func requestLogin(
-        email: String,
-        password: String,
-        completion: @escaping ((Result<LoginResponse, RequestError>) -> Void)
-    ) {
-        sendLoginRequest(withEmail: email, password: password) { result in
-            completion(result)
+    func requestLogin(email: String, password: String) async throws -> LoginResponse {
+        do {
+            let response = try await sendLoginRequest(withEmail: email, password: password)
+            return response
+        } catch {
+            throw error
         }
     }
 }

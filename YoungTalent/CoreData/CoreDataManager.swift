@@ -28,52 +28,50 @@ class CoreDataManager {
 
     private init() {}
 
-    func create<E>(type: E.Type, completion: @escaping ((Result<E, CoreDataError>) -> Void)) {
+    func create<E>(type: E.Type) async throws -> E {
         do {
             guard let object = NSEntityDescription.insertNewObject(forEntityName: "\(E.self)", into: context) as? E
             else {
-                completion(.failure(.create))
-                return
+                throw CoreDataError.create
             }
             try context.save()
-            completion(.success(object))
+            return object
         } catch {
-            completion(.failure(.save))
+            throw CoreDataError.save
         }
     }
 
-    func read<E>(type: E.Type, completion: @escaping ((Result<[E], CoreDataError>) -> Void)) {
+    func read<E>(type: E.Type) async throws -> [E] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "\(E.self)")
         do {
             guard let objects = try context.fetch(fetchRequest) as? [E]
             else {
-                completion(.failure(.fetch))
-                return
+                throw CoreDataError.fetch
             }
-            completion(.success(objects))
+            return objects
         } catch {
-            completion(.failure(.read))
+            throw CoreDataError.read
         }
     }
 
-    func update(completion: @escaping ((Result<Void, CoreDataError>) -> Void)) {
+    func update() async throws {
         do {
             try context.save()
-            completion(.success(()))
+            return
         } catch {
-            completion(.failure(.update))
+            throw CoreDataError.update
         }
     }
 
-    func delete(objects: [some NSManagedObject], completion: @escaping ((Result<Void, CoreDataError>) -> Void)) {
+    func delete(objects: [some NSManagedObject]) async throws {
         do {
             for object in objects {
                 context.delete(object)
             }
             try context.save()
-            completion(.success(()))
+            return
         } catch {
-            completion(.failure(.delete))
+            throw CoreDataError.delete
         }
     }
 }

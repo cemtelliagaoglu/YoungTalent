@@ -22,9 +22,9 @@ final class WelcomeInteractor: WelcomeBusinessLogic, WelcomeDataStore {
     var currentUserData: RefreshResponse.RefreshBody?
 
     func fetchConfigurations() {
-        worker.checkLoginStatus { [weak self] result in
-            switch result {
-            case let .success(response):
+        Task {
+            do {
+                let response = try await worker.checkLoginStatus()
                 guard let accessTokenString = response.body?.accessToken,
                       let refreshTokenString = response.body?.refreshToken
                 else { return }
@@ -40,10 +40,10 @@ final class WelcomeInteractor: WelcomeBusinessLogic, WelcomeDataStore {
                     service: KeychainConstants.refreshTokenService,
                     account: KeychainConstants.account
                 )
-                self?.currentUserData = response.body
-                self?.presenter?.presentUserLoggedIn()
-            case .failure:
-                break
+                currentUserData = response.body
+                presenter?.presentUserLoggedIn()
+            } catch {
+                return
             }
         }
         worker.fetchData { isDarkMode in

@@ -10,27 +10,24 @@ import Foundation
 public protocol HTTPClient {
     func sendRequest<T: Decodable>(
         endpoint: Endpoint,
-        responseModel: T.Type,
-        completion: @escaping (Result<T, RequestError>) -> Void
-    )
+        responseModel: T.Type
+    ) async throws -> T
 
     func sendLoginRequest(
         withEmail email: String,
-        password: String,
-        completion: @escaping (Result<LoginResponse, RequestError>) -> Void
-    )
+        password: String
+    ) async throws -> LoginResponse
 }
 
 public extension HTTPClient {
     func sendRequest<T: Decodable>(
         endpoint: Endpoint,
-        responseModel: T.Type,
-        completion: @escaping (Result<T, RequestError>) -> Void
-    ) {
+        responseModel: T.Type
+    ) async throws -> T {
         let urlComponents = prepareURLComponents(with: endpoint)
 
         guard let url = urlComponents.url else {
-            return completion(.failure(.invalidURL))
+            throw RequestError.invalidURL
         }
 
         var request = URLRequest(url: url)
@@ -40,40 +37,34 @@ public extension HTTPClient {
         if let body = endpoint.body {
             request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
         }
-
-        URLSession.shared.dataTask(with: request) { data, response, _ in
-
-            do {
-                guard let response = response as? HTTPURLResponse else {
-                    return completion(.failure(.noResponse))
-                }
-
-                switch response.statusCode {
-                case 200 ... 299:
-                    let decodedResponse = try JSONDecoder().decode(responseModel, from: data!)
-                    return completion(.success(decodedResponse))
-                case 401:
-                    return completion(.failure(.unauthorized))
-                default:
-                    return completion(.failure(.unexpectedStatusCode))
-                }
-            } catch {
-                return completion(.failure(.decode))
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            guard let response = response as? HTTPURLResponse else {
+                throw RequestError.noResponse
             }
+            switch response.statusCode {
+            case 200 ... 299:
+                let decodedResponse = try JSONDecoder().decode(responseModel, from: data)
+                return decodedResponse
+            case 401:
+                throw RequestError.unauthorized
+            default:
+                throw RequestError.unexpectedStatusCode
+            }
+        } catch {
+            throw error
         }
-        .resume()
     }
 
     func sendLoginRequest(
         withEmail email: String,
-        password: String,
-        completion: @escaping (Result<LoginResponse, RequestError>) -> Void
-    ) {
+        password: String
+    ) async throws -> LoginResponse {
         let endpoint = AuthEndpoint.login(email, password)
         let urlComponents = prepareURLComponents(with: endpoint)
 
         guard let url = urlComponents.url else {
-            return completion(.failure(.invalidURL))
+            throw RequestError.invalidURL
         }
 
         var request = URLRequest(url: url)
@@ -83,26 +74,23 @@ public extension HTTPClient {
         if let body = endpoint.body {
             request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
         }
-
-        URLSession.shared.dataTask(with: request) { data, response, _ in
-            do {
-                guard let response = response as? HTTPURLResponse else {
-                    return completion(.failure(.noResponse))
-                }
-                switch response.statusCode {
-                case 200 ... 299:
-                    let decodedResponse = try JSONDecoder().decode(LoginResponse.self, from: data!)
-                    return completion(.success(decodedResponse))
-                case 401:
-                    return completion(.failure(.unauthorized))
-                default:
-                    return completion(.failure(.unexpectedStatusCode))
-                }
-            } catch {
-                return completion(.failure(.decode))
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            guard let response = response as? HTTPURLResponse else {
+                throw RequestError.noResponse
             }
+            switch response.statusCode {
+            case 200 ... 299:
+                let decodedResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
+                return decodedResponse
+            case 401:
+                throw RequestError.unauthorized
+            default:
+                throw RequestError.unexpectedStatusCode
+            }
+        } catch {
+            throw error
         }
-        .resume()
     }
 
     private func prepareURLComponents(

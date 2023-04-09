@@ -25,33 +25,22 @@ final class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     var contacts: [User]?
 
     func fetchData() {
-        worker.fetchGroups { result in
-            switch result {
-            case let .success(allGroupsResponse):
+        Task {
+            do {
+                let allGroupsResponse = try await worker.fetchGroups()
+                let userResponse = try await worker.fetchCurrentUser()
+                let allUsersResponse = try await worker.fetchAllUsers()
                 self.groupsData = allGroupsResponse.body.groups
-                guard let groupsData = self.groupsData else { return }
-                self.presenter?.presentGroups(groupsModel: groupsData)
-            case let .failure(error):
-                self.presenter?.presentErrorMessage(error.customMessage)
-            }
-        }
-
-        worker.fetchCurrentUser { result in
-            switch result {
-            case let .success(userResponse):
-                self.presenter?.presentCurrentUser(userModel: userResponse.body)
-            case let .failure(error):
-                self.presenter?.presentErrorMessage(error.customMessage)
-            }
-        }
-        worker.fetchAllUsers { result in
-            switch result {
-            case let .success(allUsers):
-                self.contacts = allUsers.body
-                guard let contacts = self.contacts else { return }
-                self.presenter?.presentAllContacts(contactsModel: contacts)
-            case let .failure(error):
-                self.presenter?.presentErrorMessage(error.customMessage)
+                self.contacts = allUsersResponse.body
+                guard let groupsData,
+                      let contacts
+                else { return }
+                presenter?.presentGroups(groupsModel: groupsData)
+                presenter?.presentCurrentUser(userModel: userResponse.body)
+                presenter?.presentAllContacts(contactsModel: contacts)
+            } catch {
+                guard let error = error as? RequestError else { return }
+                presenter?.presentErrorMessage(error.customMessage)
             }
         }
     }

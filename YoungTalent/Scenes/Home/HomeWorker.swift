@@ -8,29 +8,47 @@
 import Foundation
 
 protocol HomeWorkingLogic: AnyObject {
-    func fetchCurrentUser(completion: @escaping ((Result<UserResponse, RequestError>) -> Void))
-    func fetchGroups(completion: @escaping ((Result<AllGroupsResponse, RequestError>) -> Void))
-    func fetchAllUsers(completion: @escaping ((Result<AllUsersResponse, RequestError>) -> Void))
+    func fetchCurrentUser() async throws -> UserResponse
+    func fetchGroups() async throws -> AllGroupsResponse
+    func fetchAllUsers() async throws -> AllUsersResponse
     func deleteRefreshToken(completion: @escaping (() -> Void))
     func updateDarkMode(completion: @escaping ((Bool) -> Void))
 }
 
 final class HomeWorker: HomeWorkingLogic, HTTPClient {
-    func fetchCurrentUser(completion: @escaping ((Result<UserResponse, RequestError>) -> Void)) {
-        sendRequest(endpoint: UserEndpoint.currentUser, responseModel: UserResponse.self) { result in
-            completion(result)
+    func fetchCurrentUser() async throws -> UserResponse {
+        do {
+            let response = try await sendRequest(
+                endpoint: UserEndpoint.currentUser,
+                responseModel: UserResponse.self
+            )
+            return response
+        } catch {
+            throw error
         }
     }
 
-    func fetchGroups(completion: @escaping ((Result<AllGroupsResponse, RequestError>) -> Void)) {
-        sendRequest(endpoint: GroupsEndpoint.all, responseModel: AllGroupsResponse.self) { result in
-            completion(result)
+    func fetchGroups() async throws -> AllGroupsResponse {
+        do {
+            let response = try await sendRequest(
+                endpoint: GroupsEndpoint.all,
+                responseModel: AllGroupsResponse.self
+            )
+            return response
+        } catch {
+            throw error
         }
     }
 
-    func fetchAllUsers(completion: @escaping ((Result<AllUsersResponse, RequestError>) -> Void)) {
-        sendRequest(endpoint: UserEndpoint.allUsers, responseModel: AllUsersResponse.self) { result in
-            completion(result)
+    func fetchAllUsers() async throws -> AllUsersResponse {
+        do {
+            let response = try await sendRequest(
+                endpoint: UserEndpoint.allUsers,
+                responseModel: AllUsersResponse.self
+            )
+            return response
+        } catch {
+            throw error
         }
     }
 

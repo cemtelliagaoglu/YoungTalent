@@ -21,11 +21,11 @@ final class LoginInteractor: LoginBusinessLogic, LoginDataStore {
     var currentUser: LoginResponse.LoginBody?
 
     func requestLoginWith(_ email: String, _ password: String) {
-        worker.requestLogin(email: email, password: password) { result in
-            switch result {
-            case let .success(response):
+        Task {
+            do {
+                let response = try await worker.requestLogin(email: email, password: password)
                 if response.error == true {
-                    self.presenter?.presentErrorMessage(response.reason)
+                    presenter?.presentErrorMessage(response.reason)
                 } else {
                     guard let accessTokenString = response.body?.accessToken,
                           let refreshTokenString = response.body?.refreshToken
@@ -48,8 +48,9 @@ final class LoginInteractor: LoginBusinessLogic, LoginDataStore {
                     self.currentUser = response.body
                     self.presenter?.presentLoginSucceed()
                 }
-            case let .failure(error):
-                self.presenter?.presentErrorMessage(error.customMessage)
+            } catch {
+                guard let error = error as? RequestError else { return }
+                presenter?.presentErrorMessage(error.customMessage)
             }
         }
     }
