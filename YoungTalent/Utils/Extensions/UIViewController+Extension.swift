@@ -14,8 +14,8 @@ extension UIViewController {
     ) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Close", style: .cancel))
-        DispatchQueue.main.async { [weak self] in
-            self?.present(alert, animated: true)
+        Task {
+            present(alert, animated: true)
         }
     }
 }

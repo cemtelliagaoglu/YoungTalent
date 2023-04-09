@@ -59,24 +59,23 @@ class MapManager: NSObject, CLLocationManagerDelegate {
             ),
             span: .init(latitudeDelta: 1 / 100, longitudeDelta: 1 / 100)
         )
-
-        let snapper = MKMapSnapshotter(options: options)
-        snapper.start { [weak self] snapshot, error in
-            if let error {
-                print(error.localizedDescription)
-            } else {
-                guard let image = snapshot?.image else { return }
+        Task {
+            do {
+                let snapper = MKMapSnapshotter(options: options)
+                let snapshot = try await snapper.start()
                 let dictionary: [String: Any] = [
                     "lat": Double(currentLocation.coordinate.latitude),
                     "lon": Double(currentLocation.coordinate.longitude),
-                    "image": image
+                    "image": snapshot.image
                 ]
-                self?.postNotification(object: dictionary)
+                postNotification(object: dictionary)
+            } catch {
+                postNotification(object: ["error": error.localizedDescription])
             }
         }
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription)
+        postNotification(object: ["error": error.localizedDescription])
     }
 }

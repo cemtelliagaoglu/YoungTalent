@@ -82,18 +82,19 @@ final class ProfileViewController: UIViewController {
     private func setupWebView() {
         webView.navigationDelegate = self
         guard let url = URL(string: "https://www.linkedin.com/in/cem-telliagaoglu/") else { return }
-
-        DispatchQueue.main.async { [weak self] in
-            self?.webView.load(URLRequest(url: url))
-            self?.webView.allowsBackForwardNavigationGestures = true
+        Task {
+            webView.load(URLRequest(url: url))
+            webView.allowsBackForwardNavigationGestures = true
         }
     }
 
     private func updateView() {
         guard let viewModel else { return }
         let genderRow = viewModel.gender == "Male" ? 0 : 1
-        genderPickerView.selectRow(genderRow, inComponent: 0, animated: false)
-        datePicker.date = viewModel.dateOfBirth
+        Task {
+            genderPickerView.selectRow(genderRow, inComponent: 0, animated: false)
+            datePicker.date = viewModel.dateOfBirth
+        }
     }
 
     private func configureToolbar() {
