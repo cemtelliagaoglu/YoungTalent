@@ -203,7 +203,7 @@ final class ChatViewController: UIViewController {
     }
 
     @IBAction func addMediaButtonPressed(_: UIButton) {
-        router?.routeToPHPicker()
+        router?.showMediaAlert()
     }
 
     @IBAction func backButtonPressed(_: CommonButton) {
