@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--LoginVC-->
+        <scene sceneID="JoH-Fh-aXw">
+            <objects>
+                <viewController storyboardIdentifier="LoginVC" id="C76-Dv-su4" customClass="LoginVC" customModule="YoungTalentDev" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1U6-vQ-bHu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" image="shapedBackground" translatesAutoresizingMaskIntoConstraints="NO" id="dKn-fa-MVO">
+                                <rect key="frame" x="-46" y="309.5" width="506" height="586.5"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="Eqz-1V-uar">
+                                <rect key="frame" x="30" y="167" width="354" height="62.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Login           " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZqT-ZZ-KrL">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="34.5"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="28"/>
+                                        <color key="textColor" name="Blue-Dark"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXg-3J-AdE">
+                                        <rect key="frame" x="0.0" y="47.5" width="354" height="15"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                        <color key="textColor" name="Blue-Light"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Lzz-wF-qZG">
+                                <rect key="frame" x="30" y="299.5" width="354" height="151"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DR1-zU-sCm">
+                                        <rect key="frame" x="0.0" y="0.0" width="34.5" height="15"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                        <color key="textColor" name="Blue-Dark"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NfA-FV-UcM">
+                                        <rect key="frame" x="0.0" y="22" width="354" height="50"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7sK-TZ-bE7">
+                                                <rect key="frame" x="20" y="17" width="314" height="16"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" name="Blue-Dark"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Purple-Soft"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="CMv-xp-Ypr"/>
+                                            <constraint firstAttribute="trailing" secondItem="7sK-TZ-bE7" secondAttribute="trailing" constant="20" id="LrI-B3-pWR"/>
+                                            <constraint firstAttribute="bottom" secondItem="7sK-TZ-bE7" secondAttribute="bottom" constant="17" id="Yf4-Au-5sL"/>
+                                            <constraint firstItem="7sK-TZ-bE7" firstAttribute="top" secondItem="NfA-FV-UcM" secondAttribute="top" constant="17" id="d1b-nJ-LZN"/>
+                                            <constraint firstItem="7sK-TZ-bE7" firstAttribute="leading" secondItem="NfA-FV-UcM" secondAttribute="leading" constant="20" id="jyr-FA-71d"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="17"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" name="Blue"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xy-Ek-lcn">
+                                        <rect key="frame" x="0.0" y="79" width="58" height="15"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                        <color key="textColor" name="Blue-Dark"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVu-mK-UVR">
+                                        <rect key="frame" x="0.0" y="101" width="354" height="50"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="at5-lX-xVC">
+                                                <rect key="frame" x="20" y="17" width="314" height="16"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" name="Blue-Dark"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Purple-Soft"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="GQq-an-KXF"/>
+                                            <constraint firstAttribute="trailing" secondItem="at5-lX-xVC" secondAttribute="trailing" constant="20" id="Hlj-vj-Lvx"/>
+                                            <constraint firstItem="at5-lX-xVC" firstAttribute="top" secondItem="DVu-mK-UVR" secondAttribute="top" constant="17" id="cgt-R6-LHa"/>
+                                            <constraint firstItem="at5-lX-xVC" firstAttribute="leading" secondItem="DVu-mK-UVR" secondAttribute="leading" constant="20" id="fyQ-cm-Z5U"/>
+                                            <constraint firstAttribute="bottom" secondItem="at5-lX-xVC" secondAttribute="bottom" constant="17" id="lOQ-Bo-xAV"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="17"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" name="Blue"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="NfA-FV-UcM" secondAttribute="trailing" id="1XO-tl-AqJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="DVu-mK-UVR" secondAttribute="trailing" id="Dxp-Xf-tTf"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jar-cJ-0pT">
+                                <rect key="frame" x="30" y="547.5" width="354" height="23.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">By click continue you are agree with
+our </string>
+                                        <attributes>
+                                            <color key="NSColor" name="Blue-Light"/>
+                                            <font key="NSFont" size="10" name="MontserratRoman-Regular"/>
+                                            <font key="NSOriginalFont" size="10" name="MontserratRoman-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Terms and Condition">
+                                        <attributes>
+                                            <color key="NSColor" red="0.59999999999999998" green="0.31764705882352939" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="10" name="MontserratRoman-Bold"/>
+                                            <font key="NSOriginalFont" size="10" name="MontserratRoman-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNv-rM-Ptj">
+                                <rect key="frame" x="158" y="480.5" width="98.5" height="47"/>
+                                <color key="backgroundColor" name="Purple-Soft"/>
+                                <color key="tintColor" name="Blue-Dark"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Login">
+                                    <fontDescription key="titleFontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                    <directionalEdgeInsets key="contentInsets" top="16" leading="32" bottom="16" trailing="32"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="Blue"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="C76-Dv-su4" eventType="touchUpInside" id="aod-fJ-Z43"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="RNB-Ci-fza">
+                                <rect key="frame" x="197" y="494" width="20" height="20"/>
+                                <color key="color" name="Blue-Dark"/>
+                            </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tEA-05-x6T" customClass="CommonButton" customModule="CommonUI">
+                                <rect key="frame" x="30" y="50" width="20" height="57"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="XWu-fr-4cF"/>
+                                    <constraint firstAttribute="height" constant="57" id="jD9-2I-K1J"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="C76-Dv-su4" eventType="touchUpInside" id="5s6-mn-Prx"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YUC-t7-had"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YUC-t7-had" firstAttribute="trailing" secondItem="dKn-fa-MVO" secondAttribute="trailing" constant="-46" id="0VU-JT-J0X"/>
+                            <constraint firstItem="dKn-fa-MVO" firstAttribute="leading" secondItem="YUC-t7-had" secondAttribute="leading" constant="-46" id="0ux-QP-Mkh"/>
+                            <constraint firstItem="RNB-Ci-fza" firstAttribute="centerY" secondItem="vNv-rM-Ptj" secondAttribute="centerY" id="5JQ-9n-W3L"/>
+                            <constraint firstItem="tEA-05-x6T" firstAttribute="top" secondItem="1U6-vQ-bHu" secondAttribute="top" constant="50" id="9KZ-lp-cHS"/>
+                            <constraint firstItem="YUC-t7-had" firstAttribute="trailing" secondItem="Eqz-1V-uar" secondAttribute="trailing" constant="30" id="A0m-O9-Mqk"/>
+                            <constraint firstAttribute="bottom" secondItem="dKn-fa-MVO" secondAttribute="bottom" id="EkK-XI-9BG"/>
+                            <constraint firstItem="Jar-cJ-0pT" firstAttribute="top" secondItem="vNv-rM-Ptj" secondAttribute="bottom" constant="20" id="HbN-vV-n4e"/>
+                            <constraint firstItem="tEA-05-x6T" firstAttribute="leading" secondItem="YUC-t7-had" secondAttribute="leading" constant="30" id="JJ7-e1-VGA"/>
+                            <constraint firstItem="RNB-Ci-fza" firstAttribute="centerX" secondItem="vNv-rM-Ptj" secondAttribute="centerX" id="Mvd-3k-0Hl"/>
+                            <constraint firstItem="vNv-rM-Ptj" firstAttribute="top" secondItem="Lzz-wF-qZG" secondAttribute="bottom" constant="30" id="Tjs-0d-HzD"/>
+                            <constraint firstItem="Eqz-1V-uar" firstAttribute="top" secondItem="1U6-vQ-bHu" secondAttribute="top" constant="167" id="Tke-OR-rG2"/>
+                            <constraint firstItem="Lzz-wF-qZG" firstAttribute="top" secondItem="Eqz-1V-uar" secondAttribute="bottom" constant="70" id="Wfu-e2-rmH"/>
+                            <constraint firstItem="YUC-t7-had" firstAttribute="trailing" secondItem="Lzz-wF-qZG" secondAttribute="trailing" constant="30" id="pUf-pW-re0"/>
+                            <constraint firstItem="Eqz-1V-uar" firstAttribute="leading" secondItem="YUC-t7-had" secondAttribute="leading" constant="30" id="rHz-jm-ohW"/>
+                            <constraint firstItem="vNv-rM-Ptj" firstAttribute="centerX" secondItem="1U6-vQ-bHu" secondAttribute="centerX" id="sX2-bc-9BJ"/>
+                            <constraint firstItem="YUC-t7-had" firstAttribute="trailing" secondItem="Jar-cJ-0pT" secondAttribute="trailing" constant="30" id="uEl-6F-rYa"/>
+                            <constraint firstItem="Jar-cJ-0pT" firstAttribute="leading" secondItem="YUC-t7-had" secondAttribute="leading" constant="30" id="udG-6u-ejv"/>
+                            <constraint firstItem="Lzz-wF-qZG" firstAttribute="leading" secondItem="YUC-t7-had" secondAttribute="leading" constant="30" id="vcL-k8-lPU"/>
+                            <constraint firstItem="dKn-fa-MVO" firstAttribute="top" secondItem="Eqz-1V-uar" secondAttribute="bottom" constant="80" id="x7z-a4-uEJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LGR-Xg-Gm4">
+                        <barButtonItem key="backBarButtonItem" title=" " id="3bp-AR-19W"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="RNB-Ci-fza" id="ukV-b9-bBt"/>
+                        <outlet property="backButton" destination="tEA-05-x6T" id="hpe-KT-9su"/>
+                        <outlet property="emailTextField" destination="7sK-TZ-bE7" id="BB4-pm-npf"/>
+                        <outlet property="loginButton" destination="vNv-rM-Ptj" id="yYh-9M-njI"/>
+                        <outlet property="passwordTextField" destination="at5-lX-xVC" id="14r-eY-0Do"/>
+                        <outlet property="termsAndConditionLabel" destination="Jar-cJ-0pT" id="WGf-ps-GMB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2W1-hK-0Y6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2903.0534351145038" y="-51.408450704225352"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="shapedBackground" width="375" height="470"/>
+        <namedColor name="Blue">
+            <color red="0.38823529411764707" green="0.37254901960784315" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Blue-Dark">
+            <color red="0.10196078431372549" green="0.066666666666666666" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Blue-Light">
+            <color red="0.5220000147819519" green="0.49799999594688416" blue="0.70599997043609619" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Purple-Soft">
+            <color red="0.96100002527236938" green="0.9570000171661377" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="backgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
